@@ -4,4 +4,5 @@ backups/ 
 blogs.dir/ 
 cache/ 
 upgrade/ 
-uploads/ 
+uploads/
+node_modules/
