@@ -1,0 +1,186 @@
+// =======================================
+// ========== Table of Contents ==========
+// =======================================
+/*
+
+1.) General Styles
+2.) Navigation Styles
+3.) Home Page
+4.) 
+
+*/
+
+// =======================================
+// =========== General Styles ============
+// =======================================
+
+html,p,li{
+	@include montserrat(400);
+}
+h1,h2,h3,h4,h5{
+	text-transform: uppercase;
+	@include oswald(400);
+}
+.red-title{
+	color: $red;
+}
+.yellow-line{
+	border: 1px solid #f6c831;
+	width: 120px;
+}
+.opacity0{
+	opacity:0;
+}
+
+// =======================================
+// ========== Navigation Styles ==========
+// =======================================
+
+.top-bar{
+	background-color:$clear;
+	position: absolute;
+	width: 100%;
+	transition: opacity 0.25s ease-in-out;
+	&.slide-down{
+		top: 0;
+		width: 100%;
+		opacity:1;
+		position:fixed;
+		background-color: #2a2a2a;
+	}
+	ul{
+		background-color: $clear;
+	}
+	ul a{
+		color:$white;
+		text-transform: uppercase;
+		@include oswald(400);
+	}
+	.top-bar-right{
+		margin-top: 20px;
+	}
+	#menu-top-nav li:last-child a{
+		@extend %gray-button;
+	}
+}
+
+
+// =======================================
+// ============= Home Page ===============
+// =======================================
+
+.large-hero {
+	.hero-bg{
+		@extend %bg_img;
+		@extend %height100;
+	}
+	.center{
+		@include vertical-center;
+		left: 0;
+		width: 100%;
+	}
+	h1,p{
+		color: $white;
+	}
+	h1{
+		@include font(55);
+	}
+	p{
+		@include font(24);
+		@include montserrat(300);
+	}
+	.play-group{
+		margin-right: 15px;
+	}
+	.play-group .button{
+		background-color: $clear;
+		border:2px solid #dfb734;
+		margin-right: 0;
+	}
+	.play-group .play-text{
+		text-transform: uppercase;
+		border-right: none;
+		border-top-left-radius:3px;
+		border-bottom-left-radius:3px;
+		@include oswald(500);
+	}
+	.play-container{
+		border-top-right-radius:3px;
+		border-bottom-right-radius:3px;
+	}
+	.play-button{
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 7px 0 7px 13px;
+		border-color: $clear $clear $clear #ffffff;
+	}
+	.button-group{
+		display:inline-block;
+	}
+	.learn-more{
+		@extend %gray-button;
+		text-transform: uppercase;
+		@include oswald(400);
+	}
+}
+
+.phone-bg{
+	img{
+		width:100%;
+	}
+}
+
+.advantages{
+	padding: 30px 0 50px;
+	h3{
+		@include font(36);
+		line-height: 2.6rem;
+	}
+	p{
+		color: $gray;
+	}
+	.advantage-body{
+		@include font(16);
+		width: 80%;
+		@include margin(50,bottom);
+		@include breakpoint(medium down) {
+			width: 100%;
+		}
+	}
+	.advantages-title{
+		@include font(20);
+		color: $red;
+	}
+	.advantages-body{
+		@include font(14);
+	}
+}
+
+.cutters{
+	@extend %bg_img;
+	height: 90vh;
+	padding: 8% 0;
+	h5,.cutter-family,.cutter-title,.cutter-body{
+		color: $white;
+	}
+	h5{
+		@include font(18);
+		@include margin(0, bottom);
+	}
+	.cutter-family{
+		@include font(36);
+	}
+	.yellow-line{
+		float: left;
+	}
+	.cutter-title{
+		@include font(20);	
+	}
+	.cutter-body{
+		@include font(14);
+	}
+	.btn.button{
+		@extend %btn-yellow;
+	}
+}
