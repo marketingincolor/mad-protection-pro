@@ -14,11 +14,19 @@
 %height100 {
 	height: 100vh;
 }
-%btn-yellow{
+%btn-white{
 	background-color: $clear;
 	border:2px solid #dfb734;
 	border-radius: 3px;
 	text-transform: uppercase;
 	@include oswald(400);
 	color:$white;
+}
+%btn-black{
+	background-color: $clear;
+	border:2px solid #dfb734;
+	border-radius: 3px;
+	text-transform: uppercase;
+	@include oswald(400);
+	color:$black;
 }

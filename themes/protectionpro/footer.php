@@ -12,10 +12,15 @@
 
 		</section>
 		<div class="footer-container" data-sticky-footer>
-			<footer class="footer">
-				<?php do_action( 'foundationpress_before_footer' ); ?>
-				<?php dynamic_sidebar( 'footer-widgets' ); ?>
-				<?php do_action( 'foundationpress_after_footer' ); ?>
+			<footer id="footer">
+				<?php //do_action( 'foundationpress_before_footer' ); ?>
+				<?php //dynamic_sidebar( 'footer-widgets' ); ?>
+				<?php //do_action( 'foundationpress_after_footer' ); ?>
+				<div class="row">
+					<div class="small-12 columns">
+						
+					</div>
+				</div>
 			</footer>
 		</div>
 

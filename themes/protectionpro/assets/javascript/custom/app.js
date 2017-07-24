@@ -2,6 +2,15 @@ $(window).scroll(function(){
 	navSlideDown();
 });
 
+$(document).ready(function(){
+	navSlideDown();
+	
+});
+
+$(window).resize(function(){
+	
+});
+
 function navSlideDown(){
 	if ($(window).scrollTop() > 200 && $(window).scrollTop() < 500) {
 		$('.top-bar').removeClass('slide-down').addClass('opacity0');
