@@ -44,6 +44,9 @@
 						</div>
 					</div>
 					<div class="top-bar-right">
+						<span class="login">
+							<a href="#!">Reports Login <i class="fa fa-lock" aria-hidden="true"></i></a>
+						</span>
 						<?php foundationpress_top_bar_r(); ?>
 
 						<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>

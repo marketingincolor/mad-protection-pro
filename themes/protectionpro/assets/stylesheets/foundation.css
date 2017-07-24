@@ -7993,6 +7993,12 @@ body#tinymce {
 2.) Navigation Styles
 3.) Home Page
 4.) 
+5.)
+6.)
+7.)
+8.)
+9.)
+10.) Footer
 
 */
 html, p, li {
@@ -8020,7 +8026,8 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   -webkit-transition: opacity 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out;
-  z-index: 10; }
+  z-index: 10;
+  padding-top: 1%; }
   .top-bar.slide-down {
     top: 0;
     width: 100%;
@@ -8035,7 +8042,16 @@ h1, h2, h3, h4, h5 {
     font-family: 'Oswald',sans-serif;
     font-weight: 400; }
   .top-bar .top-bar-right {
-    margin-top: 20px; }
+    margin-top: 20px;
+    position: relative; }
+    .top-bar .top-bar-right .login {
+      position: absolute;
+      right: 0;
+      font-size: 12px;
+      font-size: 0.75rem;
+      top: -23px; }
+      .top-bar .top-bar-right .login a {
+        color: #FFF; }
 
 #video-modal {
   padding: 50px 0 0;
@@ -8134,8 +8150,7 @@ h1, h2, h3, h4, h5 {
     font-size: 0.875rem; }
 
 .cutters {
-  height: 90vh;
-  padding: 8% 0; }
+  padding: 8% 0 20%; }
   .cutters h5, .cutters .cutter-family, .cutters .cutter-title, .cutters .cutter-body {
     color: #FFF; }
   .cutters h5 {
@@ -8155,7 +8170,7 @@ h1, h2, h3, h4, h5 {
     font-size: 0.875rem; }
 
 .protectionpro-film {
-  padding: 100px 0; }
+  padding: 10% 0; }
   .protectionpro-film .yellow-line {
     float: left; }
   .protectionpro-film h5 {
@@ -8185,5 +8200,56 @@ h1, h2, h3, h4, h5 {
     color: #000;
     font-size: 14px;
     font-size: 0.875rem; }
+
+.footer-container {
+  border: none;
+  margin-top: 0;
+  text-align: center; }
+  .footer-container .top-footer {
+    padding: 5% 0; }
+  .footer-container .footer-meta p {
+    color: #FFF;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+    font-size: 2.25rem; }
+  .footer-container .menu-footer-menu-container {
+    text-align: center;
+    margin-bottom: 50px; }
+  .footer-container #menu-footer-menu {
+    display: inline; }
+    .footer-container #menu-footer-menu a {
+      color: #000;
+      font-family: 'Oswald',sans-serif;
+      font-weight: 400;
+      text-transform: uppercase; }
+  .footer-container .bottom-footer {
+    padding: 5% 0; }
+  .footer-container .partner-logos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style-type: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 80px;
+    margin-left: 0px; }
+    .footer-container .partner-logos li {
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1; }
+  .footer-container .pp-footer-logo {
+    margin-bottom: 50px; }
+  .footer-container .footer-credits {
+    font-size: 13px;
+    font-size: 0.8125rem; }
+    .footer-container .footer-credits ul {
+      list-style-type: none;
+      margin-left: 0px; }
+    .footer-container .footer-credits ul li {
+      display: inline-block; }
+      .footer-container .footer-credits ul li a {
+        color: #000; }
 
 /*# sourceMappingURL=foundation.css.map */

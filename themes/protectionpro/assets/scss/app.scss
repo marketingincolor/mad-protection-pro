@@ -7,6 +7,12 @@
 2.) Navigation Styles
 3.) Home Page
 4.) 
+5.)
+6.)
+7.)
+8.)
+9.)
+10.) Footer
 
 */
 
@@ -48,6 +54,7 @@ h1,h2,h3,h4,h5{
 	width: 100%;
 	transition: opacity 0.25s ease-in-out;
 	z-index: 10;
+	padding-top: 1%;
 	&.slide-down{
 		top: 0;
 		width: 100%;
@@ -65,6 +72,16 @@ h1,h2,h3,h4,h5{
 	}
 	.top-bar-right{
 		margin-top: 20px;
+		position: relative;
+		.login{
+			position: absolute;
+			right: 0;
+			@include font(12);
+			top: -23px;
+			a{
+				color: $white;
+			}
+		}
 	}
 	#menu-top-nav li:last-child a{
 		@extend %gray-button;
@@ -194,8 +211,7 @@ h1,h2,h3,h4,h5{
 
 .cutters{
 	@extend %bg_img;
-	height: 90vh;
-	padding: 8% 0;
+	padding: 8% 0 20%;
 	h5,.cutter-family,.cutter-title,.cutter-body{
 		color: $white;
 	}
@@ -219,7 +235,7 @@ h1,h2,h3,h4,h5{
 
 .protectionpro-film{
 	@extend %bg_img;
-	padding: 100px 0;
+	padding: 10% 0;
 	.yellow-line{
 		float: left;
 	}
@@ -254,5 +270,65 @@ h1,h2,h3,h4,h5{
 	.read-more{
 		color: $black;
 		@include font(14);
+	}
+}
+
+
+// =======================================
+// =============== Footer ================
+// =======================================
+
+.footer-container{
+	border:none;
+	margin-top: 0;
+	text-align: center;
+	.top-footer{
+		padding: 5% 0;
+	}
+	.footer-meta p{
+		color: $white;
+		@include montserrat(300);
+		@include font(36);
+	}
+	.menu-footer-menu-container{
+		text-align: center;
+		@include margin(50,bottom);
+	}
+	#menu-footer-menu {
+		display: inline;
+		a{
+			color: $black;
+			@include oswald(400);
+			text-transform: uppercase;
+		}
+	}
+	.bottom-footer{
+		padding: 5% 0;
+	}
+	.partner-logos{
+		display: flex;
+		list-style-type: none;
+		align-items: center;
+		@include margin(80,bottom);
+		@include margin(0,left);
+		li{
+			flex-grow: 1;
+		}
+	}
+	.pp-footer-logo{
+		@include margin(50,bottom);
+	}
+	.footer-credits{
+		@include font(13);
+		ul{
+			list-style-type: none;
+			@include margin(0,left);
+		}
+		ul li {
+			display: inline-block;
+			a{
+				color: $black;
+			}
+		}
 	}
 }
