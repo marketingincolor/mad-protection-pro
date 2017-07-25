@@ -6,7 +6,7 @@
 1.) General Styles
 2.) Navigation Styles
 3.) Home Page
-4.) 
+4.) Products Page
 5.)
 6.)
 7.)
@@ -26,6 +26,9 @@ html,p,li{
 h1,h2,h3,h4,h5{
 	text-transform: uppercase;
 	@include oswald(400);
+}
+h3{
+	@include font(36);
 }
 .red-title{
 	color: $red;
@@ -61,6 +64,9 @@ h1,h2,h3,h4,h5{
 		opacity:1;
 		position:fixed;
 		background-color: #2a2a2a;
+	}
+	.current_page_item{
+		border-bottom: 2px solid #f6c831;
 	}
 	ul{
 		background-color: $clear;
@@ -270,6 +276,67 @@ h1,h2,h3,h4,h5{
 	.read-more{
 		color: $black;
 		@include font(14);
+	}
+}
+
+// =======================================
+// ============ Products Page ============
+// =======================================
+.large-hero{
+	&.products-hero{
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.yellow-line{
+		float: left;
+	}
+	.center-vert{
+		@include vertical-center;
+		width: 40%;
+		h2{
+			@include font(36);
+			color: $white;
+			@include margin(0,bottom);
+			line-height: 40px;
+		}
+		p{
+			@include font(18);
+			@include montserrat(300);
+		}
+	}
+}
+
+.sales-wheel{
+	padding: 10% 0;
+	h3{
+		@include margin(0,bottom);
+	}
+	p{
+		@include margin(100,bottom);
+	}
+	.wheel-bg{
+		background-position: center center;
+		background-repeat: no-repeat;
+		@media(max-width: 1140px){
+			background-size: contain;
+		}
+		h4{font-size: 20px;}
+		p{font-size: 14px;}
+		.columns:last-child:not(:first-child) {
+			float: left;
+		}
+		.columns{
+			position: relative;
+			top: 50px;
+		}
+	}
+}
+
+.hardware-table{
+	background-color: #f7f7f7;
+	padding: 10% 0;
+	h3{
+		@include margin(0,bottom);
 	}
 }
 

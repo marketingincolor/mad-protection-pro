@@ -7992,7 +7992,7 @@ body#tinymce {
 1.) General Styles
 2.) Navigation Styles
 3.) Home Page
-4.) 
+4.) Products Page
 5.)
 6.)
 7.)
@@ -8009,6 +8009,10 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   font-family: 'Oswald',sans-serif;
   font-weight: 400; }
+
+h3 {
+  font-size: 36px;
+  font-size: 2.25rem; }
 
 .red-title {
   color: #da291c; }
@@ -8034,6 +8038,8 @@ h1, h2, h3, h4, h5 {
     opacity: 1;
     position: fixed;
     background-color: #2a2a2a; }
+  .top-bar .current_page_item {
+    border-bottom: 2px solid #f6c831; }
   .top-bar ul {
     background-color: transparent; }
   .top-bar ul a {
@@ -8200,6 +8206,62 @@ h1, h2, h3, h4, h5 {
     color: #000;
     font-size: 14px;
     font-size: 0.875rem; }
+
+.large-hero.products-hero {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover; }
+
+.large-hero .yellow-line {
+  float: left; }
+
+.large-hero .center-vert {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 40%; }
+  .large-hero .center-vert h2 {
+    font-size: 36px;
+    font-size: 2.25rem;
+    color: #FFF;
+    margin-bottom: 0px;
+    line-height: 40px; }
+  .large-hero .center-vert p {
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 300; }
+
+.sales-wheel {
+  padding: 10% 0; }
+  .sales-wheel h3 {
+    margin-bottom: 0px; }
+  .sales-wheel p {
+    margin-bottom: 100px; }
+  .sales-wheel .wheel-bg {
+    background-position: center center;
+    background-repeat: no-repeat; }
+    @media (max-width: 1140px) {
+      .sales-wheel .wheel-bg {
+        -webkit-background-size: contain;
+                background-size: contain; } }
+    .sales-wheel .wheel-bg h4 {
+      font-size: 20px; }
+    .sales-wheel .wheel-bg p {
+      font-size: 14px; }
+    .sales-wheel .wheel-bg .columns:last-child:not(:first-child) {
+      float: left; }
+    .sales-wheel .wheel-bg .columns {
+      position: relative;
+      top: 50px; }
+
+.hardware-table {
+  background-color: #f7f7f7;
+  padding: 10% 0; }
+  .hardware-table h3 {
+    margin-bottom: 0px; }
 
 .footer-container {
   border: none;
