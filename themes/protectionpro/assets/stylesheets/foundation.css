@@ -7993,7 +7993,7 @@ body#tinymce {
 2.) Navigation Styles
 3.) Home Page
 4.) Products Page
-5.)
+5.) Retailer Resources Page
 6.)
 7.)
 8.)
@@ -8023,6 +8023,12 @@ h3 {
 
 .opacity0 {
   opacity: 0; }
+
+.top-bg {
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5% 0; }
 
 .top-bar {
   background-color: transparent;
@@ -8361,6 +8367,22 @@ h3 {
     font-size: 14px;
     font-size: 0.875rem;
     margin-bottom: 30px; }
+
+.resources {
+  padding: 8% 0; }
+  .resources h1 {
+    font-size: 36px;
+    font-size: 2.25rem; }
+  .resources img {
+    margin-bottom: 20px; }
+  .resources ul {
+    margin-left: 0px;
+    list-style-type: none; }
+    .resources ul i {
+      color: #da291c; }
+    .resources ul li {
+      text-indent: -1.2em;
+      padding: 10px 0 10px 40px; }
 
 .footer-container {
   border: none;

@@ -52,7 +52,7 @@
 						<h4 class="red-title">Improve Profits</h4>
 						<p>Significantly reduce inventory carrying costs. Eliminate the risk of inventory loss and damage.</p>
 					</div>
-					<div class="medium-3 medium-offset-4 columns .end text-left">
+					<div class="medium-3 medium-offset-4 columns end text-left">
 						<h4 class="red-title">Time to Market</h4>
 						<p>Screen protectors and full body protection designs are ready to sell on the day a product is released.</p>
 					</div>
