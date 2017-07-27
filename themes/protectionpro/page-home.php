@@ -144,7 +144,13 @@
 				'orderby'        => 'menu_order',
 				'order'          => 'ASC',
 				'posts_per_page' => 2,
-				'category_name'  => 'featured_case_study'
+				'tax_query' => array(
+						array(
+							'taxonomy' => 'home_case_study',
+							'field'    => 'slug',
+							'terms'    => 'home_page',
+						),
+					),
 			);
 
 			$the_query = new WP_Query($args);

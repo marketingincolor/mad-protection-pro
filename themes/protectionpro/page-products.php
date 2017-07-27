@@ -164,7 +164,13 @@
 
 	$args = array(
 		'post_type'      => 'case_studies',
-		'category_name'  => 'product_case_study'
+		'tax_query'      => array(
+			array(
+				'taxonomy'   => 'home_case_study',
+				'field'      => 'slug',
+				'terms'      => 'product_page',
+			),
+		),
 	);
 
 	$the_query = new WP_Query($args);

@@ -11,7 +11,7 @@
 		<div class="medium-8 medium-offset-2 columns text-center">
 			<h1><?php the_field('retailer_title'); ?></h1>
 			<hr class="yellow-line">
-			<p><?php the_field('retailer_body'); ?></p>
+			<p class="body"><?php the_field('retailer_body'); ?></p>
 		</div>
 		<div class="medium-6 columns">
 			<img src="<?php the_field('support_img'); ?>" alt="">
@@ -33,6 +33,33 @@
 			</ul>
 			<a href="#!" class="button btn-black">Training Videos</a>
 		</div>
+		<div class="clearfix"></div>
+		<section class="view-resources">
+			<div class="medium-6 large-3 columns">
+				<img src="" alt="">
+				<h5 class="red-title">This is a Title</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eea. Repellendus, alias.</p>
+				<a href="#!" class="button resource-cta">Button Text</a>
+			</div>
+			<div class="medium-6 large-3 columns">
+				<img src="" alt="">
+				<h5 class="red-title">This is a Title</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. dhd fggf xd fb</p>
+				<a href="#!" class="button resource-cta">Button Text</a>
+			</div>
+			<div class="medium-6 large-3 columns">
+				<img src="" alt="">
+				<h5 class="red-title">This is a Title</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitrum illo odit sit.</p>
+				<a href="#!" class="button resource-cta">Button Text</a>
+			</div>
+			<div class="medium-6 large-3 columns">
+				<img src="" alt="">
+				<h5 class="red-title">This is a Title</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolres error ipsum.</p>
+				<a href="#!" class="button resource-cta">Button Text</a>
+			</div>
+		</section>
 	</div>
 </section>
 

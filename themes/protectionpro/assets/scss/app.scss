@@ -5,12 +5,12 @@
 
 1.) General Styles
 2.) Navigation Styles
-3.) Home Page
-4.) Products Page
-5.) Retailer Resources Page
-6.)
-7.)
-8.)
+3.) Home
+4.) Products
+5.) Retailer Resources
+6.) About Madico
+7.) Training
+8.) Contact
 9.)
 10.) Footer
 
@@ -23,12 +23,15 @@
 html,p,li{
 	@include montserrat(400);
 }
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5,h6{
 	text-transform: uppercase;
 	@include oswald(400);
 }
-h3{
+h3,h1{
 	@include font(36);
+}
+p{
+	color: $gray;
 }
 .red-title{
 	color: $red;
@@ -468,8 +471,8 @@ h3{
 
 .resources{
 	padding: 8% 0;
-	h1{
-		@include font(36);
+	.body{
+		@include margin(50,bottom);
 	}
 	img{
 		@include margin(20,bottom);
@@ -486,7 +489,172 @@ h3{
 		}
 	}
 }
+.view-resources{
+	padding-top: 5%;
+	h5{
+		@include font(18);
+	}
+	p{
+		@include font(14);
+	}
+	.resource-cta{
+		@extend %gray-button;
+	}
+}
 
+// =======================================
+// ========== 6.) About Madico ===========
+// =======================================
+.about{
+	padding: 8% 0;
+	p{
+		color:$gray;
+	}
+	.body,img{
+		@include margin(50,bottom);
+	}
+}
+
+// =======================================
+// ============ 7.) Training =============
+// =======================================
+
+.page-template-page-training{
+	h2{
+		@include font(30);
+		@include margin(40,bottom);
+	}
+	img{
+		@include margin(20,bottom);
+	}
+}
+.training{
+	padding: 8% 0 0;
+	.body{
+		@include margin(0,bottom);
+	}
+}
+.training-videos{
+	padding: 6% 0;
+	.video-cats ul {
+		list-style-type: none;
+		@include margin(0,left);
+	}
+}
+.download-documents{
+	padding: 0 0 6%;
+}
+
+// =======================================
+// ============= 8.) Contact =============
+// =======================================
+
+.page-template-page-contact .top-footer{
+	display: none;
+}
+.contact-header{
+	padding-top: 8%;
+	.body{
+		@include margin(50,bottom);
+	}
+}
+.contact-buttons{
+	ul{
+		text-align: center;
+		margin:0;
+		@include margin(80,bottom);
+	}
+	li{
+		width: 260px;
+		text-align: center;
+		display: inline-block;
+		a{
+			width: 90%;
+			@include font(18);
+		}
+	}
+	i{
+		@include margin(20,bottom);
+	}
+}
+.contact-form{
+	padding-bottom: 8%;
+	border-bottom:2px solid #dddddd;
+	.contact-info{
+		margin:0;
+		list-style-type: none;
+	}
+	p{
+		@include margin(30,bottom);
+	}
+	.contact-info li{
+		color: $gray;
+		@include font(14);
+		&:first-child{
+			color: $black;
+			text-transform: uppercase;
+			@include oswald(400);
+			@include font(16);
+		}
+	}
+	.contact-info i {
+		color: $red;
+	}
+	.contact-info .last-li{
+		text-indent: 20px;
+	}
+}
+
+// Contact form styles
+.nf-form-fields-required {
+	display: none;
+}
+.nf-form-content .nf-field-label label {
+	line-height: 16px;
+	@include oswald(400);
+	@include font(18);
+	text-transform: uppercase;
+}
+.nf-form-content input[type=text], .nf-form-content select,.nf-form-content input[type=tel],.nf-form-content input[type=email]{
+	border:none;
+	border-bottom:2px solid #dddddd;
+	box-shadow:none;
+	padding-left: 0;
+}
+.nf-form-content input[type=button]{
+	text-transform:uppercase;
+	@include oswald(500);
+	@include font(18);
+	color: $white;
+	background-color: #eab321;
+	border-radius: 5px;
+	border: none;
+	padding: 20px 30px;
+	cursor: pointer;
+}
+.nf-form-content .label-above .nf-field-label {
+  margin-bottom: 30px;
+}
+.nf-form-content textarea{
+	resize: none;
+	border: 2px solid #dddddd;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #808285!important;
+  @include font(18);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #808285!important;
+  @include font(18);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #808285!important;
+  @include font(18);
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #808285!important;
+  @include font(18);
+}
 
 // =======================================
 // =============== Footer ================
