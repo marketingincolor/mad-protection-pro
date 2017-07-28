@@ -726,6 +726,21 @@ p{
 		border-radius:3px;
 	}
 }
+.case-study-single {
+	padding: 10% 0;
+	.excerpt{
+		@include margin(60,bottom);
+	}
+	img{
+		width: 100%;
+		@include margin(60,bottom);
+	}
+	.body{
+		h1,h2,h3,h4,h5,h6{
+			color: $red;
+		}
+	}
+}
 
 // =======================================
 // =============== Footer ================

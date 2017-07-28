@@ -2,7 +2,6 @@
 	/*
 	Template Name: Case Studies
 	*/
-	// https://wp1114.hostgator.com/~wafgei0adhcs/wp-admin
 	get_header(); 
 	$feat_img = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 	get_template_part('template-parts/top-bg');

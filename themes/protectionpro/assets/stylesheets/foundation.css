@@ -8593,6 +8593,16 @@ p {
     border: none;
     border-radius: 3px; }
 
+.case-study-single {
+  padding: 10% 0; }
+  .case-study-single .excerpt {
+    margin-bottom: 60px; }
+  .case-study-single img {
+    width: 100%;
+    margin-bottom: 60px; }
+  .case-study-single .body h1, .case-study-single .body h2, .case-study-single .body h3, .case-study-single .body h4, .case-study-single .body h5, .case-study-single .body h6 {
+    color: #da291c; }
+
 .footer-container {
   border: none;
   margin-top: 0;
