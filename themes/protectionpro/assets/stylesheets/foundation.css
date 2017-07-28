@@ -7997,7 +7997,8 @@ body#tinymce {
 6.) About Madico
 7.) Training
 8.) Contact
-9.)
+9.) FAQ
+10.) Case Studies
 10.) Footer
 
 */
@@ -8067,6 +8068,8 @@ p {
       top: -23px; }
       .top-bar .top-bar-right .login a {
         color: #FFF; }
+  .top-bar #menu-top-nav li:last-child {
+    border-bottom: none; }
 
 #video-modal {
   padding: 50px 0 0;
@@ -8417,6 +8420,18 @@ p {
 
 .training-videos {
   padding: 6% 0; }
+  .training-videos .video-container {
+    position: relative;
+    cursor: pointer; }
+    .training-videos .video-container .play-img {
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0; }
+    .training-videos .video-container .red-title {
+      margin-top: 20px; }
   .training-videos .video-cats ul {
     list-style-type: none;
     margin-left: 0px; }
@@ -8457,6 +8472,8 @@ p {
     list-style-type: none; }
   .contact-form p {
     margin-bottom: 30px; }
+  .contact-form .contact-info {
+    margin-bottom: 50px; }
   .contact-form .contact-info li {
     color: #404040;
     font-size: 14px;
@@ -8475,6 +8492,11 @@ p {
 
 .nf-form-fields-required {
   display: none; }
+
+#nf-field-5, #nf-field-9 {
+  color: #808285;
+  font-size: 18px;
+  font-size: 1.125rem; }
 
 .nf-form-content .nf-field-label label {
   line-height: 16px;
@@ -8534,6 +8556,42 @@ p {
   color: #808285 !important;
   font-size: 18px;
   font-size: 1.125rem; }
+
+.faqs {
+  padding: 10% 0; }
+  .faqs .body {
+    margin-bottom: 10%; }
+  .faqs .faq-cats ul {
+    list-style-type: none; }
+
+.case-studies {
+  padding: 10% 0; }
+
+.page-template-page-case-studies .store-study, .page-template-page-case-studies .case-studies {
+  padding-top: 0; }
+
+.study-container {
+  border: 2px solid #dddddd; }
+  .study-container img {
+    width: 100%;
+    height: 175px; }
+  .study-container .case-meta {
+    padding: 20px;
+    font-size: 14px;
+    font-size: 0.875rem; }
+  .study-container .case-meta .red-title {
+    font-size: 18px;
+    font-size: 1.125rem; }
+  .study-container a {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: 0.875rem;
+    margin-bottom: 0px;
+    width: 100%;
+    background-color: #808285;
+    border: none;
+    border-radius: 3px; }
 
 .footer-container {
   border: none;
