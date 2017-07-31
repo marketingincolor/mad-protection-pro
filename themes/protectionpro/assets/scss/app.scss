@@ -690,13 +690,61 @@ p{
 // =======================================
 
 .faqs{
-	padding: 10% 0;
+	padding: 8% 0;
 	.body{
-		margin-bottom: 10%;
+		margin-bottom: 8%;
+	}
+	.input-group{
+		position: relative;
+		margin-bottom: 8%
+	}
+	input[type=text]{
+		border:none;
+		border-bottom: 2px solid #DDD;
+		box-shadow: none;
+	}
+	button{
+		background-color: transparent;
+		color: $black;
+		position: absolute;
+		right: 0;	
+		top: 0;
 	}
 	.faq-cats ul{
 		list-style-type: none;
 	}
+	.accordion-title .red-triangle{
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 5px 0 5px 7px;
+		border-color: transparent transparent transparent #ef3f33;
+		display: inline-block;
+		margin-right: 15px;
+		transition: transform 0.3s ease-in-out;
+	}
+	.accordion-title p{
+		display: inline;
+		@include font(16);
+	}
+	.accordion-title::before{
+		content:'';	
+	}
+	.accordion-content p{
+		color: #808285;
+	}
+	.is-active > .accordion-title::before {
+	  content: '';
+	}
+	.accordion-content,.accordion-title,:last-child:not(.is-active) > .accordion-title,:last-child > .accordion-content:last-child{
+	  border: none;
+  }
+  .accordion-title:hover, .accordion-title:focus{
+  	background-color: transparent;
+  }
+  .accordion-title[aria-expanded=true] .red-triangle{
+  	transform: rotate(90deg);
+  }
 }
 
 // =======================================

@@ -8564,11 +8564,55 @@ p {
   font-size: 1.125rem; }
 
 .faqs {
-  padding: 10% 0; }
+  padding: 8% 0; }
   .faqs .body {
-    margin-bottom: 10%; }
+    margin-bottom: 8%; }
+  .faqs .input-group {
+    position: relative;
+    margin-bottom: 8%; }
+  .faqs input[type=text] {
+    border: none;
+    border-bottom: 2px solid #DDD;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+  .faqs button {
+    background-color: transparent;
+    color: #000;
+    position: absolute;
+    right: 0;
+    top: 0; }
   .faqs .faq-cats ul {
     list-style-type: none; }
+  .faqs .accordion-title .red-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 7px;
+    border-color: transparent transparent transparent #ef3f33;
+    display: inline-block;
+    margin-right: 15px;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; }
+  .faqs .accordion-title p {
+    display: inline;
+    font-size: 16px;
+    font-size: 1rem; }
+  .faqs .accordion-title::before {
+    content: ''; }
+  .faqs .accordion-content p {
+    color: #808285; }
+  .faqs .is-active > .accordion-title::before {
+    content: ''; }
+  .faqs .accordion-content, .faqs .accordion-title, .faqs :last-child:not(.is-active) > .accordion-title, .faqs :last-child > .accordion-content:last-child {
+    border: none; }
+  .faqs .accordion-title:hover, .faqs .accordion-title:focus {
+    background-color: transparent; }
+  .faqs .accordion-title[aria-expanded=true] .red-triangle {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg); }
 
 .case-studies {
   padding: 10% 0; }
