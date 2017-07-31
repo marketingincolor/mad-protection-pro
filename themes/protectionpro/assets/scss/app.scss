@@ -13,7 +13,9 @@
 8.) Contact
 9.) FAQ
 10.) Case Studies
-10.) Footer
+11.) Distributor
+12.) 404
+13.) Footer
 
 */
 
@@ -587,6 +589,10 @@ p{
 		a{
 			width: 90%;
 			@include font(18);
+			cursor: pointer;
+		}
+		i{
+			@include font(30);
 		}
 	}
 	i{
@@ -726,6 +732,7 @@ p{
 		border-radius:3px;
 	}
 }
+
 .case-study-single {
 	padding: 10% 0;
 	.excerpt{
@@ -739,6 +746,60 @@ p{
 		h1,h2,h3,h4,h5,h6{
 			color: $red;
 		}
+		.btn{
+			@extend %gray-button;
+			@include montserrat(400);
+			@include font(14);
+			background-color: #808285;
+			border-radius:3px;
+			color:$white
+		}
+	}
+}
+.single-case_studies .case-studies{
+	padding-top: 0;
+	h4{
+		@include font(24);
+	}
+}
+.single-case_studies .case-studies .row{
+	margin-bottom: 30px;
+}
+
+// =======================================
+// ========== 11.) Distributor ===========
+// =======================================
+
+.distributor{
+	padding: 8% 0;
+	.body{
+		@include margin(50,bottom);
+	}
+}
+
+// =======================================
+// ============== 11.) 404 ===============
+// =======================================
+
+.error-top{
+	padding: 8% 0 4%;
+	.bottom{
+		@include margin(50,bottom);
+	}
+	.input-group{
+		position: relative;
+	}
+	input[type=text]{
+		border:none;
+		border-bottom: 2px solid #DDD;
+		box-shadow: none;
+	}
+	button{
+		background-color: transparent;
+		color: $black;
+		position: absolute;
+		right: 0;	
+		top: 0;
 	}
 }
 
@@ -763,7 +824,11 @@ p{
 		@include margin(50,bottom);
 	}
 	#menu-footer-menu {
-		display: inline;
+		display: flex;
+		flex-wrap: wrap;
+		li{
+			flex-grow: 1;
+		}
 		a{
 			color: $black;
 			@include oswald(400);
@@ -775,6 +840,7 @@ p{
 	}
 	.partner-logos{
 		display: flex;
+		flex-wrap: wrap;
 		list-style-type: none;
 		align-items: center;
 		@include margin(80,bottom);

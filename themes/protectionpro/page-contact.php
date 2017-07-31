@@ -23,9 +23,9 @@
 	<div class="row">
 		<div class="large-10 large-offset-1 columns text-center">
 			<ul>
-				<li><a href="#!" class="button btn-black text-center"><i class="fa fa-book" aria-hidden="true"></i><br />Need training?</a></li>
-				<li><a href="#!" class="button btn-black text-center"><i class="fa fa-cubes" aria-hidden="true"></i><br />Become a Distributor</a></li>
-				<li><a href="#!" class="button btn-black text-center"><i class="fa fa-question-circle" aria-hidden="true"></i><br />FAQs</a></li>
+				<li><a href="#!" class="button btn-black text-center"><?php the_field('left_box_icon'); ?></i><br /><?php the_field('left_box_text'); ?></a></li>
+				<li><a href="#!" class="button btn-black text-center"><?php the_field('middle_box_icon'); ?><br /><?php the_field('middle_box_text'); ?></a></li>
+				<li><a href="#!" class="button btn-black text-center"><?php the_field('right_box_icon'); ?></i><br /><?php the_field('right_box_text'); ?></a></li>
 			</ul>
 		</div>
 	</div>
@@ -34,12 +34,12 @@
 <div class="contact-form">
 	<div class="row">
 		<div class="large-4 large-offset-1 columns">
-			<p>If you have any questions about our touchscreen and full-body protection products, please complete the contact form and we'll be in touch with you very shortly!</p>
+			<p><?php the_field('form_copy'); ?></p>
 			<ul class="contact-info">
-				<li>CLEARPLEX PROTECTION<span class="red-title">PRO</span></li>
-				<li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;(801) 571-8243</li>
-				<li><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;9466 S. 670 W Unit A</li>
-				<li class="last-li">Sandy, UT 84070</li>
+				<li><?php the_field('company_name'); ?></li>
+				<li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;<?php the_field('phone_num'); ?></li>
+				<li><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<?php the_field('street_address'); ?></li>
+				<li class="last-li"><?php the_field('city_state_zip'); ?></li>
 			</ul>
 		</div>
 		<div class="large-6 columns end">

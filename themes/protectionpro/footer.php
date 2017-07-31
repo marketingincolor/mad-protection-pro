@@ -35,7 +35,7 @@
 				</aside>
 				<aside class="bottom-footer">
 					<div class="row">
-						<div class="medium-8 medium-offset-2 columns">
+						<div class="large-8 large-offset-2 medium-10.medium-offset-1 columns">
 						  <ul class="partner-logos">
 								<?php 
 									for ($count=1; $count < 5; $count++) { 
