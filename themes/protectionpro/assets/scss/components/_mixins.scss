@@ -13,3 +13,7 @@
 @mixin margin($size,$position){
 	margin-#{$position}: $size#{px};
 }
+@mixin pad30-mobile{
+	padding-left: 30px;
+	padding-right: 30px;
+}

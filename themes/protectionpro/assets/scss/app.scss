@@ -32,6 +32,9 @@ h1,h2,h3,h4,h5,h6{
 }
 h3,h1{
 	@include font(36);
+	@include breakpoint(small only){
+		@include font(30);
+	}
 }
 p{
 	color: $gray;
@@ -42,6 +45,9 @@ p{
 .yellow-line{
 	border: 1px solid #f6c831;
 	width: 120px;
+}
+section :not(.large-hero){
+	
 }
 .opacity0{
 	opacity:0;
@@ -75,6 +81,28 @@ p{
 		opacity:1;
 		position:fixed;
 		background-color: #2a2a2a;
+		@media(max-width: 928px){
+			height: 100px;
+		}
+		@media(max-width: 400px){
+			height: 80px;
+		}
+		.top-bar-left {
+			top: 10px;
+			@media(max-width: 400px){
+				top: 10px;
+			}
+			@media(max-width: 375px){
+				top: 13px;
+			}
+		}
+		.cheeseburger{
+			top: 13px !important;
+			@media(max-width: 400px){
+				top: 7px !important;
+				font-size: 20px !important;
+			}
+		}
 	}
 	.current_page_item{
 		border-bottom: 2px solid #f6c831;
@@ -87,9 +115,53 @@ p{
 		text-transform: uppercase;
 		@include oswald(400);
 	}
+	.top-bar-left{
+		position: absolute;
+		top: 30px;
+		left: 30px;
+		display: block !important;
+		.top-bar-title img{
+			@media(max-width: 400px){
+				width: 215px;
+			}
+			@media(max-width: 360px){
+				width: 175px;
+			} 
+		}
+	}
 	.top-bar-right{
 		margin-top: 20px;
 		position: relative;
+		@media(max-width: 928px){
+			text-align: right;
+		}
+		#menu-top-nav,.login{
+			@media(max-width: 928px){
+				display: none;
+			}
+		}
+		.cheeseburger{
+			color: white;
+			@include font(22);
+			position: absolute;
+	    top: 32px;
+	    right: 30px;
+	    cursor: pointer;
+	    @media(max-width: 400px){
+	    	top: 26px;
+	    }
+	    @media(max-width: 360px){
+				@include font(17);
+				top: 24px;
+			}
+			@media(min-width: 929px){
+				display: none;
+				visibility: hidden;
+			}
+			&:focus{
+				outline: none;
+			}
+		}
 		.login{
 			position: absolute;
 			right: 0;
@@ -140,19 +212,42 @@ p{
 		left: 0;
 		width: 100%;
 		z-index: 1;
+		@include breakpoint(medium down){
+			padding-left:30px;
+			padding-right:30px;
+		}
 	}
 	h1,p{
 		color: $white;
 	}
 	h1{
 		@include font(55);
+		@include breakpoint(medium down){
+			@include font(32);
+		}
 	}
 	p{
 		@include font(24);
 		@include montserrat(300);
+		@include breakpoint(medium down){
+			@include font(18);
+		}
 	}
 	.play-group{
 		margin-right: 15px;
+		@include breakpoint(small down){
+			@include margin(0,right);
+		}
+		.play-text{
+			@include breakpoint(small down){
+				width: 80%
+			}
+		}
+		.play-container{
+			@include breakpoint(small down){
+				width: 20%
+			}
+		}
 	}
 	.play-group .button{
 		background-color: $clear;
@@ -179,11 +274,17 @@ p{
 	}
 	.button-group{
 		display:inline-block;
+		@include breakpoint(small down){
+			width: 200px;
+		}
 	}
 	.learn-more{
 		@extend %gray-button;
 		text-transform: uppercase;
 		@include oswald(400);
+		@include breakpoint(small only){
+			width: 100%;
+		}
 	}
 }
 
@@ -191,13 +292,20 @@ p{
 	position: relative;
 	img{
 		width:100%;
+		@include breakpoint(small down){
+			height: 120px;
+		}
 	}
 }
 
 .advantages{
 	padding: 30px 0 50px;
+	@include breakpoint(small down){
+		position: relative;
+		@include margin(-90,top);
+		@include pad30-mobile;
+	}
 	h3{
-		@include font(36);
 		line-height: 2.6rem;
 	}
 	p{
@@ -223,6 +331,12 @@ p{
 .cutters{
 	@extend %bg_img;
 	padding: 8% 0 20%;
+	@include breakpoint(small only){
+		padding: 15% 0 50%;
+		@include pad30-mobile;
+		background-image: url(/wp-content/uploads/2017/07/cutters-bg-mobile.jpg) !important;
+		background-position: left bottom;
+	}
 	h5,.cutter-family,.cutter-title,.cutter-body{
 		color: $white;
 	}
@@ -247,6 +361,12 @@ p{
 .protectionpro-film{
 	@extend %bg_img;
 	padding: 10% 0;
+	@include breakpoint(small only){
+		padding: 15% 0 55%;
+		@include pad30-mobile;
+		background-image: url(/wp-content/uploads/2017/08/film-bg-mobile.jpg) !important;
+		background-position: left bottom;
+	}
 	.yellow-line{
 		float: left;
 	}
@@ -261,7 +381,13 @@ p{
 
 .home-case-studies{
 	@extend %bg_img;
-	padding: 140px 0;
+	padding: 10% 0;
+	@include breakpoint(small only){
+		padding: 15% 0 95%;
+		@include pad30-mobile;
+		background-image: url(/wp-content/uploads/2017/08/home-case-bg-mobile1.jpg) !important;
+		background-position: left bottom;
+	}
 	p{
 		color: $gray;
 	}
@@ -704,7 +830,7 @@ p{
 		box-shadow: none;
 	}
 	button{
-		background-color: transparent;
+		background-color: $clear;
 		color: $black;
 		position: absolute;
 		right: 0;	
@@ -718,7 +844,7 @@ p{
 		height: 0;
 		border-style: solid;
 		border-width: 5px 0 5px 7px;
-		border-color: transparent transparent transparent #ef3f33;
+		border-color: $clear $clear $clear #ef3f33;
 		display: inline-block;
 		margin-right: 15px;
 		transition: transform 0.3s ease-in-out;
@@ -740,7 +866,7 @@ p{
 	  border: none;
   }
   .accordion-title:hover, .accordion-title:focus{
-  	background-color: transparent;
+  	background-color: $clear;
   }
   .accordion-title[aria-expanded=true] .red-triangle{
   	transform: rotate(90deg);
@@ -843,7 +969,7 @@ p{
 		box-shadow: none;
 	}
 	button{
-		background-color: transparent;
+		background-color: $clear;
 		color: $black;
 		position: absolute;
 		right: 0;	
@@ -861,11 +987,18 @@ p{
 	text-align: center;
 	.top-footer{
 		padding: 5% 0;
+		@include breakpoint(small only){
+			padding: 15% 0;
+			@include pad30-mobile;
+		}
 	}
 	.footer-meta p{
 		color: $white;
 		@include montserrat(300);
 		@include font(36);
+		@include breakpoint(small only){
+			@include font(30);	
+		}
 	}
 	.menu-footer-menu-container{
 		text-align: center;
@@ -876,6 +1009,9 @@ p{
 		flex-wrap: wrap;
 		li{
 			flex-grow: 1;
+			@include breakpoint(small only){
+				flex: 1 0 100%;
+			}
 		}
 		a{
 			color: $black;
@@ -895,6 +1031,9 @@ p{
 		@include margin(0,left);
 		li{
 			flex-grow: 1;
+			@include breakpoint(small only){
+				flex: 1 0 50%;
+			}
 		}
 	}
 	.pp-footer-logo{

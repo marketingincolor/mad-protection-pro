@@ -27,14 +27,6 @@
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
 	<header class="site-header" role="banner">
-		<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle() ?>>
-			<div class="title-bar-left">
-				<button class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-				<span class="site-mobile-title title-bar-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</span>
-			</div>
-		</div>
 		<nav class="site-navigation top-bar" role="navigation">
 			<div class="row">
 				<div class="small-12 columns">
@@ -52,6 +44,13 @@
 						<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
 							<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 						<?php endif; ?>
+						<i class="fa fa-bars cheeseburger" data-toggle="mobile-menu" aria-hidden="true"></i>
+						<div class="full reveal" id="mobile-menu" data-reveal  data-animation-in="spin-in" data-animation-out="spin-out">
+						  <img src="http://placekitten.com/1920/1280" alt="Introspective Cage">
+						  <button class="close-button" data-close aria-label="Close reveal" type="button">
+						    <span aria-hidden="true">&times;</span>
+						  </button>
+						</div>
 					</div>
 				</div>
 			</div>

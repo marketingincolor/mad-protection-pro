@@ -15,7 +15,7 @@
 		<div class="button-group play-group" data-open="video-modal">
 		  <a href="#" class="button play-text"><?php the_field('play_button_text'); ?></a>
 		  <a href="#" class="button play-container"><div class="play-button"></div></a>
-		</div>
+		</div><br class="show-for-small-only" />
 		<div class="button-group">
 			<a href="#" class="button learn-more"><?php the_field('learn_more_button_text'); ?></a>
 		</div>
@@ -39,7 +39,7 @@
 <!-- Advantages section -->
 <section class="advantages">
 	<div class="row">
-		<div class="small-12 medium-8 medium-offset-2 columns">
+		<div class="large-8 large-offset-2 large-10 large-offset-1 columns">
 			<center>
 				<h3><?php the_field('advantage_title'); ?></h3>
 				<hr class="yellow-line">
@@ -71,15 +71,18 @@
 		<?php endif ?>
 
 			<div class="row">
-				<div class="medium-2 columns">
+				<div class="medium-2 small-3 columns">
 					<?php the_post_thumbnail(); ?>
 				</div>
-				<div class="medium-10 columns">
+				<div class="medium-10 small-9 columns">
 					<h4 class="advantages-title"><?php the_title(); ?></h4>
 					<p class="advantages-body"><?php echo get_the_content(); ?></p>
 				</div>
 			</div>
 		</div>
+			<?php if ($count % 2 == 0): ?>
+				<div class="clearfix show-for-medium-only"></div>
+			<?php endif ?>
 
 		<?php }} wp_reset_postdata(); ?>
 
@@ -102,11 +105,14 @@
 			<h4 class="cutter-title"><?php the_field('cutter'.$count.'_title'); ?></h4>
 			<p class="cutter-body"><?php the_field('cutter'.$count.'_body'); ?></p>
 			<?php if ($count == 1) { ?>
-				<a href="#!" class="button btn-white"><?php the_field('cutter_button_text'); ?></a>
+				<a href="#!" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
 			<?php } ?>
 		</div>
 
 		<?php } ?>
+		<div class="small-12 columns show-for-small-only">
+			<a href="#!" class="button btn-white"><?php the_field('cutter_button_text'); ?></a>
+		</div>
 
 	</div>
 </section>
@@ -129,7 +135,7 @@
 
 <section class="home-case-studies" style="background-image: url(<?php the_field('home_case_studies_bg'); ?>);">
 	<div class="row">
-		<div class="small-6 columns">
+		<div class="medium-6 columns">
 			<h3><?php the_field('home_case_studies_title'); ?></h3>
 			<hr class="yellow-line">
 			<div class="clearfix"></div>
