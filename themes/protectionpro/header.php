@@ -45,8 +45,15 @@
 							<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 						<?php endif; ?>
 						<i class="fa fa-bars cheeseburger" data-toggle="mobile-menu" aria-hidden="true"></i>
-						<div class="full reveal" id="mobile-menu" data-reveal  data-animation-in="spin-in" data-animation-out="spin-out">
-						  <img src="http://placekitten.com/1920/1280" alt="Introspective Cage">
+						<div class="full reveal" id="mobile-menu" data-reveal  data-animation-in="slide-in-down bounce" data-animation-out="slide-out-up bounce">
+						  <ul class="mobile-menu-list">
+						  	<li><a href="#!">Home</a></li>
+						  	<li><a href="#!">Our Products</a></li>
+						  	<li><a href="#!">Retailer Resources</a></li>
+						  	<li><a href="#!">FAQs</a></li>
+						  	<li><a href="#!">About</a></li>
+						  	<li><a href="#!">Contact Us</a></li>
+						  </ul>
 						  <button class="close-button" data-close aria-label="Close reveal" type="button">
 						    <span aria-hidden="true">&times;</span>
 						  </button>
