@@ -81,7 +81,7 @@ section :not(.large-hero){
 		opacity:1;
 		position:fixed;
 		background-color: #2a2a2a;
-		@media(max-width: 928px){
+		@media(max-width: 943px){
 			height: 100px;
 		}
 		@media(max-width: 400px){
@@ -95,6 +95,11 @@ section :not(.large-hero){
 			@media(max-width: 375px){
 				top: 13px;
 			}
+		}
+		.top-bar-left,.top-bar-right {
+		  @media(max-width: 943px){
+		  	width: auto !important;
+		  }
 		}
 		.cheeseburger{
 			top: 13px !important;
@@ -116,10 +121,12 @@ section :not(.large-hero){
 		@include oswald(400);
 	}
 	.top-bar-left{
-		position: absolute;
-		top: 30px;
-		left: 30px;
-		display: block !important;
+		@media(max-width: 943px){
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			width: auto !important;
+		}
 		.top-bar-title img{
 			@media(max-width: 400px){
 				width: 215px;
@@ -132,11 +139,11 @@ section :not(.large-hero){
 	.top-bar-right{
 		margin-top: 20px;
 		position: relative;
-		@media(max-width: 928px){
+		@media(max-width: 943px){
 			text-align: right;
 		}
 		#menu-top-nav,.login{
-			@media(max-width: 928px){
+			@media(max-width: 943px){
 				display: none;
 			}
 		}
@@ -154,7 +161,7 @@ section :not(.large-hero){
 				@include font(17);
 				top: 24px;
 			}
-			@media(min-width: 929px){
+			@media(min-width: 944px){
 				display: none;
 				visibility: hidden;
 			}
@@ -191,6 +198,7 @@ section :not(.large-hero){
 		left: 0;
 		list-style-type: none;
 		margin:0;
+		@include margin(60,bottom);
 		li{
 			padding: 10px 0;
 		}
@@ -204,6 +212,15 @@ section :not(.large-hero){
 	 		@extend %gray-button;
 	 		padding: 5px 10px;
 	 	}
+	}
+	.mobile-login {
+		position: absolute;
+		bottom: 15%;
+		width: 100%;
+		left: 0;
+		a{
+		  color: white;
+	  }
 	}
 	.close-button{
 		top: 40px;

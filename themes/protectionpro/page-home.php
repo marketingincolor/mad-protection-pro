@@ -39,7 +39,7 @@
 <!-- Advantages section -->
 <section class="advantages">
 	<div class="row">
-		<div class="large-8 large-offset-2 large-10 large-offset-1 columns">
+		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns">
 			<center>
 				<h3><?php the_field('advantage_title'); ?></h3>
 				<hr class="yellow-line">

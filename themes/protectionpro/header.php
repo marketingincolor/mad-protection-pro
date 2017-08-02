@@ -36,7 +36,7 @@
 						</div>
 					</div>
 					<div class="top-bar-right">
-						<span class="login">
+						<span class="login hide-for-small-only">
 							<a href="#!">Reports Login <i class="fa fa-lock" aria-hidden="true"></i></a>
 						</span>
 						<?php foundationpress_top_bar_r(); ?>
@@ -54,6 +54,9 @@
 						  	<li><a href="#!">About</a></li>
 						  	<li><a href="#!">Contact Us</a></li>
 						  </ul>
+						  <span class="mobile-login">
+						  	<a href="#!">Reports Login <i class="fa fa-lock" aria-hidden="true"></i></a>
+						  </span>
 						  <button class="close-button" data-close aria-label="Close reveal" type="button">
 						    <span aria-hidden="true">&times;</span>
 						  </button>
