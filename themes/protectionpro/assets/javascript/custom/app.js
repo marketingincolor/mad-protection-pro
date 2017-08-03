@@ -4,12 +4,22 @@ $(window).scroll(function(){
 
 $(document).ready(function(){
 	navSlideDown();
+	scrollDown();
 });
 
 $(window).resize(function(){
 	
 });
 
+// Scroll down to second section on home page
+function scrollDown(){
+	$('.scroll-down').on('click',function(){
+		var height = $('.large-hero').outerHeight();
+		$('html,body').animate({
+      scrollTop: height
+    }, 1000);
+	});
+}
 
 // Adds a disabled option to the beginning of <select> elements
 // in contact forms, since Ninja Forms can't do it.

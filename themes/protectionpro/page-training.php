@@ -39,7 +39,7 @@
 				<h2 class="red-title">Videos</h2>
 			</header>
 		</div>
-		<div class="large-9 columns">
+		<div class="medium-9 columns">
 			<div class="row">
 
 			<?php
@@ -65,9 +65,8 @@
 					$the_query->the_post();
 			?>
 
-				<div class="large-4 columns">
+				<div class="medium-4 columns">
 					<div class="video-container" title="Play Video" data-title="<?php the_title(); ?>" data-video="<?php the_field('video_url'); ?>">
-						<img src="http://fillmurray.com/400/200" alt="">
 						<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/play-icon.png" alt="Play Video" class="play-img">
 					</div>
 					<h5 class="red-title"><?php the_title(); ?></h5>
@@ -78,7 +77,7 @@
 
 			</div>
 		</div>
-		<div class="large-2 large-offset-1 columns">
+		<div class="medium-2 medium-offset-1 columns">
 			<aside class="video-cats">
 				<ul>
 					<?php 
@@ -100,22 +99,22 @@
 		<header class="large-12 columns">
 			<h2 class="red-title">Documents for Download</h2>
 		</header>
-		<div class="large-3 columns">
+		<div class="large-3 medium-4 columns">
 			<img src="http://fillmurray.com/350/200" alt="">
 			<h5 class="red-title">Document Title</h5>
 			<p class="body">This is a great document. You should download it and find out why.</p>
 		</div>
-		<div class="large-3 columns">
+		<div class="large-3 medium-4 columns">
 			<img src="http://fillmurray.com/350/200" alt="">
 			<h5 class="red-title">Document Title</h5>
 			<p class="body">This is a great document. You should download it and find out why.</p>
 		</div>
-		<div class="large-3 columns">
+		<div class="large-3 medium-4 columns">
 			<img src="http://fillmurray.com/350/200" alt="">
 			<h5 class="red-title">Document Title</h5>
 			<p class="body">This is a great document. You should download it and find out why.</p>
 		</div>
-		<div class="large-3 columns">
+		<div class="large-3 medium-4 columns">
 			<img src="http://fillmurray.com/350/200" alt="">
 			<h5 class="red-title">Document Title</h5>
 			<p class="body">This is a great document. You should download it and find out why.</p>

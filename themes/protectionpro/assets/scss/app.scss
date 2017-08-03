@@ -46,9 +46,6 @@ p{
 	border: 1px solid #f6c831;
 	width: 120px;
 }
-section :not(.large-hero){
-	
-}
 .opacity0{
 	opacity:0;
 }
@@ -62,6 +59,10 @@ section :not(.large-hero){
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 5% 0;
+	@media(max-width: 943px){
+		padding: 0;
+		height: 115px;
+	}
 }
 
 // =======================================
@@ -186,11 +187,33 @@ section :not(.large-hero){
 		@extend %gray-button;
 	}
 }
+body:not(.home):not(.page-template-page-products) .top-bar .top-bar-left {
+	top: 20px;
+	@media(max-width: 400px){
+		top: 25px;
+	}
+	@media(max-width: 360px){
+		top: 27px;
+	}
+}
+body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-left{
+	top: 10px;
+}
+body:not(.home):not(.page-template-page-products) .top-bar .top-bar-right .cheeseburger {
+	top: 22px;
+}
+body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-right .cheeseburger{
+	@media(max-width: 360px){
+		top: 5px !important;
+		font-size: 16px !important;
+	}
+}
 
 // Full Screen Mobile menu open styles
 #mobile-menu{
 	background-color: #2f2f2f;
 	text-align: center;
+	top: 0 !important;
 	.mobile-menu-list{
 		position: absolute;
 		@include vertical-center;
@@ -237,7 +260,7 @@ section :not(.large-hero){
 
 #video-modal{
 	padding: 50px 0 0;
-	background-color:$black;
+	background-color: $black;
 	border:none;
 	.flex-video{
 		margin-bottom: 0;
@@ -250,7 +273,21 @@ section :not(.large-hero){
 .large-hero {
 	background: #000;
 	height: 100vh;
-	overflow:hidden;
+	overflow: hidden;
+	@include breakpoint(small only){
+		position: relative;
+	}
+	.scroll-down{
+		position: absolute;
+		bottom: 30px;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		img{
+			cursor: pointer;
+			padding: 15px;
+		}
+	}
 	video{
     min-width: 100%;
     min-height: 100%;
@@ -384,7 +421,7 @@ section :not(.large-hero){
 	@include breakpoint(small only){
 		padding: 15% 0 50%;
 		@include pad30-mobile;
-		background-image: url(/wp-content/uploads/2017/07/cutters-bg-mobile.jpg) !important;
+		background-image: url(../images/cutters-bg-mobile.jpg) !important;
 		background-position: left bottom;
 	}
 	h5,.cutter-family,.cutter-title,.cutter-body{
@@ -414,7 +451,7 @@ section :not(.large-hero){
 	@include breakpoint(small only){
 		padding: 15% 0 55%;
 		@include pad30-mobile;
-		background-image: url(/wp-content/uploads/2017/08/film-bg-mobile.jpg) !important;
+		background-image: url(../images/film-bg-mobile.jpg) !important;
 		background-position: left bottom;
 	}
 	.yellow-line{
@@ -435,7 +472,7 @@ section :not(.large-hero){
 	@include breakpoint(small only){
 		padding: 15% 0 95%;
 		@include pad30-mobile;
-		background-image: url(/wp-content/uploads/2017/08/home-case-bg-mobile1.jpg) !important;
+		background-image: url(../images/home-case-bg-mobile1.jpg) !important;
 		background-position: left bottom;
 	}
 	p{
@@ -712,15 +749,31 @@ section :not(.large-hero){
 }
 .training{
 	padding: 8% 0 0;
+	@include breakpoint(medium down){
+		@include pad30-mobile;
+	}
 	.body{
 		@include margin(0,bottom);
 	}
 }
 .training-videos{
 	padding: 6% 0;
+	@include breakpoint(medium down){
+		@include pad30-mobile;
+	}
 	.video-container{
+		@include margin(20,bottom);
 		position: relative;
 		cursor: pointer;
+		height: 200px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		background:
+		    linear-gradient(
+		      rgba(0, 0, 0, 0.45), 
+		      rgba(0, 0, 0, 0.45)
+		    ),url(http://fillmurray.com/388/200);
 		.play-img{
 			margin: auto;
 			position: absolute;
@@ -1007,6 +1060,9 @@ section :not(.large-hero){
 
 .error-top{
 	padding: 8% 0 4%;
+	@include breakpoint(medium down){
+		padding: 8% 30px 6%;
+	}
 	.bottom{
 		@include margin(50,bottom);
 	}
