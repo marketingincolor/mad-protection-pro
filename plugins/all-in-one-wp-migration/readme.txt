@@ -3,7 +3,7 @@ Contributors: yani.iliev, bangelov, pimjitsawang
 Tags: move, transfer, copy, migrate, backup, clone, restore, db migration, wordpress migration, website migration, database export, database import, apoyo, sauvegarde, di riserva, バックアップ
 Requires at least: 3.3
 Tested up to: 4.8
-Stable tag: 6.54
+Stable tag: 6.55
 License: GPLv2 or later
 
 Move, transfer, copy, migrate, and backup a site with 1-click. Quick, easy, and reliable.
@@ -90,6 +90,21 @@ Alternatively you can download the plugin using the download button on this page
 3. Plugin Menu
 
 == Changelog ==
+= 6.55 =
+**Added**
+
+* Percentage indicator on "Unpacking archive" step
+* Chunking mechanism when adding database.sql to wpress file on export
+
+**Changed**
+
+* Display 2GB+ value if file size cannot be obtained on Backups page
+* Move COMMIT condition after processing all table records
+
+**Fixed**
+
+* Directory separator of archiver on Windows
+
 = 6.54 =
 **Changed**
 

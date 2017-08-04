@@ -707,6 +707,9 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 
 .resources{
 	padding: 8% 0;
+	@include breakpoint(medium down){
+		@include pad30-mobile;
+	}
 	.body{
 		@include margin(50,bottom);
 	}
@@ -724,6 +727,11 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 			padding: 10px 0 10px 40px;
 		}
 	}
+	.btn-black{
+		@include breakpoint(small only){
+			@include margin(50,bottom);
+		}
+	}
 }
 .view-resources{
 	padding-top: 5%;
@@ -735,6 +743,9 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	}
 	.resource-cta{
 		@extend %gray-button;
+	}
+	.columns.show-for-small-only{
+		@include margin(50,bottom);
 	}
 }
 
