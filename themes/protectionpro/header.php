@@ -46,14 +46,15 @@
 						<?php endif; ?>
 						<i class="fa fa-bars cheeseburger" data-toggle="mobile-menu" aria-hidden="true"></i>
 						<div class="full reveal" id="mobile-menu" data-reveal  data-animation-in="slide-in-down bounce" data-animation-out="slide-out-up bounce">
-						  <ul class="mobile-menu-list">
-						  	<li><a href="#!">Home</a></li>
+						  <!-- <ul class="mobile-menu-list"> -->
+						  	<!-- <li><a href="#!">Home</a></li>
 						  	<li><a href="#!">Our Products</a></li>
 						  	<li><a href="#!">Retailer Resources</a></li>
 						  	<li><a href="#!">FAQs</a></li>
 						  	<li><a href="#!">About</a></li>
-						  	<li><a href="#!">Contact Us</a></li>
-						  </ul>
+						  	<li><a href="#!">Contact Us</a></li> -->
+						  	<?php wp_nav_menu( array( 'theme_location' => '','menu_class' => 'mobile-menu-list','container' => 'ul' )); ?>
+						  <!-- </ul> -->
 						  <span class="mobile-login">
 						  	<a href="#!">Reports Login <i class="fa fa-lock" aria-hidden="true"></i></a>
 						  </span>
