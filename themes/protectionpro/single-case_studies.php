@@ -1,13 +1,15 @@
 <?php
 	get_header(); 
 	get_template_part('template-parts/top-bg');
+	$featured_img_array = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+	$featured_img       = $featured_img_array[0];
 ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<!-- Save current post ID for later -->
 	<?php $post_id = get_the_ID(); ?>
 
-	<section class="case-study-single">
+	<section class="case-study-single hide-for-small-only">
 		<div class="row">
 			<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
 				<h1><?php the_title(); ?></h1>
@@ -24,6 +26,28 @@
 					<a href="#!" class="btn button">View More Case Studies</a>
 				</article>
 			</div>
+		</div>
+	</section>
+
+	<section class="case-study-single show-for-small-only">
+		<div class="row-expanded">
+			<div class="small-12 single-bg" style="background: url(<?php echo $featured_img; ?>) center center no-repeat;background-size:cover;">
+			</div>
+		</div>
+		<div class="row">
+			<section class="single-body">
+				<div class="large-10 large-offset-1 columns end">
+					<h1><?php the_title(); ?></h1>
+					<hr class="yellow-line">
+				</div>
+				<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns end">
+					<article class="body">
+						<?php the_content(); ?>
+						<a href="#!" class="btn button">Share Case Study</a>
+						<a href="#!" class="btn button">View More Case Studies</a>
+					</article>
+				</div>
+			</section>
 		</div>
 	</section>
 
@@ -63,10 +87,10 @@
 			</div>
 		</div>
 
-		<?php //$count++; ?>
-		<?php //if ($count % 4 == 0) { ?>
-			<!-- </div><div class="row"> -->
-		<?php //} ?>
+		<?php $count++; ?>
+		<?php if ($count % 2 == 0) { ?>
+			<div class="clearfix show-for-medium-only"></div>
+		<?php } ?>
 
 	<?php }}} wp_reset_postdata(); ?>
 
