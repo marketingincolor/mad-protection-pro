@@ -28,8 +28,8 @@ setTimeout(function(){
 		var $form = $('.nf-form-cont');
 		$form.find('#nf-field-5').find('option').removeAttr("selected");
 		$form.find('#nf-field-5').find('option:first').before('<option disabled="disabled" selected="selected">Select one</option>');
-		$form.find('#nf-field-9').find('option').removeAttr("selected");
-		$form.find('#nf-field-9').find('option:first').before('<option disabled="disabled" selected="selected">Select country</option>');
+		$form.find('#nf-field-9,#nf-field-17').find('option').removeAttr("selected");
+		$form.find('#nf-field-9,#nf-field-17').find('option:first').before('<option disabled="disabled" selected="selected">Select country</option>');
 	})();
 },150);
 

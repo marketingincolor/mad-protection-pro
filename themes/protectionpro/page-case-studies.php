@@ -44,7 +44,7 @@
 			$the_query->the_post();
 	?>
 
-		<div class="medium-7 large-8 columns">
+		<div class="medium-8 columns">
 			<?php the_post_thumbnail( 'full' ); ?>
 		</div>
 		<div class="medium-6 large-5 columns">
@@ -52,7 +52,7 @@
 				<h4 class="red-title"><?php the_title(); ?></h4>
 				<p class="location"><?php the_field('store_location'); ?></p>
 				<p><?php echo wp_trim_words(get_the_content(),20,'...'); ?></p>
-				<a href="#!" class="button btn-white"><?php the_field('store_button_text'); ?></a>
+				<a href="<?php the_permalink(); ?>" class="button btn-white"><?php the_field('store_button_text'); ?></a>
 			</div>
 		</div>
 		
@@ -69,7 +69,7 @@
 	<?php 
 	// Query custom post type "case_studies" to get 
 	// product page case study only
-
+	$count = 0;
 	$args = array(
 		'post_type'      => 'case_studies',
 		'posts_per_page' => 4,
@@ -98,6 +98,11 @@
 				</aside>
 			</div>
 		</div>
+
+		<?php $count++; ?>
+		<?php if ($count % 2 == 0) { ?>
+			<div class="clearfix show-for-medium-only"></div>
+		<?php } ?>
 
 	<?php }} wp_reset_postdata(); ?>
 

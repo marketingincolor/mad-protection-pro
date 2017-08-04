@@ -645,12 +645,22 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		top: 50%;
 		transform: translateY(-50%);
 		right: 8%;
+		@include breakpoint(small only){
+			position: static;
+			transform: translateY(0);
+		}
+	}
+	.medium-8.columns, .medium-6.columns{
+		padding: 0;
 	}
 	.black-bg{
 		background-color: #000;
 		padding: 50px;
-		@include breakpoint(medium down) {
+		@include breakpoint(medium only) {
 			padding: 20px;
+		}
+		@include breakpoint(small only) {
+			padding: 30px;
 		}
 		h4{
 			@include font(24);
@@ -664,8 +674,15 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 			color:$white;
 			@include font(18);
 			@include margin(30,bottom);
+			@include breakpoint(medium down){
+				@include font(14);
+			}
 		}
 	}
+}
+
+.page-template-page-case-studies .case-studies{
+	@include pad30-mobile;
 }
 
 .product-faqs{
@@ -863,7 +880,7 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 .nf-form-fields-required {
 	display: none;
 }
-#nf-field-5,#nf-field-9{
+#nf-field-5,#nf-field-9,#nf-field-17{
 	color:#808285;
 	@include font(18);
 }
@@ -981,13 +998,18 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 // =======================================
 
 .case-studies{
-	padding: 10% 0;
+	padding: 8% 0;
+	.large-3.medium-6{
+		@include breakpoint(medium down){
+			@include margin(30,bottom);
+		}
+	}
 }
-.page-template-page-case-studies .store-study,.page-template-page-case-studies .case-studies{
+.page-template-page-case-studies .store-study{
 	padding-top: 0;
 }
 .study-container{
-	border: 2px solid #dddddd;
+	border: 2px solid #DDD;
 	img{
 		width: 100%;
 		height: 175px;
@@ -995,6 +1017,9 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	.case-meta{
 		padding: 20px;
 		@include font(14);
+		@include breakpoint(small only){
+			padding: 30px;
+		}
 	}
 	.case-meta .red-title{
 		@include font(18);
@@ -1075,8 +1100,18 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 
 .distributor{
 	padding: 8% 0;
+	@include breakpoint(medium down){
+		@include pad30-mobile;
+	}
 	.body{
 		@include margin(50,bottom);
+	}
+	.nf-form-cont .one-half{
+		@include breakpoint(small only){
+			width: auto;
+			margin-left: 0;
+			float: none;
+		}
 	}
 }
 
