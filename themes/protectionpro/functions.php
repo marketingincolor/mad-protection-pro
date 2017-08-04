@@ -14,6 +14,9 @@
  * @since FoundationPress 1.0.0
  */
 
+// Add support for excerpts on pages
+add_post_type_support('page','excerpt');
+
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
 

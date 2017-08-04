@@ -754,11 +754,52 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 // =======================================
 .about{
 	padding: 8% 0;
+	h1{
+		@include margin(0,bottom);
+	}
+	article {
+		h1,h2,h2,h4,h5,h6{
+			color: $red;
+			text-transform: uppercase;
+		}
+	}
 	p{
 		color:$gray;
+		a{
+			color: $gray;
+			border-bottom: 3px solid #fbf0b5;
+			&:hover{
+				background-color: #fbf0b5;
+			}
+		}
 	}
 	.body,img{
 		@include margin(50,bottom);
+	}
+	&.show-for-small-only{
+		padding-top: 0;
+		.pad30{
+			@include pad30-mobile;
+		}
+		.img-column{
+			padding: 0;
+		}
+		.body{
+			@include font(18);
+		}
+		.yellow-line{
+			float: left;
+		}
+		article p {
+			@include font(14);
+			a{
+				color: $gray;
+				border-bottom: 2px solid #fbf0b5;
+				&:hover{
+					background-color: #fbf0b5;
+				}
+			}
+		}
 	}
 }
 

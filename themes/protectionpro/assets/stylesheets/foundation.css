@@ -8237,10 +8237,40 @@ body:not(.home):not(.page-template-page-products) .top-bar .top-bar-right .chees
 
 .about {
   padding: 8% 0; }
+  .about h1 {
+    margin-bottom: 0px; }
+  .about article h1, .about article h2, .about article h2, .about article h4, .about article h5, .about article h6 {
+    color: #da291c;
+    text-transform: uppercase; }
   .about p {
     color: #404040; }
+    .about p a {
+      color: #404040;
+      border-bottom: 3px solid #fbf0b5; }
+      .about p a:hover {
+        background-color: #fbf0b5; }
   .about .body, .about img {
     margin-bottom: 50px; }
+  .about.show-for-small-only {
+    padding-top: 0; }
+    .about.show-for-small-only .pad30 {
+      padding-left: 30px;
+      padding-right: 30px; }
+    .about.show-for-small-only .img-column {
+      padding: 0; }
+    .about.show-for-small-only .body {
+      font-size: 18px;
+      font-size: 1.125rem; }
+    .about.show-for-small-only .yellow-line {
+      float: left; }
+    .about.show-for-small-only article p {
+      font-size: 14px;
+      font-size: 0.875rem; }
+      .about.show-for-small-only article p a {
+        color: #404040;
+        border-bottom: 2px solid #fbf0b5; }
+        .about.show-for-small-only article p a:hover {
+          background-color: #fbf0b5; }
 
 .page-template-page-training h2 {
   font-size: 30px;
