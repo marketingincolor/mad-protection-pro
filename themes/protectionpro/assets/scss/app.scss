@@ -323,6 +323,11 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	}
 	.play-group{
 		margin-right: 15px;
+		&:hover .button{
+			 // {
+				background-color: #dfb734;
+			// }
+		}
 		@include breakpoint(small down){
 			@include margin(0,right);
 		}
@@ -1085,6 +1090,10 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		background-color: #808285;
 		border:none;
 		border-radius:3px;
+		transition: background-color 0.25s ease-in-out;
+		&:hover{
+			background-color: $gray;
+		}
 	}
 }
 
@@ -1121,8 +1130,12 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 			@include montserrat(400);
 			@include font(14);
 			background-color: #808285;
-			border-radius:3px;
-			color:$white
+			border-radius: 3px;
+			color: $white;
+			transition: background-color 0.25s ease-in-out;
+			&:hover{
+				background-color: $gray;
+			}
 		}
 	}
 }
