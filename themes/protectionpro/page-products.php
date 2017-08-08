@@ -214,8 +214,14 @@
 
 				$args = array(
 					'post_type'      => 'faqs',
-					'category_name'  => 'product_faq',
-					'posts_per_page' => 6
+					'posts_per_page' => 6,
+					'tax_query'      => array(
+						array(
+							'taxonomy'   => 'faq_category',
+							'field'      => 'term_id',
+							'terms'      => array(10,11,12,13,14)
+						),
+					)
 				);
 				$count = 1;
 				$the_query = new WP_Query($args);
