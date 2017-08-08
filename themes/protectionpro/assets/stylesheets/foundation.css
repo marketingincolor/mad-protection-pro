@@ -8615,6 +8615,36 @@ body:not(.home):not(.page-template-page-products) .top-bar .top-bar-right .chees
     right: 0;
     top: 0; }
 
+#search-results {
+  padding: 8% 0; }
+  #search-results h1 {
+    margin-bottom: 0px; }
+  #search-results .yellow-line {
+    float: left;
+    margin-bottom: 50px; }
+  #search-results input[type=text] {
+    border: none;
+    border-bottom: 2px solid #DDD;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+  #search-results button {
+    background-color: transparent;
+    color: #000;
+    position: absolute;
+    right: 0;
+    top: 0; }
+  #search-results .input-group {
+    position: relative;
+    margin-bottom: 8%; }
+  #search-results .result-block {
+    margin-bottom: 30px; }
+  #search-results h5 a {
+    color: #000; }
+  #search-results .result-block p {
+    color: #a5a5a5; }
+  #search-results .search-content {
+    color: #444; }
+
 .footer-container {
   border: none;
   margin-top: 0;

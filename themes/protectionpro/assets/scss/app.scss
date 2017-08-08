@@ -1169,7 +1169,7 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 }
 
 // =======================================
-// ============== 11.) 404 ===============
+// ============== 12.) 404 ===============
 // =======================================
 
 .error-top{
@@ -1201,8 +1201,43 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 // ========= 13.) Search Results =========
 // =======================================
 
-.search-results{
-	
+#search-results{
+	padding: 8% 0;
+	h1{
+		@include margin(0,bottom);
+	}
+	.yellow-line{
+		float: left;
+		@include margin(50,bottom);
+	}
+	input[type=text]{
+		border:none;
+		border-bottom: 2px solid #DDD;
+		box-shadow: none;
+	}
+	button{
+		background-color: transparent;
+		color: #000;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.input-group {
+    position: relative;
+    margin-bottom: 8%;
+	}
+	.result-block{
+		@include margin(30,bottom);
+	}
+	h5 a{
+		color: $black;
+	}
+	.result-block p{
+		color: #a5a5a5;
+	}
+	.search-content{
+		color: #444;
+	}
 }
 
 // =======================================
