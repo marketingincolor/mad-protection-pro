@@ -10,15 +10,36 @@
 	border:2px solid #7d7c7c;
 	background-color: #626160;
 	border-radius: 3px;
+	transition: background-color 0.25s ease-in-out;
+	&:hover {
+		background-color: #7d7c7c;
+	}
 }
 %height100 {
 	height: 100vh;
 }
-%btn-yellow{
+%btn-white{
 	background-color: $clear;
 	border:2px solid #dfb734;
 	border-radius: 3px;
 	text-transform: uppercase;
 	@include oswald(400);
 	color:$white;
+	transition: background-color 0.25s ease-in-out;
+	&:hover{
+		background-color: #dfb734;
+	}
+}
+%btn-black{
+	background-color: $clear;
+	border:2px solid #dfb734;
+	border-radius: 3px;
+	text-transform: uppercase;
+	@include oswald(400);
+	color:$black;
+	transition: all 0.25s ease-in-out;
+	&:hover{
+		background-color: #dfb734;
+		color: $white;
+	}
 }
