@@ -21,9 +21,9 @@
 </section>
 
 <!-- Sales Wheel Section -->
-<section class="sales-wheel">
+<section class="sales-wheel hide">
 	<div class="row">
-		<div class="medium-8 column medium-offset-2 text-center">
+		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
 			<h3><?php the_field('sales_wheel_title'); ?></h3>
 			<hr class="yellow-line">
 			<p><?php the_field('sales_wheel_body'); ?></p>
@@ -64,13 +64,13 @@
 
 <section class="hardware-table clearfix">
 	<div class="row">
-		<div class="medium-8 medium-offset-2 columns text-center">
+		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
 			<h3>A Hardware Solution for Every Need</h3>
 			<hr class="yellow-line">
-			<p class="hardware-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium, neque eget eleifend commodo, tortor lorem mattis mauris, nec facilisis nulla nibh in mi.</p>
+			<p class="hardware-body">ProtectionPro offers three different size cutters, each designed for specific retailers, devices, and volume of usage per week.</p>
 		</div>
 		<div class="medium-12 columns text-center">
-			<div class="row collapse">
+			<div class="row collapse hide-for-small-only">
 				<div class="medium-4 columns">
 					<h3 class="red-title"><?php the_field('express_title'); ?></h3>
 					<img src="<?php the_field('express_image'); ?>" alt="">
@@ -115,15 +115,75 @@
 					</ul>
 				</div>
 			</div>
+
+			<div class="row show-for-small-only">
+				<img class="slide-img" src="<?php bloginfo('template_directory'); ?>/assets/images/slide-compare.jpg" alt="slide to compare">
+				
+				<div class="owl-carousel owl-theme">
+			    <div class="item">
+			    	<div class="medium-4 columns">
+			    		<h3 class="red-title"><?php the_field('express_title'); ?></h3>
+			    		<img src="<?php the_field('express_image'); ?>" alt="">
+			    		<p><?php the_field('express_body'); ?></p>
+			    		<ul>
+			    			<li><?php the_field('express_dimensions') ?></li>
+			    			<li><?php the_field('express_weight') ?></li>
+			    			<li><?php the_field('express_sizes') ?></li>
+			    			<li><?php the_field('express_types') ?></li>
+			    			<li><?php the_field('express_usage') ?></li>
+			    			<li><?php the_field('express_volume') ?></li>
+			    			<li><?php the_field('express_retail') ?></li>
+			    		</ul>
+			    	</div>
+			    </div>
+			    <div class="item">
+			    	<div class="medium-4 columns middle-column">
+			    		<h5><?php the_field('elite_recommended'); ?></h5>
+			    		<h3 class="red-title"><?php the_field('elite_title'); ?></h3>
+			    		<img src="<?php the_field('elite_image'); ?>" alt="">
+			    		<p><?php the_field('elite_body'); ?></p>
+			    		<ul>
+			    			<li><?php the_field('elite_dimensions') ?></li>
+			    			<li><?php the_field('elite_weight') ?></li>
+			    			<li><?php the_field('elite_sizes') ?></li>
+			    			<li><?php the_field('elite_types') ?></li>
+			    			<li><?php the_field('elite_usage') ?></li>
+			    			<li><?php the_field('elite_volume') ?></li>
+			    			<li><?php the_field('elite_retail') ?></li>
+			    		</ul>
+			    	</div>
+			    </div>
+			    <div class="item">
+			    	<div class="medium-4 columns">
+			    		<h3 class="red-title"><?php the_field('lite_title'); ?></h3>
+			    		<img src="<?php the_field('lite_image'); ?>" alt="">
+			    		<p><?php the_field('lite_body'); ?></p>
+			    		<ul>
+			    			<li><?php the_field('lite_dimensions') ?></li>
+			    			<li><?php the_field('lite_weight') ?></li>
+			    			<li><?php the_field('lite_sizes') ?></li>
+			    			<li><?php the_field('lite_types') ?></li>
+			    			<li><?php the_field('lite_usage') ?></li>
+			    			<li><?php the_field('lite_volume') ?></li>
+			    			<li><?php the_field('lite_retail') ?></li>
+			    		</ul>
+			    	</div>
+			    </div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 
 <section class="touchscreen" style="background-image: url(<?php the_field('touchscreen_bg'); ?>);">
 	<div class="row">
-		<div class="medium-6 medium-offset-6 columns">
+		<div class="large-6 large-offset-6 columns">
+			<div class="text-center">
+				<img src="<?php bloginfo('template_directory'); ?>/assets/images/touchscreen-top.jpg" alt="protection pro touchscreen" class="hide-for-large">
+			</div>
 			<h3><?php the_field('touchscreen_title'); ?></h3>
 			<hr class="yellow-line">
+			<div class="clearfix hide-for-large-only"></div>
 			<p><?php the_field('touchscreen_body'); ?></p>
 			<ul>
 
@@ -138,7 +198,7 @@
 
 <section class="library" style="background-image: url(<?php the_field('library_bg'); ?>);">
 	<div class="row">
-		<div class="medium-6 columns">
+		<div class="large-6 columns">
 			<h3><?php the_field('library_title'); ?></h3>
 			<hr class="yellow-line">
 			<div class="clearfix"></div>

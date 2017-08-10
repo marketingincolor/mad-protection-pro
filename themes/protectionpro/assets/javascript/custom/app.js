@@ -5,11 +5,28 @@ $(window).scroll(function(){
 $(document).ready(function(){
 	navSlideDown();
 	scrollDown();
+	productCarousel();
 });
 
 $(window).resize(function(){
 	
 });
+
+// product table carousel for mobile
+function productCarousel(){
+	$('.owl-carousel').owlCarousel({
+    center: false,
+    stagePadding: 30,
+    items:1,
+    loop:false,
+    margin:0,
+    responsive:{
+        640:{
+            items:2
+        }
+    }
+	});
+}
 
 // Scroll down to second section on home page
 function scrollDown(){
