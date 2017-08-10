@@ -17,7 +17,7 @@
 		  <a href="#" class="button play-container"><div class="play-button"></div></a>
 		</div><br class="show-for-small-only" />
 		<div class="button-group">
-			<a href="#" class="button learn-more"><?php the_field('learn_more_button_text'); ?></a>
+			<a href="/products" class="button learn-more"><?php the_field('learn_more_button_text'); ?></a>
 		</div>
 	</center>
 	<div class="scroll-down show-for-small-only">
@@ -84,7 +84,7 @@
 			</div>
 		</div>
 			<?php if ($count % 2 == 0): ?>
-				<div class="clearfix show-for-medium-only"></div>
+				<div class="clearfix show-for-medium"></div>
 			<?php endif ?>
 
 		<?php }} wp_reset_postdata(); ?>
@@ -101,6 +101,9 @@
 			<h5><?php the_field('home_cutters_title'); ?></h5>
 			<hr class="yellow-line">
 		</div>
+		<div class="medium-9 columns">
+			<p class="body">While our competitors have just one cutting machine, ProtectionPro offers three different cutters, and feature the fastest cutting and install times.</p>
+		</div>
 
 		<?php for ($count=1; $count < 4; $count++) { ?> 
 
@@ -108,13 +111,13 @@
 			<h4 class="cutter-title"><?php the_field('cutter'.$count.'_title'); ?></h4>
 			<p class="cutter-body"><?php the_field('cutter'.$count.'_body'); ?></p>
 			<?php if ($count == 1) { ?>
-				<a href="#!" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
+				<a href="/products" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
 			<?php } ?>
 		</div>
 
 		<?php } ?>
 		<div class="small-12 columns show-for-small-only">
-			<a href="#!" class="button btn-white"><?php the_field('cutter_button_text'); ?></a>
+			<a href="/products" class="button btn-white"><?php the_field('cutter_button_text'); ?></a>
 		</div>
 
 	</div>
@@ -134,53 +137,53 @@
 	</div>
 </section>
 
-<!-- Case Studies Section -->
+<!-- Case Studies Section  (SECTION ON HOLD)-->
 
-<section class="home-case-studies" style="background-image: url(<?php the_field('home_case_studies_bg'); ?>);">
+<!-- <section class="home-case-studies" style="background-image: url(<?php //the_field('home_case_studies_bg'); ?>);">
 	<div class="row">
 		<div class="medium-6 columns">
-			<h3><?php the_field('home_case_studies_title'); ?></h3>
+			<h3><?php //the_field('home_case_studies_title'); ?></h3>
 			<hr class="yellow-line">
 			<div class="clearfix"></div>
-			<p><?php the_field('home_case_studies_body'); ?></p>
+			<p><?php //the_field('home_case_studies_body'); ?></p> -->
 
 			<?php
 			// Query custom post type "case_studies" to get 
 			// featured case studies only
 
-			$args = array(
-				'post_type'      => 'case_studies',
-				'orderby'        => 'menu_order',
-				'order'          => 'ASC',
-				'posts_per_page' => 2,
-				'tax_query' => array(
-						array(
-							'taxonomy' => 'home_case_study',
-							'field'    => 'slug',
-							'terms'    => 'home_page',
-						),
-					),
-			);
+			// $args = array(
+			// 	'post_type'      => 'case_studies',
+			// 	'orderby'        => 'menu_order',
+			// 	'order'          => 'ASC',
+			// 	'posts_per_page' => 2,
+			// 	'tax_query' => array(
+			// 			array(
+			// 				'taxonomy' => 'home_case_study',
+			// 				'field'    => 'slug',
+			// 				'terms'    => 'home_page',
+			// 			),
+			// 		),
+			// );
 
-			$the_query = new WP_Query($args);
+			// $the_query = new WP_Query($args);
 
-			if ( $the_query->have_posts() ) {
-				while ( $the_query->have_posts() ) {
-					$the_query->the_post();
-					$count++;
+			// if ( $the_query->have_posts() ) {
+			// 	while ( $the_query->have_posts() ) {
+			// 		$the_query->the_post();
+			// 		$count++;
 			?>
 
-			<div class="featured-case-study">
-				<h5 class="red-title"><?php the_title(); ?></h5>
-				<p><?php echo wp_trim_words(get_the_content(),20,'...') ?></p>
-				<a href="<?php the_permalink(); ?>" class="read-more clearfix"><strong>Read More »</strong></a>
+			<!-- <div class="featured-case-study">
+				<h5 class="red-title"><?php //the_title(); ?></h5>
+				<p><?php //echo wp_trim_words(get_the_content(),20,'...') ?></p>
+				<a href="<?php //the_permalink(); ?>" class="read-more clearfix"><strong>Read More »</strong></a>
 			</div>
 
-			<?php }} wp_reset_postdata(); ?>
+			<?php //}} wp_reset_postdata(); ?>
 
-			<a href="#!" class="button btn-black"><?php the_field('home_case_studies_button_text'); ?></a>
+			<a href="#!" class="button btn-black"><?php //the_field('home_case_studies_button_text'); ?></a>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <?php get_footer(); ?>

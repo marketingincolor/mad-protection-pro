@@ -28,7 +28,7 @@
 						<div class="medium-8 medium-offset-2 columns">
 							<div class="footer-meta">
 								<p><?php the_field('footer_body',$footer_id); ?></p>
-								<a href="#!" class="button btn-white"><?php the_field('footer_button_text',$footer_id); ?></a>
+								<a href="/contact" class="button btn-white"><?php the_field('footer_button_text',$footer_id); ?></a>
 							</div>
 						</div>
 					</div>

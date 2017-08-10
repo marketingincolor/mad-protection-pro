@@ -437,6 +437,9 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		@include font(18);
 		@include margin(0, bottom);
 	}
+	.body{
+		color: $white;
+	}
 	.cutter-family{
 		@include font(36);
 	}
@@ -510,6 +513,11 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	&.products-hero{
 		background-repeat: no-repeat;
 		background-size: cover;
+		@include breakpoint(small only){
+			background-image: url(../images/product-hero-mobile.jpg) !important;
+			background-position: left top;
+			height: 900px
+		}
 	}
 	.yellow-line{
 		float: left;
@@ -517,15 +525,31 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	.center-vert{
 		@include vertical-center;
 		width: 40%;
+		@include breakpoint(medium down){
+			width: 100%;
+			padding: 0 10%;
+		}
+		@include breakpoint(small only){
+			padding: 0 20px;
+			transform: translateY(0);
+			position: static;
+			@include margin(130,top);
+		}
 		h2{
 			@include font(36);
 			color: $white;
 			@include margin(0,bottom);
 			line-height: 40px;
+			@include breakpoint(small only){
+				@include font(30);
+			}
 		}
 		p{
 			@include font(18);
 			@include montserrat(300);
+			@include breakpoint(small only){
+				@include font(16);
+			}
 		}
 	}
 }
@@ -561,6 +585,17 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	}
 	.hardware-body{
 		@include margin(100,bottom);
+		@include breakpoint(small only){
+			@include margin(40,bottom);
+		}
+	}
+	.row.show-for-small-only{
+		position: relative;
+	}
+	.slide-img{
+		@include vertical-center;
+    z-index: 2;
+    left: 0;
 	}
 	.medium-4.columns{
 		background-color: $white;
@@ -572,6 +607,15 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		&:nth-of-type(1),&:nth-of-type(3){
 			position: relative;
 			top: 82px;
+			@include breakpoint(medium only){
+				top: 30px;
+				padding-top: 40px;
+			}
+		}
+		&:nth-of-type(3){
+			@include breakpoint(medium only){
+				padding-bottom: 43px;
+			}
 		}
 		&:nth-of-type(2){
 			padding-top: 40px;
@@ -579,6 +623,9 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		}
 		&:nth-of-type(3) p{
 			@include margin(22,bottom);
+		}
+		&.middle-column{
+			top: 50px !important;
 		}
 		h3{
 			@include margin(30,bottom);
@@ -595,12 +642,27 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 			padding: 10px 0;
 		}
 	}
+	.large-8.large-offset-2{
+		@include breakpoint(medium down){
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
 }
 
 .touchscreen{
 	padding: 10% 0;
 	background-size:cover;
 	background-repeat:no-repeat;
+	@include breakpoint(medium down){
+		background-image: none !important;
+		padding: 10% 20px;
+	}
+	.yellow-line{
+		@include breakpoint(medium down){
+			float: left;
+		}
+	}
 	p{
 		@include margin(50,bottom);
 	}
@@ -621,6 +683,9 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	padding: 10% 0;
 	background-size:cover;
 	background-repeat:no-repeat;
+	@include breakpoint(medium down){
+		padding: 10% 20px;
+	}
 	h3,p{
 		color: $white;
 	}
@@ -639,6 +704,10 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	}
 	.row.expanded{
 		position: relative;
+	}
+	.medium-8.medium-offset-2{
+		padding-left: 30px;
+		padding-right: 30px;
 	}
 	.medium-7{
 		padding-left: 0;
@@ -693,6 +762,9 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 
 .product-faqs{
 	padding: 0 0 10%;
+	@include breakpoint(medium down){
+		padding: 0 20px 10%;
+	}
 	p{
 		@include margin(75,bottom);
 	}
