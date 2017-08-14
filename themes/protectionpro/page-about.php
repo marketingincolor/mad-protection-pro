@@ -16,7 +16,7 @@
 			<hr class="yellow-line">
 			<p class="body"><?php echo get_the_excerpt(); ?></p>
 		</div>
-		<div class="large-10 large-offset-1 medium-12 columns">
+		<div class="large-10 large-offset-1 medium-12 columns tablet-fs">
 			<img src="<?php echo $feat_img; ?>" alt="About Madico" class="feat-img">
 		</div>
 		<article class="large-8 large-offset-2 medium-10 medium-offset-1 columns end">

@@ -99,22 +99,22 @@
 		<header class="large-12 columns">
 			<h2 class="red-title">Documents for Download</h2>
 		</header>
-		<div class="large-3 medium-4 columns">
+		<div class="large-3 medium-6 columns">
 			<img src="http://fillmurray.com/350/200" alt="">
 			<h5 class="red-title">Document Title</h5>
 			<p class="body">This is a great document. You should download it and find out why.</p>
 		</div>
-		<div class="large-3 medium-4 columns">
+		<div class="large-3 medium-6 columns">
 			<img src="http://fillmurray.com/350/200" alt="">
 			<h5 class="red-title">Document Title</h5>
 			<p class="body">This is a great document. You should download it and find out why.</p>
 		</div>
-		<div class="large-3 medium-4 columns">
+		<div class="large-3 medium-6 columns">
 			<img src="http://fillmurray.com/350/200" alt="">
 			<h5 class="red-title">Document Title</h5>
 			<p class="body">This is a great document. You should download it and find out why.</p>
 		</div>
-		<div class="large-3 medium-4 columns">
+		<div class="large-3 medium-6 columns end">
 			<img src="http://fillmurray.com/350/200" alt="">
 			<h5 class="red-title">Document Title</h5>
 			<p class="body">This is a great document. You should download it and find out why.</p>

@@ -14,7 +14,7 @@ var cleanCSS    = require('gulp-clean-css');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = 'http://localhost:8888';
+var URL = '';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -66,6 +66,7 @@ var PATHS = {
 
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js',
+    'assets/javascript/vendor/*.js',
   ],
   phpcs: [
     '**/*.php',

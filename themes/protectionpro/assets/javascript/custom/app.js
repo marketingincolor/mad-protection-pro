@@ -5,11 +5,52 @@ $(window).scroll(function(){
 $(document).ready(function(){
 	navSlideDown();
 	scrollDown();
+	productCarousel();
+	switchImage();
 });
 
 $(window).resize(function(){
 	
 });
+
+//switch slide image on mobile comparison table (products page)
+function switchImage(){
+	
+
+	
+
+}
+
+// product table carousel for mobile
+function productCarousel(){
+	var owl = $('.owl-carousel');
+
+	owl.owlCarousel({
+    center: false,
+    stagePadding: 30,
+    items:1,
+    loop:false,
+    margin:0,
+    responsive:{
+      640:{
+          items:2
+      }
+    }
+	});
+
+	owl.on('dragged.owl.carousel', function(event) {
+		var $lastSlide = $('.hardware-table').find('.owl-item')[2];
+		var $firstSlide = $('.hardware-table').find('.owl-item')[0];
+
+	  if ($lastSlide.classList.contains('active')) {
+	  	$('.slide-img').css('display','none');
+	  	$('.slide-img-right').css('display','block');
+	  }else if($firstSlide.classList.contains('active')){
+	  	$('.slide-img-right').css('display','none');
+	  	$('.slide-img').css('display','block');
+	  }
+	})
+}
 
 // Scroll down to second section on home page
 function scrollDown(){
@@ -37,7 +78,6 @@ setTimeout(function(){
 function navSlideDown(){
 	var viewportHeight = $(window).height();
 	if ($('body').hasClass('home') || $('body').hasClass('page-template-page-products')) {
-		console.log('home');
 		if ($(window).scrollTop() > 200 && $(window).scrollTop() < viewportHeight) {
 			$('.top-bar').removeClass('slide-down').addClass('opacity0');
 		}

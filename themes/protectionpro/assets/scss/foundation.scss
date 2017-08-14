@@ -72,6 +72,10 @@
 @import "modules/editor-style";
 
 // Components
+@import "components/animate";
+@import "components/autoHeight";
+@import "components/core";
+@import "components/lazyload";
 @import "components/buttons";
 @import "components/cards";
 @import "components/featured-image";

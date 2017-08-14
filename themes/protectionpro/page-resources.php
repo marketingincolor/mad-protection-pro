@@ -56,8 +56,6 @@
 						<div class="small-9 columns">
 							<h5 class="red-title"><?php the_field('title'.$i); ?></h5>
 							<p><?php the_field('body'.$i); ?></p>
-						</div>
-						<div class="small-12 columns">
 							<a href="<?php the_field('link'.$i); ?>" class="button resource-cta"><?php the_field('button_text'.$i); ?></a>
 						</div>
 					</div>
