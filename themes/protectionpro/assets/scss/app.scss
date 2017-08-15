@@ -27,10 +27,6 @@
 html,p,li{
 	@include montserrat(400);
 }
-html,body{
-	-webkit-transform:translate3d(0,0,0);
-	transform:translate3d(0,0,0);
-}
 h1,h2,h3,h4,h5,h6{
 	text-transform: uppercase;
 	@include oswald(400);
@@ -117,13 +113,10 @@ a,button{
 			height: 80px;
 		}
 		.top-bar-left {
-			top: -5px;
+			top: 2px;
 			position: relative;
 			@media(max-width: 400px){
 				top: 10px;
-			}
-			@media(max-width: 375px){
-				top: 5px;
 			}
 		}
 		.top-bar-left,.top-bar-right {
@@ -132,7 +125,7 @@ a,button{
 		  }
 		}
 		.cheeseburger{
-			top: 33px !important;
+			top: 5px !important;
 			@media(max-width: 400px){
 				top: -3px !important;
 				font-size: 20px !important;
@@ -171,9 +164,15 @@ a,button{
 	.top-bar-left{
 		@media(max-width: 943px){
 			position: absolute;
-			top: 30px;
+			top: 25px;
 			left: 30px;
 			width: auto !important;
+		}
+		@media(max-width: 375px){
+			top: 20px;
+		}
+		@media(max-width: 320px){
+			left: 10px;
 		}
 		.top-bar-title img{
 			@media(max-width: 400px){
@@ -204,11 +203,10 @@ a,button{
 	    right: 20px;
 	    cursor: pointer;
 	    @media(max-width: 400px){
-	    	top: 16px;
+	    	top: 12px;
 	    }
 	    @media(max-width: 360px){
 				@include font(17);
-				top: 14px;
 			}
 			@media(min-width: 943px){
 				display: none;
@@ -238,8 +236,14 @@ a,button{
 		padding-right: 20px;
 	}
 }
-body:not(.home):not(.page-template-page-products) .top-bar {
-	top: 20px;
+body:not(.home):not(.page-template-page-products) .top-bar .top-bar-left{
+	top: 10px;
+	@media(max-width: 440px){
+		top: 0;
+	}
+}
+body:not(.home):not(.page-template-page-products) .top-bar:not(.slide-down) {
+	top: 10px;
 	@media(max-width: 400px){
 		top: 25px;
 	}
@@ -248,15 +252,24 @@ body:not(.home):not(.page-template-page-products) .top-bar {
 	}
 }
 body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-left{
-	top: 10px;
+	top: 0px;
+	@media(max-width: 375px){
+		top: 7px;
+	}
 }
 body:not(.home):not(.page-template-page-products) .top-bar .top-bar-right .cheeseburger {
-	top: 12px;
+	top: 5px;
+	@media(max-width: 440px){
+		top: -9px;
+	}
 }
 body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-right .cheeseburger{
 	@media(max-width: 360px){
 		top: -5px !important;
 		font-size: 16px !important;
+	}
+	@media(max-width: 375px){
+		top: 2px !important;
 	}
 }
 
@@ -431,11 +444,8 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 8px 0 7px 13px;
+		border-width: 8px 0 8px 13px;
 		border-color: $clear $clear $clear #ffffff;
-		@include breakpoint(medium down){
-			border-width: 8px 0 8px 13px;
-		}
 	}
 	.button-group{
 		display:inline-block;

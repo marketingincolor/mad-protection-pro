@@ -27,7 +27,7 @@ function productCarousel(){
     }
 	});
 
-	owl.on('dragged.owl.carousel', function(event) {
+	$('.owl-carousel').on('dragged.owl.carousel', function(event) {
 		var $lastSlide = $('.hardware-table').find('.owl-item')[2];
 		var $firstSlide = $('.hardware-table').find('.owl-item')[0];
 

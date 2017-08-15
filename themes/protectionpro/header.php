@@ -26,7 +26,7 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<header class="site-header" role="banner">
+	<!-- <header class="site-header" role="banner"> -->
 		<nav class="site-navigation top-bar" role="navigation">
 			<div class="row">
 				<div class="small-12 columns">
@@ -60,7 +60,7 @@
 				</div>
 			</div>
 		</nav>
-	</header>
+	<!-- </header> -->
 
 	<section class="container">
 		<?php do_action( 'foundationpress_after_header' );
