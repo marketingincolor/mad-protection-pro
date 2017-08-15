@@ -184,8 +184,11 @@ a,button{
 		}
 	}
 	.top-bar-right{
-		margin-top: 15px;
+		margin-top: 20px;
 		position: relative;
+		@media(max-width:1038px){
+			margin-top: 15px;
+		}
 		@media(max-width: 943px){
 			text-align: right;
 		}
