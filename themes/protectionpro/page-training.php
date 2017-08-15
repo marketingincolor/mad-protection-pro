@@ -35,9 +35,9 @@
 <section class="training-videos">
 	<div class="row">
 		<div class="large-12 columns">
-			<header>
+			<!-- <header>
 				<h2 class="red-title">Videos</h2>
-			</header>
+			</header> -->
 		</div>
 		<div class="medium-9 columns">
 			<div class="row">
@@ -94,7 +94,7 @@
 </section>
 
 <!-- Document Downloads Section -->
-<section class="download-documents">
+<!-- <section class="download-documents">
 	<div class="row">
 		<header class="large-12 columns">
 			<h2 class="red-title">Documents for Download</h2>
@@ -120,16 +120,12 @@
 			<p class="body">This is a great document. You should download it and find out why.</p>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <?php get_footer(); ?>
 <script>
 	$('.video-container').on('click',function(){
-		console.log('yo')
 		var that = this;
-		// $(document).on('open.zf.reveal', '#exampleModal1[data-reveal]', function() {
-		//   console.log('This works');
-		// });
 		$('#exampleModal1').bind('open.zf.reveal',function(){
 			var videoSrc   = $(that).data('video');
 			var videoTitle = $(that).data('title');

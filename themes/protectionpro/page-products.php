@@ -20,49 +20,56 @@
 	</div>
 </section>
 
-<!-- Sales Wheel Section -->
-<section class="sales-wheel hide">
+<section class="product-advantage">
 	<div class="row">
-		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
-			<h3><?php the_field('sales_wheel_title'); ?></h3>
+		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns end text-center">
+			<h2><?php the_field('product_advantage_title'); ?></h2>
 			<hr class="yellow-line">
-			<p><?php the_field('sales_wheel_body'); ?></p>
+			<p class="body"><?php the_field('product_advantage_body'); ?></p>
 		</div>
-		<div class="medium-12 columns">
-			<div class="wheel-bg" style="background-image: url(<?php bloginfo('template_directory'); ?>/assets/images/sales-wheel-bg.jpg);">
-				<div class="row">
-					<div class="medium-3 medium-offset-1 columns text-right">
-						<h4 class="red-title">Increase Sales Monthly</h4>
-						<p>Retail shops can produce protectors for every device that comes in the door.</p>
-					</div>
-					<div class="medium-3 medium-offset-4 columns text-left">
-						<h4 class="red-title">Free up shelf space</h4>
-						<p>ProtectionPro frees up shelf space. Retailers don't have to stock up on product.</p>
-					</div>
-					<div class="medium-3 columns text-right">
-						<h4 class="red-title">Reduce inventory costs</h4>
-						<p>No more stocking of outdated protectors for the few customers that may need them.</p>
-					</div>
-					<div class="medium-3 medium-offset-6 columns text-left">
-						<h4 class="red-title">Go Green</h4>
-						<p>ProtectionPro is a green solution to packaging.</p>
-					</div>
-					<div class="clearfix"></div>
-					<div class="medium-3 medium-offset-1 columns text-right">
-						<h4 class="red-title">Improve Profits</h4>
-						<p>Significantly reduce inventory carrying costs. Eliminate the risk of inventory loss and damage.</p>
-					</div>
-					<div class="medium-3 medium-offset-4 columns end text-left">
-						<h4 class="red-title">Time to Market</h4>
-						<p>Screen protectors and full body protection designs are ready to sell on the day a product is released.</p>
-					</div>
-				</div>
-			</div>
+		<div class="large-5 large-offset-1 medium-6 columns">
+			<ul>
+				<?php if(get_field('product_advantage1')) { ?>
+				<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('product_advantage1'); ?></li>
+				<?php } ?>
+
+				<?php if(get_field('product_advantage3')) { ?>
+				<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('product_advantage3'); ?></li>
+				<?php } ?>
+
+				<?php if(get_field('product_advantage5')) { ?>
+				<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('product_advantage5'); ?></li>
+				<?php } ?>
+
+				<?php if(get_field('product_advantage7')) { ?>
+				<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('product_advantage7'); ?></li>
+				<?php } ?>
+
+			</ul>
+		</div>
+		<div class="large-5 medium-6 columns end">
+			<ul>
+				<?php if(get_field('product_advantage2')) { ?>
+				<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('product_advantage2'); ?></li>
+				<?php } ?>
+
+				<?php if(get_field('product_advantage4')) { ?>
+				<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('product_advantage4'); ?></li>
+				<?php } ?>
+
+				<?php if(get_field('product_advantage6')) { ?>
+				<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('product_advantage6'); ?></li>
+				<?php } ?>
+
+				<?php if(get_field('product_advantage8')) { ?>
+				<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('product_advantage8'); ?></li>
+				<?php } ?>
+			</ul>
 		</div>
 	</div>
 </section>
 
-<section class="hardware-table clearfix">
+<section class="hardware-table clearfix" id="hardware-comparison">
 	<div class="row">
 		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
 			<h3>A Hardware Solution for Every Need</h3>
@@ -120,7 +127,7 @@
 				<img class="slide-img" src="<?php bloginfo('template_directory'); ?>/assets/images/slide-compare.jpg" alt="slide left to compare">
 				<img class="slide-img-right" src="<?php bloginfo('template_directory'); ?>/assets/images/slide-right.jpg" alt="slide right to compare">
 				
-				<div class="owl-carousel owl-theme">
+				<div class="compare-carousel owl-carousel owl-theme">
 			    <div class="item">
 			    	<div class="medium-4 columns">
 			    		<h3 class="red-title"><?php the_field('express_title'); ?></h3>
@@ -196,20 +203,72 @@
 		</div>
 	</div>
 </section>
-
-<section class="library" style="background-image: url(<?php the_field('library_bg'); ?>);">
+		
+<section class="full-body">
 	<div class="row">
-		<div class="large-6 columns">
-			<h3><?php the_field('library_title'); ?></h3>
+		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
+			<h2>Customized Full Body Protection Make It Unique</h2>
 			<hr class="yellow-line">
-			<div class="clearfix"></div>
-			<p><?php the_field('library_body'); ?></p>
-			<a href="#!" class="button btn-white"><?php the_field('library_button_text'); ?></a>
+			<p class="body">ProtectionPro offers a full range of body protectors that also allow you to customize the look and feel of your device. They're available for tablets, eReaders, phones, cameras, and wearables</p>
 		</div>
+		<div class="clearfix"></div>
+				<div class="medium-8 columns carousel-column">
+					<div class="full-body-carousel owl-carousel owl-theme">
+					    <div class="item" data-hash="1">
+					    	<img src="http://fillmurray.com/1200/500" alt="">
+					    </div>
+					    <div class="item" data-hash="2">
+					    	<img src="http://fillmurray.com/1201/500" alt="">
+					    </div>
+					    <div class="item" data-hash="3">
+					    	<img src="http://fillmurray.com/1202/500" alt="">
+					    </div>
+					    <div class="item" data-hash="4">
+					    	<img src="http://fillmurray.com/1203/500" alt="">
+					    </div>
+					</div>
+				</div>
+				<div class="medium-4 columns black-column">
+					<div class="black-bg">
+						<h4>Our Full Body Protection</h4>
+						<ul>
+							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; Unique style and personalization</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; Variety of texture and color options</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;  case-friendly options</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; Increased durability</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; The ability to update the look of a legacy or damaged device</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; Seamless integration with ClearPlex film</li>
+							<li>
+								<ul class="img-ul">
+									<li><a href="#1"><img src="http://fillmurray.com/50/50" alt=""></a></li>
+									<li><a href="#2"><img src="http://fillmurray.com/50/50" alt=""></a></li>
+									<li><a href="#3"><img src="http://fillmurray.com/50/50" alt=""></a></li>
+									<li><a href="#4"><img src="http://fillmurray.com/50/50" alt=""></a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns end text-center">
+					<p>Full body protectors are made using the same equipment and technology as screen protectors. Templates are downloaded from our library and full body protectors are cut on the same cutters--in the same amount of time. The only distinction is that a different product is cut and it's installed on the device a bit differently.</p>
+				</div>
 	</div>
 </section>
 
-<section class="store-study">
+<!-- <section class="library" style="background-image: url(<?php //the_field('library_bg'); ?>);">
+	<div class="row">
+		<div class="large-6 columns">
+			<h3><?php //the_field('library_title'); ?></h3>
+			<hr class="yellow-line">
+			<div class="clearfix"></div>
+			<p><?php //the_field('library_body'); ?></p>
+			<a href="#!" class="button btn-white"><?php //the_field('library_button_text'); ?></a>
+		</div>
+	</div>
+</section> -->
+
+<!-- <section class="store-study">
 	<div class="row">
 		<div class="medium-8 medium-offset-2 columns text-center case-heading">
 			<h3><?php the_field('store_title'); ?></h3>
@@ -258,9 +317,9 @@
 
 
 	</div>
-</section>
+</section> -->
 
-<section class="product-faqs">
+<!-- <section class="product-faqs">
 	<div class="row">
 		<div class="medium-8 medium-offset-2 columns text-center">
 			<h3><?php the_field('faq_title'); ?></h3>
@@ -309,6 +368,6 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <?php get_footer(); ?>

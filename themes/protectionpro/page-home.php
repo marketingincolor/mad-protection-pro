@@ -102,7 +102,7 @@
 			<hr class="yellow-line">
 		</div>
 		<div class="medium-9 columns">
-			<p class="body">While our competitors have just one cutting machine, ProtectionPro offers three different cutters, and feature the fastest cutting and install times.</p>
+			<p class="body"><?php the_field('home_cutters_body'); ?></p>
 		</div>
 
 		<?php for ($count=1; $count < 4; $count++) { ?> 
@@ -111,7 +111,7 @@
 			<h4 class="cutter-title"><?php the_field('cutter'.$count.'_title'); ?></h4>
 			<p class="cutter-body"><?php the_field('cutter'.$count.'_body'); ?></p>
 			<?php if ($count == 1) { ?>
-				<a href="/products" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
+				<a href="/products#hardware-comparison" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
 			<?php } ?>
 		</div>
 
@@ -133,6 +133,49 @@
 			<div class="clearfix"></div>
 			<p><?php the_field('protection_body'); ?></p>
 			<a href="#!" class="button btn-black"><?php the_field('protection_button'); ?></a>
+		</div>
+	</div>
+</section>
+
+<!-- Sales Wheel Section -->
+<section class="sales-wheel">
+	<div class="row">
+		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
+			<h3><?php the_field('sales_wheel_title'); ?></h3>
+			<hr class="yellow-line">
+			<p><?php the_field('sales_wheel_body'); ?></p>
+		</div>
+		<div class="medium-12 columns">
+			<div class="wheel-bg" style="background-image: url(<?php bloginfo('template_directory'); ?>/assets/images/sales-wheel-bg.jpg);">
+				<div class="row">
+					<div class="medium-3 medium-offset-1 columns text-right">
+						<h4 class="red-title"><?php the_field('11oclock_title'); ?></h4>
+						<p><?php the_field('11oclock_body'); ?></p>
+					</div>
+					<div class="medium-3 medium-offset-4 columns text-left">
+						<h4 class="red-title"><?php the_field('1oclock_title'); ?></h4>
+						<p><?php the_field('1oclock_body'); ?></p>
+					</div>
+					<div class="clearfix"></div>
+					<div class="medium-3 columns text-right">
+						<h4 class="red-title"><?php the_field('9oclock_title'); ?></h4>
+						<p><?php the_field('9oclock_body'); ?></p>
+					</div>
+					<div class="medium-3 medium-offset-6 columns text-left">
+						<h4 class="red-title"><?php the_field('3oclock_title'); ?></h4>
+						<p><?php the_field('3oclock_body'); ?></p>
+					</div>
+					<div class="clearfix"></div>
+					<div class="medium-3 medium-offset-1 columns text-right">
+						<h4 class="red-title"><?php the_field('7oclock_title'); ?></h4>
+						<p><?php the_field('7oclock_body'); ?></p>
+					</div>
+					<div class="medium-3 medium-offset-4 columns end text-left">
+						<h4 class="red-title"><?php the_field('5oclock_title'); ?></h4>
+						<p><?php the_field('5oclock_body'); ?></p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

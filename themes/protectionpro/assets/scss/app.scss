@@ -78,7 +78,7 @@ a,button{
 .top-bg{
 	background-size: cover;
 	background-repeat: no-repeat;
-	padding: 5% 0;
+	padding: 4.5% 0;
 	@media(max-width: 943px){
 		padding: 0;
 		height: 115px;
@@ -509,7 +509,7 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 
 .cutters{
 	@extend %bg_img;
-	padding: 8% 0 20%;
+	padding: 8% 0 30%;
 	background-position: center bottom;
 	@include breakpoint(small only){
 		padding: 15% 0 50%;
@@ -570,6 +570,29 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	}
 }
 
+.sales-wheel{
+	padding: 10% 0;
+	h3{
+		@include margin(0,bottom);
+	}
+	p{
+		@include margin(100,bottom);
+	}
+	.wheel-bg{
+		background-position: center center;
+		background-repeat: no-repeat;
+		@media(max-width: 1140px){
+			background-size: contain;
+		}
+		h4{font-size: 20px;}
+		p{font-size: 14px;}
+		.columns{
+			position: relative;
+			top: 50px;
+		}
+	}
+}
+
 .home-case-studies{
 	@extend %bg_img;
 	padding: 10% 0;
@@ -615,6 +638,18 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 			height: auto;
 			padding-bottom: 10px;
 		}
+		.center-vert{
+			width: 37%;
+			@media(max-width: 1125px){
+				width: 55%;
+			}
+			@media(max-width: 900px){
+				width: 75%;
+			}
+			@media(max-width: 768px){
+				width: 90%;
+			}
+		}
 		.center-vert p{
 			line-height: 1.8
 		}
@@ -654,26 +689,73 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	}
 }
 
-.sales-wheel{
+.product-advantage{
+	padding: 8% 0;
+	@include breakpoint(medium down){
+		@include pad30-mobile;
+	}
+	h2{
+		@include font(36);
+		@include breakpoint(small only){
+			@include font(30);
+		}
+	}
+	.body{
+		@include margin(50,bottom);
+	}
+	ul{
+		@include margin(0,left);
+		list-style-type: none;
+		i{
+			color:$red;
+		}
+		li{
+			text-indent: -1em;
+			padding: 10px 0 10px 40px;
+		}
+	}
+}
+
+.full-body{
 	padding: 10% 0;
-	h3{
-		@include margin(0,bottom);
+	background-color: #f7f7f7;
+	h2{
+		@include font(36);
 	}
-	p{
-		@include margin(100,bottom);
+	.black-bg{
+		background-color: $black;
+		padding: 30px;
+		color: white;
+		h4{
+			margin-bottom: 20px;
+		}
 	}
-	.wheel-bg{
-		background-position: center center;
-		background-repeat: no-repeat;
-		@media(max-width: 1140px){
-			background-size: contain;
+	ul{
+		@include margin(0,left);
+		list-style-type: none;
+		i{
+			color:$red;
 		}
-		h4{font-size: 20px;}
-		p{font-size: 14px;}
-		.columns{
-			position: relative;
-			top: 50px;
+		li{
+			text-indent: -1.2em;
+			padding: 0 0 0 40px;
+			@include font(14);
 		}
+	}
+	.img-ul{
+		li{
+			display: inline-block;
+			padding:0;
+		}
+	}
+	.black-bg li{
+		
+	}
+	.carousel-column{
+		padding-right: 0;
+	}
+	.black-column{
+		padding-left: 0;
 	}
 }
 
