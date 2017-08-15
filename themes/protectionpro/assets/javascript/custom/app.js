@@ -6,26 +6,15 @@ $(document).ready(function(){
 	navSlideDown();
 	scrollDown();
 	productCarousel();
-	switchImage();
 });
 
 $(window).resize(function(){
 	
 });
 
-//switch slide image on mobile comparison table (products page)
-function switchImage(){
-	
-
-	
-
-}
-
 // product table carousel for mobile
 function productCarousel(){
-	var owl = $('.owl-carousel');
-
-	owl.owlCarousel({
+	$('.owl-carousel').owlCarousel({
     center: false,
     stagePadding: 30,
     items:1,
