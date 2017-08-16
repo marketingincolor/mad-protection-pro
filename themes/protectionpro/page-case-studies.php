@@ -96,9 +96,6 @@
 
 					<?php $string = get_the_content(); ?>
 					<?php echo substr($string, 0, strrpos(substr($string, 0, 200), ' ')); ?>
-					<?php //echo strtok(wordwrap($string, 100, "...\n"), "\n"); ?>
-
-					<p><?php //echo wp_trim_words(get_the_content(),20,'...'); ?></p>
 					<a href="<?php the_permalink(); ?>" class="button"><?php the_field('store_button_text'); ?></a>
 				</aside>
 			</div>

@@ -68,18 +68,11 @@ function fullBodyCarousel(){
 
 // make columns on product page always stay equal height
 function columnHeight(){
-	// var leftColHeight  = $('.carousel-column').outerHeight();
-	// var rightColHeight = $('.black-column').outerHeight();
+	var rightColHeight = $('.black-column').outerHeight();
 
-	// $('.carousel-column').find('.owl-item').find('img').each(function(){
-	// 	$(this).css({'height':leftColHeight});
-	// });
-
-	// if (leftColHeight > rightColHeight){
-	// 	$('.black-column').css({'height':leftColHeight});
-	// }else{
-	// 	$('.carousel-column').css({'height':rightColHeight});
-	// }
+	$('.full-body').find('.item').each(function(){
+		$(this).css({'height':rightColHeight});
+	});
 }
 
 // Scroll down to second section on home page
@@ -93,7 +86,8 @@ function scrollDown(){
 }
 
 // Adds a disabled option to the beginning of <select> elements
-// in contact forms, since Ninja Forms can't do it.
+// in contact forms, since Ninja Forms can't do it. Uses setTimeout 
+// in order to run after Ninja Forms
 setTimeout(function(){
 	(function addDisabledSelect(){
 		var $form = $('.nf-form-cont');
@@ -103,6 +97,16 @@ setTimeout(function(){
 		$form.find('#nf-field-9,#nf-field-17').find('option:first').before('<option disabled="disabled" selected="selected">Select country</option>');
 	})();
 },150);
+
+// change placeholder text on mobile for first and last name
+setTimeout(function(){
+	if ($(window).width() < 640) {
+		// first name
+		$('.page-template-page-contact').find('#nf-field-1').attr('placeholder','First name')
+		// last name
+		$('.page-template-page-contact').find('#nf-field-6').attr('placeholder','Last name')
+	}
+},250);
 
 // makes nav slide down after scrolling past 1st section
 function navSlideDown(){

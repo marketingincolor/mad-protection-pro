@@ -37,7 +37,7 @@
 					</div>
 					<div class="top-bar-right">
 						<span class="login hide-for-small-only">
-							<a href="#!">Reports Login <i class="fa fa-lock" aria-hidden="true"></i></a>
+							<a href="http://reports.clearplex.com">Reports Login <i class="fa fa-lock" aria-hidden="true"></i></a>
 						</span>
 						<?php foundationpress_top_bar_r(); ?>
 
@@ -50,7 +50,7 @@
 								<!-- Display Mobile Menu -->
 						  	<?php wp_nav_menu( array( 'theme_location' => 'footer-menu','menu_id' => 'mobile-menu-modal','menu_class' => 'mobile-menu-list','container' => 'ul' )); ?>
 						  <span class="mobile-login">
-						  	<a href="#!">Reports Login <i class="fa fa-lock" aria-hidden="true"></i></a>
+						  	<a href="http://reports.clearplex.com">Reports Login <i class="fa fa-lock" aria-hidden="true"></i></a>
 						  </span>
 						  <button class="close-button" data-close aria-label="Close reveal" type="button">
 						    <span aria-hidden="true">&times;</span>

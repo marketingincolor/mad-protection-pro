@@ -23,7 +23,7 @@
 				<article class="body">
 					<?php the_content(); ?>
 					<a href="#!" class="btn button">Share Case Study</a>
-					<a href="/case-studies" class="btn button">View More Case Studies</a>
+					<a href="<?php echo site_url(); ?>/case-studies" class="btn button">View More Case Studies</a>
 				</article>
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 					<article class="body">
 						<?php the_content(); ?>
 						<a href="#!" class="btn button">Share Case Study</a>
-						<a href="/case-studies" class="btn button">View More Case Studies</a>
+						<a href="<?php echo site_url(); ?>/case-studies" class="btn button">View More Case Studies</a>
 					</article>
 				</div>
 			</section>

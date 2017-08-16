@@ -183,7 +183,7 @@
 	</div>
 </section>
 
-<section class="touchscreen" style="background-image: url(<?php the_field('touchscreen_bg'); ?>);">
+<section id="touchscreen" class="touchscreen" style="background-image: url(<?php the_field('touchscreen_bg'); ?>);">
 	<div class="row">
 		<div class="large-6 large-offset-6 columns">
 			<div class="text-center">
@@ -196,7 +196,9 @@
 			<ul>
 
 				<?php for ($i=1; $i < 9; $i++) { ?>
-					<li><?php the_field('touchscreen_check'); ?>&nbsp;&nbsp; <?php the_field('touchscreen_item'.$i); ?></li>
+					<?php if (get_field('touchscreen_item'.$i)) { ?>
+					  <li><?php the_field('touchscreen_check'); ?>&nbsp;&nbsp; <?php the_field('touchscreen_item'.$i); ?></li>
+					<?php } ?>
 				<?php } ?>
 
 			</ul>
@@ -214,18 +216,14 @@
 		<div class="clearfix"></div>
 				<div class="medium-8 columns carousel-column">
 					<div class="full-body-carousel owl-carousel owl-theme">
-					    <div class="item" data-hash="1">
-					    	<img src="http://fillmurray.com/1200/500" alt="">
-					    </div>
-					    <div class="item" data-hash="2">
-					    	<img src="http://fillmurray.com/1201/500" alt="">
-					    </div>
-					    <div class="item" data-hash="3">
-					    	<img src="http://fillmurray.com/1202/500" alt="">
-					    </div>
-					    <div class="item" data-hash="4">
-					    	<img src="http://fillmurray.com/1203/500" alt="">
-					    </div>
+				    <div class="item" data-hash="1" style="background-image:url(http://fillmurray.com/1200/500);">
+				    </div>
+				    <div class="item" data-hash="2" style="background-image:url(http://fillmurray.com/1301/500);">
+				    </div>
+				    <div class="item" data-hash="3" style="background-image:url(http://fillmurray.com/1202/500);">
+				    </div>
+				    <div class="item" data-hash="4" style="background-image:url(http://fillmurray.com/1209/500);">
+				    </div>
 					</div>
 				</div>
 				<div class="medium-4 columns black-column">
@@ -240,10 +238,10 @@
 							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; Seamless integration with ClearPlex film</li>
 							<li>
 								<ul class="img-ul">
-									<li><a href="#1"><img src="http://fillmurray.com/50/50" alt=""></a></li>
-									<li><a href="#2"><img src="http://fillmurray.com/50/50" alt=""></a></li>
-									<li><a href="#3"><img src="http://fillmurray.com/50/50" alt=""></a></li>
-									<li><a href="#4"><img src="http://fillmurray.com/50/50" alt=""></a></li>
+									<li><a href="#1"><img src="<?php bloginfo('template_directory'); ?>/assets/images/Alligator_Black.jpg" alt=""></a></li>
+									<li><a href="#2"><img src="<?php bloginfo('template_directory'); ?>/assets/images/CarbonFiber_Silver.jpg" alt=""></a></li>
+									<li><a href="#3"><img src="<?php bloginfo('template_directory'); ?>/assets/images/CarbonFiber_Black.jpg" alt=""></a></li>
+									<li><a href="#4"><img src="<?php bloginfo('template_directory'); ?>/assets/images/CarbonFiber_White.jpg" alt=""></a></li>
 								</ul>
 							</li>
 						</ul>
