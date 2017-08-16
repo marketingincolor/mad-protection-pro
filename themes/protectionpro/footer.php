@@ -50,10 +50,10 @@
 							</div>
 							<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' )); ?>
 							<div class="footer-credits">
-								<p class="copyright">Copyright &copy;<?php echo date('Y') ?>  ClearPlex&reg; by ProtectionPro by Madico&reg;</p>
+								<p class="copyright">Copyright &copy;<?php echo date('Y') ?>  ClearPlex&reg; ProtectionPro by Madico&reg;</p>
 								<ul>
-									<li><a href="#!">Reports Login</a></li> |
-									<li><a href="#!">Privacy Policy</a></li>
+									<li><a href="http://reports.clearplex.com">Reports Login</a></li> |
+									<li><a href="<?php echo site_url(); ?>/privacy-policy">Privacy Policy</a></li>
 								</ul>
 							</div>
 						</div>

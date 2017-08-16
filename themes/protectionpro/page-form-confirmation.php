@@ -23,9 +23,9 @@
 	<div class="row">
 		<div class="large-10 large-offset-1 columns text-center">
 			<ul>
-				<li><a href="#!" class="button btn-black text-center"><?php the_field('left_box_icon'); ?></i><br /><?php the_field('left_box_text'); ?></a></li>
-				<li><a href="#!" class="button btn-black text-center"><?php the_field('middle_box_icon'); ?><br /><?php the_field('middle_box_text'); ?></a></li>
-				<li><a href="#!" class="button btn-black text-center"><?php the_field('right_box_icon'); ?></i><br /><?php the_field('right_box_text'); ?></a></li>
+				<li><a href="<?php echo site_url(); ?>/resources" class="button btn-black text-center"><?php the_field('left_box_icon'); ?></i><br /><?php the_field('left_box_text'); ?></a></li>
+				<li><a href="<?php echo site_url(); ?>/distributor" class="button btn-black text-center"><?php the_field('middle_box_icon'); ?><br /><?php the_field('middle_box_text'); ?></a></li>
+				<li><a href="<?php echo site_url(); ?>/case-studies" class="button btn-black text-center"><?php the_field('right_box_icon'); ?></i><br /><?php the_field('right_box_text'); ?></a></li>
 			</ul>
 		</div>
 	</div>

@@ -6,25 +6,72 @@ $(document).ready(function(){
 	navSlideDown();
 	scrollDown();
 	productCarousel();
+	fullBodyCarousel();
+	columnHeight();
 });
 
 $(window).resize(function(){
-	
+	columnHeight();
 });
 
 // product table carousel for mobile
 function productCarousel(){
-	$('.owl-carousel').owlCarousel({
+	$('.compare-carousel').owlCarousel({
     center: false,
     stagePadding: 30,
     items:1,
     loop:false,
     margin:0,
     responsive:{
-        640:{
-            items:2
-        }
+      640:{
+          items:2
+      }
     }
+	});
+
+	$('.compare-carousel').on('translated.owl.carousel', function(event) {
+		var $lastSlide = $('.hardware-table').find('.owl-item')[2];
+		var $firstSlide = $('.hardware-table').find('.owl-item')[0];
+
+	  if ($lastSlide.classList.contains('active')) {
+	  	$('.slide-img').css('display','none');
+	  	$('.slide-img-right').css('display','block');
+	  }else if($firstSlide.classList.contains('active')){
+	  	$('.slide-img-right').css('display','none');
+	  	$('.slide-img').css('display','block');
+	  }
+	});
+
+	$('.slide-img-right').on('click',function(){
+		$('.compare-carousel').trigger('prev.owl.carousel');
+	});
+
+	$('.slide-img').on('click',function(){
+		$('.compare-carousel').trigger('next.owl.carousel');
+	});
+}
+
+// Full Body Protection Carousel on product page
+function fullBodyCarousel(){
+	$('.full-body-carousel').owlCarousel({
+    items:1,
+    loop:false,
+    center:true,
+    margin:0,
+    URLhashListener:true,
+    autoplayHoverPause:true,
+    startPosition: 'URLHash',
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn'
+  });
+}
+
+// make columns on product page always stay equal height
+function columnHeight(){
+	var rightColHeight = $('.black-column').outerHeight();
+
+	$('.full-body').find('.item').each(function(){
+		$(this).css({'height':rightColHeight});
 	});
 }
 
@@ -39,7 +86,8 @@ function scrollDown(){
 }
 
 // Adds a disabled option to the beginning of <select> elements
-// in contact forms, since Ninja Forms can't do it.
+// in contact forms, since Ninja Forms can't do it. Uses setTimeout 
+// in order to run after Ninja Forms
 setTimeout(function(){
 	(function addDisabledSelect(){
 		var $form = $('.nf-form-cont');
@@ -50,11 +98,20 @@ setTimeout(function(){
 	})();
 },150);
 
+// change placeholder text on mobile for first and last name
+setTimeout(function(){
+	if ($(window).width() < 640) {
+		// first name
+		$('.page-template-page-contact').find('#nf-field-1').attr('placeholder','First name')
+		// last name
+		$('.page-template-page-contact').find('#nf-field-6').attr('placeholder','Last name')
+	}
+},250);
+
 // makes nav slide down after scrolling past 1st section
 function navSlideDown(){
 	var viewportHeight = $(window).height();
 	if ($('body').hasClass('home') || $('body').hasClass('page-template-page-products')) {
-		console.log('home');
 		if ($(window).scrollTop() > 200 && $(window).scrollTop() < viewportHeight) {
 			$('.top-bar').removeClass('slide-down').addClass('opacity0');
 		}

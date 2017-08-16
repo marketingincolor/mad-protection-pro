@@ -93,7 +93,9 @@
 				<?php the_post_thumbnail( 'full' ); ?>
 				<aside class="case-meta">
 					<h5 class="red-title"><?php the_title(); ?></h5>
-					<p><?php echo wp_trim_words(get_the_content(),20,'...'); ?></p>
+
+					<?php $string = get_the_content(); ?>
+					<?php echo substr($string, 0, strrpos(substr($string, 0, 200), ' ')); ?>
 					<a href="<?php the_permalink(); ?>" class="button"><?php the_field('store_button_text'); ?></a>
 				</aside>
 			</div>
@@ -112,3 +114,6 @@
 <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
+<script>
+	$('.case-meta').find('h3').remove();
+</script>

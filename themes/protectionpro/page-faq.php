@@ -19,7 +19,7 @@
 		<div class="medium-10 medium-offset-1 columns end">
 			<?php get_search_form(); ?>
 		</div>
-		<div class="large-8 large-offset-1 medium-9 columns">
+		<div class="large-8 large-offset-1 medium-12 columns">
 			
 			<ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
 			  <li class="accordion-item is-active" data-accordion-item>

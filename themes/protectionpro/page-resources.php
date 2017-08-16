@@ -19,21 +19,25 @@
 			<img src="<?php the_field('support_img'); ?>" alt="">
 			<h4 class="red-title"><?php the_field('support_title'); ?></h4>
 			<ul>
-				<?php for ($i=1; $i < 7; $i++) { ?>
-					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('support_item'.$i); ?></li>
+				<?php for ($i=1; $i < 10; $i++) { ?>
+					<?php if (get_field('support_item'.$i)) { ?>
+					  <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('support_item'.$i); ?></li>
+					 <?php } ?>
 				<?php } ?>
 			</ul>
-			<a href="#!" class="button btn-black">Get Support</a>
+			<a href="<?php echo site_url(); ?>/contact" class="button btn-black">Get Support</a>
 		</div>
 		<div class="medium-6 columns">
 			<img src="<?php the_field('training_img'); ?>" alt="">
 			<h4 class="red-title"><?php the_field('training_title'); ?></h4>
 			<ul>
-				<?php for ($i=1; $i < 5; $i++) { ?>
-					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('training_item'.$i); ?></li>
+				<?php for ($i=1; $i < 10; $i++) { ?>
+					<?php if (get_field('training_item'.$i)) { ?>
+						<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('training_item'.$i); ?></li>
+					<?php } ?>
 				<?php } ?>
 			</ul>
-			<a href="/training" class="button btn-black">Training Videos</a>
+			<a href="<?php echo site_url(); ?>/training" class="button btn-black">Training Videos</a>
 		</div>
 		<div class="clearfix"></div>
 		<section class="view-resources">
@@ -56,8 +60,6 @@
 						<div class="small-9 columns">
 							<h5 class="red-title"><?php the_field('title'.$i); ?></h5>
 							<p><?php the_field('body'.$i); ?></p>
-						</div>
-						<div class="small-12 columns">
 							<a href="<?php the_field('link'.$i); ?>" class="button resource-cta"><?php the_field('button_text'.$i); ?></a>
 						</div>
 					</div>
