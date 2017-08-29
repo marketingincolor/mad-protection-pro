@@ -39,23 +39,15 @@
 				<h2 class="red-title">Videos</h2>
 			</header> -->
 		</div>
-		<div class="medium-9 columns">
+		<div class="medium-12 columns">
 			<div class="row">
 
 			<?php
-			// Query custom post type "case_studies" to get 
-			// product page case study only
+			// Query custom post type "videos"
 
 			$args = array(
 				'post_type'      => 'videos',
 				'posts_per_page' => -1
-				// 'tax_query'      => array(
-				// 	array(
-				// 		'taxonomy'   => 'home_case_study',
-				// 		'field'      => 'slug',
-				// 		'terms'      => 'product_page',
-				// 	),
-				// ),
 			);
 
 			$the_query = new WP_Query($args);
@@ -65,7 +57,7 @@
 					$the_query->the_post();
 			?>
 
-				<div class="medium-4 columns">
+				<div class="medium-3 columns">
 					<div class="video-container" title="Play Video" data-title="<?php the_title(); ?>" data-video="<?php the_field('video_url'); ?>">
 						<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/play-icon.png" alt="Play Video" class="play-img">
 					</div>
@@ -77,19 +69,19 @@
 
 			</div>
 		</div>
-		<div class="medium-2 medium-offset-1 columns">
+		<!-- <div class="medium-2 medium-offset-1 columns">
 			<aside class="video-cats">
 				<ul>
 					<?php 
-						$taxonomy = 'videos';
-						$terms = get_terms($taxonomy, ['hide_empty' => false,]);
-						foreach($terms as $term) {
-						  echo '<li><h6 class="red-title">' . $term->name . '</h6></li>';
-						}
+						// $taxonomy = 'videos';
+						// $terms = get_terms($taxonomy, ['hide_empty' => false,]);
+						// foreach($terms as $term) {
+						//   echo '<li><h6 class="red-title">' . $term->name . '</h6></li>';
+						// }
 					?>
 				</ul>
 			</aside>
-		</div>
+		</div> -->
 	</div>
 </section>
 

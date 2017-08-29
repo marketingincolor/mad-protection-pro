@@ -22,17 +22,7 @@
 		?>
 
 		<div class="footer-container" data-sticky-footer>
-			<footer id="footer" >
-				<aside class="top-footer" style="background-image: url(<?php the_field('footer_bg',$footer_id); ?>);">
-					<div class="row">
-						<div class="medium-8 medium-offset-2 columns">
-							<div class="footer-meta">
-								<p><?php the_field('footer_body',$footer_id); ?></p>
-								<a href="<?php echo site_url(); ?>/contact" class="button btn-white"><?php the_field('footer_button_text',$footer_id); ?></a>
-							</div>
-						</div>
-					</div>
-				</aside>
+			<footer id="footer">
 				<aside class="bottom-footer">
 					<div class="row">
 						<div class="large-8 large-offset-2 columns">

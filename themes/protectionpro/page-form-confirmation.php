@@ -12,7 +12,7 @@
 <section class="contact-header">
 	<div class="row">
 		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
-			<h1><?php the_title(); ?></h1>
+			<h1><?php the_field('page_heading'); ?></h1>
 			<hr class="yellow-line">
 			<article class="body"><?php the_content(); ?></article>
 		</div>
@@ -23,9 +23,19 @@
 	<div class="row">
 		<div class="large-10 large-offset-1 columns text-center">
 			<ul>
-				<li><a href="<?php echo site_url(); ?>/resources" class="button btn-black text-center"><?php the_field('left_box_icon'); ?></i><br /><?php the_field('left_box_text'); ?></a></li>
-				<li><a href="<?php echo site_url(); ?>/distributor" class="button btn-black text-center"><?php the_field('middle_box_icon'); ?><br /><?php the_field('middle_box_text'); ?></a></li>
-				<li><a href="<?php echo site_url(); ?>/case-studies" class="button btn-black text-center"><?php the_field('right_box_icon'); ?></i><br /><?php the_field('right_box_text'); ?></a></li>
+				<?php if(get_field('left_box_link')) { ?>
+
+				<li><a href="<?php echo site_url();the_field('left_box_link'); ?>" class="button btn-black text-center"><?php the_field('left_box_icon'); ?></i><br /><?php the_field('left_box_text'); ?></a></li>
+
+				<?php } if(get_field('middle_box_link')) { ?>
+
+				<li><a href="<?php echo site_url(); the_field('middle_box_link');?>" class="button btn-black text-center"><?php the_field('middle_box_icon'); ?><br /><?php the_field('middle_box_text'); ?></a></li>
+
+				<?php } if(get_field('right_box_link')) { ?>
+
+					<li><a href="<?php echo site_url();the_field('right_box_link');?>" class="button btn-black text-center"><?php the_field('right_box_icon'); ?></i><br /><?php the_field('right_box_text'); ?></a></li>
+
+				<?php } ?>
 			</ul>
 		</div>
 	</div>
@@ -33,4 +43,4 @@
 
 <?php endwhile; endif; ?>
 
-<?php get_footer(); ?>
+<?php get_footer('success'); ?>

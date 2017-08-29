@@ -14,6 +14,7 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>.partner-logos{display:flex;list-style-type:none;align-items:center}</style>
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
@@ -61,6 +62,7 @@
 			</div>
 		</nav>
 	<!-- </header> -->
+	<script>templateURL = '<?php bloginfo("template_directory"); ?>';</script>
 
 	<section class="container">
 		<?php do_action( 'foundationpress_after_header' );
