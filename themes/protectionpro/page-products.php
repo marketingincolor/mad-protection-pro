@@ -208,49 +208,45 @@
 		
 <section class="full-body">
 	<div class="row">
-		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
-			<h2>Customized Full Body Protection Make It Unique</h2>
+		<div class="medium-10 medium-offset-1 columns text-center">
+			<h2><?php the_field('full_body_heading'); ?></h2>
 			<hr class="yellow-line">
-			<p class="body">ProtectionPro offers a full range of body protectors that also allow you to customize the look and feel of your device. They're available for tablets, eReaders, phones, cameras, and wearables</p>
+			<p class="body"><?php the_field('full_body_body'); ?></p>
 		</div>
 		<div class="clearfix"></div>
-				<div class="medium-8 columns carousel-column">
-					<div class="full-body-carousel owl-carousel owl-theme">
-				    <div class="item" data-hash="1" style="background-image:url(http://fillmurray.com/1200/500);">
-				    </div>
-				    <div class="item" data-hash="2" style="background-image:url(http://fillmurray.com/1301/500);">
-				    </div>
-				    <div class="item" data-hash="3" style="background-image:url(http://fillmurray.com/1202/500);">
-				    </div>
-				    <div class="item" data-hash="4" style="background-image:url(http://fillmurray.com/1209/500);">
-				    </div>
-					</div>
-				</div>
-				<div class="medium-4 columns black-column">
-					<div class="black-bg">
-						<h4>Our Full Body Protection</h4>
-						<ul>
-							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; Unique style and personalization</li>
-							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; Variety of texture and color options</li>
-							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;  case-friendly options</li>
-							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; Increased durability</li>
-							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; The ability to update the look of a legacy or damaged device</li>
-							<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; Seamless integration with ClearPlex film</li>
-							<li>
-								<ul class="img-ul">
-									<li><a href="#1"><img src="<?php bloginfo('template_directory'); ?>/assets/images/Alligator_Black.jpg" alt=""></a></li>
-									<li><a href="#2"><img src="<?php bloginfo('template_directory'); ?>/assets/images/CarbonFiber_Silver.jpg" alt=""></a></li>
-									<li><a href="#3"><img src="<?php bloginfo('template_directory'); ?>/assets/images/CarbonFiber_Black.jpg" alt=""></a></li>
-									<li><a href="#4"><img src="<?php bloginfo('template_directory'); ?>/assets/images/CarbonFiber_White.jpg" alt=""></a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-				<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns end text-center">
-					<p>Full body protectors are made using the same equipment and technology as screen protectors. Templates are downloaded from our library and full body protectors are cut on the same cutters--in the same amount of time. The only distinction is that a different product is cut and it's installed on the device a bit differently.</p>
-				</div>
+		<div class="large-7 large-offset-0 medium-10 medium-offset-1 columns carousel-column">
+			<div class="full-body-carousel owl-carousel owl-theme">
+		    <div class="item" data-hash="1" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/alligator-phone.jpg);">
+		    </div>
+		    <div class="item" data-hash="2" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/silver-phone.jpg);">
+		    </div>
+		    <div class="item" data-hash="3" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/white-phone.jpg);">
+		    </div>
+		    <div class="item" data-hash="4" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/black-phone.jpg);">
+		    </div>
+			</div>
+		</div>
+		<div class="large-5 large-offset-0 medium-10 medium-offset-1 columns black-column">
+			<div class="black-bg">
+				<h4><?php the_field('full_body_blackbox_heading'); ?></h4>
+				<ul>
+					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item1'); ?></li>
+					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item2'); ?></li>
+					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;  <?php the_field('full_body_blackbox_item3'); ?></li>
+					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item4'); ?></li>
+					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item5'); ?></li>
+					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item6'); ?></li>
+				</ul>
+				<p class="swatches"><span class="available">Sample Patterns</span> <span class="select">(Select to Preview)</span></p>
+				<ul class="img-ul">
+					<li><a href="#1"><img src="<?php bloginfo('template_directory'); ?>/assets/images/alligator-circle.png" alt="" class="active-swatch"></a></li>
+					<li><a href="#2"><img src="<?php bloginfo('template_directory'); ?>/assets/images/silver-circle.png" alt=""></a></li>
+					<li><a href="#3"><img src="<?php bloginfo('template_directory'); ?>/assets/images/white-circle.png" alt=""></a></li>
+					<li><a href="#4"><img src="<?php bloginfo('template_directory'); ?>/assets/images/black-circle.png" alt=""></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clearfix"></div>
 	</div>
 </section>
 

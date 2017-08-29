@@ -49,7 +49,7 @@
 					<img src="<?php the_field('icon'.$i); ?>" alt="ProtectionPro <?php the_field('title'.$i); ?>">
 					<h5 class="red-title"><?php the_field('title'.$i); ?></h5>
 					<p><?php the_field('body'.$i); ?></p>
-					<a href="<?php the_field('link'.$i); ?>" class="button resource-cta"><?php the_field('button_text'.$i); ?></a>
+					<a href="<?php if(get_field('link'.$i)=='/faq' || get_field('link'.$i)=='/contact'){echo site_url();}the_field('link'.$i); ?>" <?php if(get_field('link'.$i) == 'https://play.google.com/store/apps/details?id=com.clearplex.clearplex20&hl=en' || get_field('link'.$i) == 'http://devices.clearplex.com'){echo 'target="_blank"';} ?> class="button resource-cta"><?php the_field('button_text'.$i); ?></a>
 				</div>
 
 				<div class="medium-6 large-3 columns show-for-small-only">
@@ -64,8 +64,6 @@
 						</div>
 					</div>
 				</div>
-
-
 
 				<?php $count++; ?>
 				<?php if ($count % 2 == 0) { ?>

@@ -34,9 +34,9 @@ $options = get_option('mic_theme_options'); ?>
  	<div class="row">
  		<div class="large-10 large-offset-1 columns text-center">
  			<ul>
- 				<li><a href="#!" class="button btn-black text-center"><?php echo $options['404_left_button_icon']; ?><br /><?php echo $options['404_left_button_text']; ?></a></li>
- 				<li><a href="#!" class="button btn-black text-center"><?php echo $options['404_middle_button_icon']; ?><br /><?php echo $options['404_middle_button_text']; ?></a></li>
- 				<li><a href="#!" class="button btn-black text-center"><?php echo $options['404_right_button_icon']; ?><br /><?php echo $options['404_right_button_text']; ?></a></li>
+ 				<li><a href="<?php echo site_url(); ?>" class="button btn-black text-center"><?php echo $options['404_left_button_icon']; ?><br /><?php echo $options['404_left_button_text']; ?></a></li>
+ 				<li><a href="<?php echo site_url(); ?>/distributor" class="button btn-black text-center"><?php echo $options['404_middle_button_icon']; ?><br /><?php echo $options['404_middle_button_text']; ?></a></li>
+ 				<li><a href="<?php echo site_url(); ?>/faq" class="button btn-black text-center"><?php echo $options['404_right_button_icon']; ?><br /><?php echo $options['404_right_button_text']; ?></a></li> 
  			</ul>
  		</div>
  	</div>

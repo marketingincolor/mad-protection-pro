@@ -8,11 +8,41 @@ $(document).ready(function(){
 	productCarousel();
 	fullBodyCarousel();
 	columnHeight();
+	activeSwatch();
+	ajaxFAQsearch();
 });
 
 $(window).resize(function(){
 	columnHeight();
 });
+
+// change active swatch on full body product section
+function activeSwatch(){
+	var $imgs = $('.img-ul').find('img');
+	$imgs.on('click',function(){
+		$imgs.removeClass('active-swatch');
+		$(this).addClass('active-swatch');
+	});
+}
+
+// Search FAQs using AJAX
+function ajaxFAQsearch(){
+	$('#faq-page').on('keyup','#s',function(e){
+		e.preventDefault();
+		var $form    = $(this).parent().parent();
+    var query    = $(this).val();
+    var $content = $('#accordion-container');
+
+		$.ajax({
+			url: templateURL + '/ajax-search.php',
+			type: 'POST',
+			data: {query : query},
+			success: function(response) {
+        $content.html(response).foundation();
+      }
+		});
+	});
+}
 
 // product table carousel for mobile
 function productCarousel(){
@@ -85,19 +115,6 @@ function scrollDown(){
 	});
 }
 
-// Adds a disabled option to the beginning of <select> elements
-// in contact forms, since Ninja Forms can't do it. Uses setTimeout 
-// in order to run after Ninja Forms
-setTimeout(function(){
-	(function addDisabledSelect(){
-		var $form = $('.nf-form-cont');
-		$form.find('#nf-field-5').find('option').removeAttr("selected");
-		$form.find('#nf-field-5').find('option:first').before('<option disabled="disabled" selected="selected">Select one</option>');
-		$form.find('#nf-field-9,#nf-field-17').find('option').removeAttr("selected");
-		$form.find('#nf-field-9,#nf-field-17').find('option:first').before('<option disabled="disabled" selected="selected">Select country</option>');
-	})();
-},150);
-
 // change placeholder text on mobile for first and last name
 setTimeout(function(){
 	if ($(window).width() < 640) {
@@ -107,6 +124,16 @@ setTimeout(function(){
 		$('.page-template-page-contact').find('#nf-field-6').attr('placeholder','Last name')
 	}
 },250);
+
+// Adds a disabled option to the beginning of <select> elements on Contact Page
+// in contact forms, since Ninja Forms can't do it.
+setTimeout(function(){
+	(function addDisabledSelect(){
+		var $form = $('#nf-form-1-cont');
+		$form.find('#nf-field-5').find('option').removeAttr("selected");
+		$form.find('#nf-field-5').find('option:first').before('<option disabled="disabled" selected="selected">Please Choose One</option>');
+	})();
+},150);
 
 // makes nav slide down after scrolling past 1st section
 function navSlideDown(){

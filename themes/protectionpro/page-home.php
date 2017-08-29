@@ -39,104 +39,6 @@
 	<img src="<?php the_field('top_phone_img_bg'); ?>" alt="">
 </section>
 
-<!-- Advantages section -->
-<section class="advantages">
-	<div class="row">
-		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns">
-			<center>
-				<h3><?php the_field('advantage_title'); ?></h3>
-				<hr class="yellow-line">
-				<p class="advantage-body"><?php the_field('advantage_body'); ?></p>
-			</center>
-		</div>
-
-		<?php
-		// Query custom post type "advantage"
-
-		$args = array(
-			'post_type'      => 'advantage',
-			'orderby'        => 'menu_order',
-			'order'          => 'ASC'
-		);
-
-		$the_query = new WP_Query($args);
-		$count     = 0;
-
-		if ( $the_query->have_posts() ) {
-			while ( $the_query->have_posts() ) {
-				$the_query->the_post();
-				$count++;
-		?>
-		<?php if ($count % 2 == 0): ?>
-			<div class="medium-6 medium-offset-1 columns">
-		<?php else: ?>
-			<div class="medium-5 columns">
-		<?php endif ?>
-
-			<div class="row">
-				<div class="small-3 columns">
-					<?php the_post_thumbnail(); ?>
-				</div>
-				<div class="small-9 columns">
-					<h4 class="advantages-title"><?php the_title(); ?></h4>
-					<p class="advantages-body"><?php echo get_the_content(); ?></p>
-				</div>
-			</div>
-		</div>
-			<?php if ($count % 2 == 0): ?>
-				<div class="clearfix show-for-medium"></div>
-			<?php endif ?>
-
-		<?php }} wp_reset_postdata(); ?>
-
-	</div>
-</section>
-
-<!-- Cutters Section -->
-<?php $cutter_bg_img = get_field('cutters_bg_img'); ?>
-
-<section class="cutters" style="background-image: url(<?php the_field('cutters_bg_img'); ?>);">
-	<div class="row">
-		<div class="small-12 columns">
-			<h5><?php the_field('home_cutters_title'); ?></h5>
-			<hr class="yellow-line">
-		</div>
-		<div class="medium-9 columns">
-			<p class="body"><?php the_field('home_cutters_body'); ?></p>
-		</div>
-
-		<?php for ($count=1; $count < 4; $count++) { ?> 
-
-		<div class="medium-4 columns">
-			<h4 class="cutter-title"><?php the_field('cutter'.$count.'_title'); ?></h4>
-			<p class="cutter-body"><?php the_field('cutter'.$count.'_body'); ?></p>
-			<?php if ($count == 1) { ?>
-				<a href="/products#hardware-comparison" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
-			<?php } ?>
-		</div>
-
-		<?php } ?>
-		<div class="small-12 columns show-for-small-only">
-			<a href="<?php echo site_url(); ?>/products" class="button btn-white"><?php the_field('cutter_button_text'); ?></a>
-		</div>
-
-	</div>
-</section>
-
-<!-- Protection Pro Film Section -->
-
-<section class="protectionpro-film" style="background-image: url(<?php the_field('protection_bg_img'); ?>);">
-	<div class="row">
-		<div class="medium-6 medium-offset-6 columns">
-			<h5><?php the_field('protection_title'); ?></h5>
-			<hr class="yellow-line">
-			<div class="clearfix"></div>
-			<p><?php the_field('protection_body'); ?></p>
-			<a href="<?php echo site_url(); ?>/products#touchscreen" class="button btn-black"><?php the_field('protection_button'); ?></a>
-		</div>
-	</div>
-</section>
-
 <!-- Sales Wheel Section -->
 <section class="sales-wheel">
 	<div class="row">
@@ -158,20 +60,20 @@
 						<p><?php the_field('1oclock_body'); ?></p>
 					</div>
 					<div class="clearfix"></div>
-					<div class="medium-3 columns text-right">
+					<div class="medium-3 columns text-right middle-columns">
 						<h4 class="red-title"><?php the_field('9oclock_title'); ?></h4>
 						<p><?php the_field('9oclock_body'); ?></p>
 					</div>
-					<div class="medium-3 medium-offset-6 columns text-left">
+					<div class="medium-3 medium-offset-6 columns text-left middle-columns">
 						<h4 class="red-title"><?php the_field('3oclock_title'); ?></h4>
 						<p><?php the_field('3oclock_body'); ?></p>
 					</div>
 					<div class="clearfix"></div>
-					<div class="medium-3 medium-offset-1 columns text-right">
+					<div class="medium-3 medium-offset-1 columns text-right bottom-columns">
 						<h4 class="red-title"><?php the_field('7oclock_title'); ?></h4>
 						<p><?php the_field('7oclock_body'); ?></p>
 					</div>
-					<div class="medium-3 medium-offset-4 columns end text-left">
+					<div class="medium-3 medium-offset-4 columns end text-left bottom-columns">
 						<h4 class="red-title"><?php the_field('5oclock_title'); ?></h4>
 						<p><?php the_field('5oclock_body'); ?></p>
 					</div>
@@ -207,7 +109,7 @@
 				<div class="medium-6 columns">
 					<div class="row">
 						<div class="medium-4 small-3 columns text-center">
-							<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/moneyhand-icon.png" alt="">
+							<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/icon-devices.png" alt="">
 						</div>
 						<div class="medium-8 small-9 columns">
 							<h4 class="red-title"><?php the_field('9oclock_title'); ?></h4>
@@ -218,7 +120,7 @@
 				<div class="medium-6 columns">
 					<div class="row">
 						<div class="medium-4 small-3 columns text-center">
-							<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/world-icon.png" alt="">
+							<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/icon-inventory.png" alt="">
 						</div>
 						<div class="medium-8 small-9 columns">
 							<h4 class="red-title"><?php the_field('3oclock_title'); ?></h4>
@@ -230,7 +132,7 @@
 				<div class="medium-6 columns">
 					<div class="row">
 						<div class="medium-4 small-3 columns text-center">
-							<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/improve-icon.png" alt="">
+							<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/leader-icon.png" alt="">
 						</div>
 						<div class="medium-8 small-9 columns">
 							<h4 class="red-title"><?php the_field('7oclock_title'); ?></h4>
@@ -241,7 +143,7 @@
 				<div class="medium-6 columns">
 					<div class="row">
 						<div class="medium-4 small-3 columns text-center">
-							<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/market-icon.png" alt="">
+							<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/design-icon.png" alt="">
 						</div>
 						<div class="medium-8 small-9 columns">
 							<h4 class="red-title"><?php the_field('5oclock_title'); ?></h4>
@@ -255,8 +157,53 @@
 	</div>
 </section>
 
-<!-- Case Studies Section  (SECTION ON HOLD)-->
+<!-- Cutters Section -->
+<?php $cutter_bg_img = get_field('cutters_bg_img'); ?>
 
+<section class="cutters" style="background-image: url(<?php the_field('cutters_bg_img'); ?>);">
+	<div class="row">
+		<div class="small-12 columns">
+			<h5><?php the_field('home_cutters_title'); ?></h5>
+			<hr class="yellow-line">
+		</div>
+		<div class="medium-9 large-7 columns">
+			<p class="body"><?php the_field('home_cutters_body'); ?></p>
+		</div>
+		<div class="clearfix"></div>
+
+		<?php for ($count=1; $count < 4; $count++) { ?> 
+
+		<div class="medium-4 columns">
+			<h4 class="cutter-title"><?php the_field('cutter'.$count.'_title'); ?></h4>
+			<p class="cutter-body"><?php the_field('cutter'.$count.'_body'); ?></p>
+			<?php if ($count == 1) { ?>
+				<a href="<?php echo site_url(); ?>/products#hardware-comparison" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
+			<?php } ?>
+		</div>
+
+		<?php } ?>
+		<div class="small-12 columns show-for-small-only">
+			<a href="<?php echo site_url(); ?>/products" class="button btn-white"><?php the_field('cutter_button_text'); ?></a>
+		</div>
+
+	</div>
+</section>
+
+<!-- Protection Pro Film Section -->
+
+<section class="protectionpro-film" style="background-image: url(<?php the_field('protection_bg_img'); ?>);">
+	<div class="row">
+		<div class="medium-6 medium-offset-6 columns">
+			<h2><?php the_field('protection_title'); ?></h2>
+			<hr class="yellow-line">
+			<div class="clearfix"></div>
+			<p><?php the_field('protection_body'); ?></p>
+			<a href="<?php echo site_url(); ?>/products#touchscreen" class="button btn-black"><?php the_field('protection_button'); ?></a>
+		</div>
+	</div>
+</section>
+
+<!-- Case Studies Section  (SECTION ON HOLD)-->
 <section class="home-case-studies" style="background-image: url(<?php the_field('home_case_studies_bg'); ?>);">
 	<div class="row">
 		<div class="medium-6 columns">
