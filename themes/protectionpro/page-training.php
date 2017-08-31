@@ -23,7 +23,7 @@
 
 <div class="reveal" id="exampleModal1" data-reveal>
   <h1></h1>
-  <video id="training-video" src="" autoplay controls></video>
+  <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -39,8 +39,8 @@
 				<h2 class="red-title">Videos</h2>
 			</header> -->
 		</div>
-		<div class="medium-12 columns">
-			<div class="row">
+		<div class="medium-10 medium-offset-1 columns end">
+			<div class="row medium-up-2">
 
 			<?php
 			// Query custom post type "videos"
@@ -57,8 +57,8 @@
 					$the_query->the_post();
 			?>
 
-				<div class="medium-3 columns">
-					<div class="video-container" title="Play Video" data-title="<?php the_title(); ?>" data-video="<?php the_field('video_url'); ?>">
+				<div class="column column-block">
+					<div class="video-container" title="Play Video" data-title="<?php the_title(); ?>" data-video="<?php the_field('video_url'); ?>" style="background:linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)),url(<?php the_post_thumbnail_url('full'); ?>);">
 						<img src="<?php bloginfo('template_directory'); ?>/assets/images/icons/play-icon.png" alt="Play Video" class="play-img">
 					</div>
 					<h5 class="red-title"><?php the_title(); ?></h5>
@@ -121,7 +121,7 @@
 		$('#exampleModal1').bind('open.zf.reveal',function(){
 			var videoSrc   = $(that).data('video');
 			var videoTitle = $(that).data('title');
-			$('#training-video').attr('src',videoSrc);
+			$('#exampleModal1').find('iframe').attr('src',videoSrc);
 			$('#exampleModal1').find('h1').text(videoTitle);
 		});
 		$('#exampleModal1').foundation('open');
