@@ -1209,15 +1209,12 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		@include margin(20,bottom);
 		position: relative;
 		cursor: pointer;
-		height: 200px;
+		height: 300px;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
-		background:
-		    linear-gradient(
-		      rgba(0, 0, 0, 0.45), 
-		      rgba(0, 0, 0, 0.45)
-		    ),url(http://fillmurray.com/388/200);
+		background-repeat: no-repeat;
+		border: 1px solid #ccc;
 		.play-img{
 			margin: auto;
 			position: absolute;

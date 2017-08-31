@@ -15,13 +15,21 @@
  */
 
 // search posts and pages
-function search_filter( $query ) {
-  if ( $query->is_search ) {
-      $query->set( 'post_type', array('post','page','case_studies') );
-  }
-  return $query;
-}
-add_filter('pre_get_posts','search_filter');
+// function search_filter( $query ) {
+// 	if (!is_page(14)) {
+// 		if ( $query->is_search ) {
+// 		  $query->set( 'post_type', array('post','page','case_studies') );
+// 		}
+// 		return $query;
+// 	} else{
+	// 	if ( $query->is_search ) {
+	// 	  $query->set('post_type', array('faqs'));
+	// 	}
+	// 	return $query;
+	// }
+  
+// }
+// add_filter('pre_get_posts','search_filter');
 
 // Add support for excerpts on pages
 add_post_type_support('page','excerpt');
