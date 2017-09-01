@@ -36,7 +36,8 @@
 				<aside class="bottom-footer">
 					<div class="row">
 						<div class="large-8 large-offset-2 columns">
-						  <ul class="partner-logos">
+							<!-- Hide logos until we get some -->
+						  <ul class="partner-logos hide">
 								<?php 
 									for ($count=1; $count < 5; $count++) { 
 										echo '<li><img src="';
