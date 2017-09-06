@@ -1,12 +1,3 @@
-/*
-  Foundation for Sites components:
-  Import the building blocks you need for your project.
-  Reducing the number of imported components will optimize page speed.
-  ---------------------------------------------------------------------
-  The Foundation framework is built by Zurb
-  Licensed under MIT Open Source
-*/
-
 //  Settings
 @import "global/settings"; // Foundation settings file.
 
@@ -81,12 +72,22 @@
 @import "modules/editor-style";
 
 // Components
+@import "components/animate";
+@import "components/autoHeight";
+@import "components/core";
+@import "components/lazyload";
 @import "components/buttons";
 @import "components/cards";
 @import "components/featured-image";
 @import "components/dividers";
 @import "components/links";
+@import "components/mixins";
+@import "components/colors";
+@import "components/placeholders";
+@import "components/fonts";
 
 // Templates
-@import "templates/front";
-@import "templates/kitchen-sink";
+
+// user stylesheet
+@import "app.scss";
+
