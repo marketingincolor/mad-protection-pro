@@ -12,8 +12,12 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?> >
 	<head>
+		<?php $options = get_option('mic_theme_options');echo html_entity_decode( $options['gtm_code_head']); ?>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<?php if (is_page('consumer-success','thank-you-distributor','distributor-success','retailer-success','success')) { ?>
+			<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		<?php } ?>
 		<style>.partner-logos{display:flex;list-style-type:none;align-items:center}</style>
 		<?php wp_head(); ?>
 	</head>

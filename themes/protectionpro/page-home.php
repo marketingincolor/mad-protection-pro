@@ -27,7 +27,7 @@
 	<div id="video-modal" class="small reveal" data-reveal aria-labelledby="videoModalTitle" aria-hidden="true" role="dialog">
 	  <div class="flex-video widescreen">
 	  	<h2></h2>
-	    <video src="<?php echo home_url();the_field('video_url'); ?>" controls autoplay></video>
+	    <video src="<?php echo home_url();the_field('full_video_url'); ?>" controls autoplay></video>
 	  </div>
 	  <button class="close-button" data-close aria-label="Close modal" type="button">
 	    <span aria-hidden="true">&times;</span>
@@ -252,3 +252,14 @@
 </section> -->
 
 <?php get_footer(); ?>
+
+<script>
+
+var url = "<?php the_field('full_video_url') ?>";
+	$(document).on('closed.zf.reveal',function(){
+		$('#video-modal').find('video').trigger('pause');
+	});
+	// $(document).on('open.zf.reveal',function(){
+	// 	$('#video-modal').find('video').attr('src',url);
+	// });
+</script>

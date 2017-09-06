@@ -76,5 +76,6 @@
 <!-- <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
 //]]></script> -->
+<?php $options = get_option('mic_theme_options');echo html_entity_decode( $options['gtm_code_body']); ?>
 </body>
 </html>
