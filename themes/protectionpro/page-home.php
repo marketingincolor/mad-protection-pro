@@ -27,7 +27,7 @@
 	<div id="video-modal" class="small reveal" data-reveal aria-labelledby="videoModalTitle" aria-hidden="true" role="dialog">
 	  <div class="flex-video widescreen">
 	  	<h2></h2>
-	    <video src="<?php echo home_url();the_field('video_url'); ?>" controls autoplay></video>
+	    <video src="<?php echo home_url();the_field('full_video_url'); ?>" controls autoplay></video>
 	  </div>
 	  <button class="close-button" data-close aria-label="Close modal" type="button">
 	    <span aria-hidden="true">&times;</span>
@@ -204,51 +204,62 @@
 </section>
 
 <!-- Case Studies Section  (SECTION ON HOLD)-->
-<section class="home-case-studies" style="background-image: url(<?php the_field('home_case_studies_bg'); ?>);">
+<!-- <section class="home-case-studies" style="background-image: url(<?php //the_field('home_case_studies_bg'); ?>);">
 	<div class="row">
 		<div class="medium-6 columns">
-			<h3><?php the_field('home_case_studies_title'); ?></h3>
+			<h3><?php //the_field('home_case_studies_title'); ?></h3>
 			<hr class="yellow-line">
 			<div class="clearfix"></div>
-			<p><?php the_field('home_case_studies_body'); ?></p>
+			<p><?php //the_field('home_case_studies_body'); ?></p>
 
 			<?php
 			// Query custom post type "case_studies" to get 
 			// featured case studies only
 
-			$args = array(
-				'post_type'      => 'case_studies',
-				'orderby'        => 'menu_order',
-				'order'          => 'ASC',
-				'posts_per_page' => 2,
-				'tax_query' => array(
-						array(
-							'taxonomy' => 'home_case_study',
-							'field'    => 'slug',
-							'terms'    => 'home_page',
-						),
-					),
-			);
+			// $args = array(
+			// 	'post_type'      => 'case_studies',
+			// 	'orderby'        => 'menu_order',
+			// 	'order'          => 'ASC',
+			// 	'posts_per_page' => 2,
+			// 	'tax_query' => array(
+			// 			array(
+			// 				'taxonomy' => 'home_case_study',
+			// 				'field'    => 'slug',
+			// 				'terms'    => 'home_page',
+			// 			),
+			// 		),
+			// );
 
-			$the_query = new WP_Query($args);
+			// $the_query = new WP_Query($args);
 
-			if ( $the_query->have_posts() ) {
-				while ( $the_query->have_posts() ) {
-					$the_query->the_post();
-					$count++;
+			// if ( $the_query->have_posts() ) {
+			// 	while ( $the_query->have_posts() ) {
+			// 		$the_query->the_post();
+			// 		$count++;
 			?>
 
 			<div class="featured-case-study">
-				<h5 class="red-title"><?php the_title(); ?></h5>
-				<p><?php echo wp_trim_words(get_the_content(),20,'...') ?></p>
-				<a href="<?php the_permalink(); ?>" class="read-more clearfix"><strong>Read More »</strong></a>
+				<h5 class="red-title"><?php //the_title(); ?></h5>
+				<p><?php //echo wp_trim_words(get_the_content(),20,'...') ?></p>
+				<a href="<?php //the_permalink(); ?>" class="read-more clearfix"><strong>Read More »</strong></a>
 			</div>
 
-			<?php }} wp_reset_postdata(); ?>
+			<?php //}} wp_reset_postdata(); ?>
 
-			<a href="<?php echo site_url(); ?>/case-studies" class="button btn-black"><?php the_field('home_case_studies_button_text'); ?></a>
+			<a href="<?php //echo site_url(); ?>/case-studies" class="button btn-black"><?php //the_field('home_case_studies_button_text'); ?></a>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <?php get_footer(); ?>
+
+<script>
+
+var url = "<?php the_field('full_video_url') ?>";
+	$(document).on('closed.zf.reveal',function(){
+		$('#video-modal').find('video').trigger('pause');
+	});
+	// $(document).on('open.zf.reveal',function(){
+	// 	$('#video-modal').find('video').attr('src',url);
+	// });
+</script>

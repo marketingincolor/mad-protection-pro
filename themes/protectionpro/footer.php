@@ -36,7 +36,8 @@
 				<aside class="bottom-footer">
 					<div class="row">
 						<div class="large-8 large-offset-2 columns">
-						  <ul class="partner-logos">
+							<!-- Hide logos until we get some -->
+						  <ul class="partner-logos hide">
 								<?php 
 									for ($count=1; $count < 5; $count++) { 
 										echo '<li><img src="';
@@ -75,5 +76,6 @@
 <!-- <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
 //]]></script> -->
+<?php $options = get_option('mic_theme_options');echo html_entity_decode( $options['gtm_code_body']); ?>
 </body>
 </html>
