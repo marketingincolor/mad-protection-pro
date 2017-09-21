@@ -25,3 +25,12 @@
 <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
+
+<script>
+	setTimeout(function(){
+		$('#nf-field-17').find('option').each(function(){
+		  var country = $(this).text();
+		  $(this).attr('value',country)
+		});
+	},500)
+</script>
