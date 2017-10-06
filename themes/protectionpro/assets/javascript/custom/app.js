@@ -16,6 +16,15 @@ $(window).resize(function(){
 	columnHeight();
 });
 
+function changeCountryValue(){
+	if ($('body').hasClass('page-template-page-distributor')) {
+		$('#nf-field-17').find('option').each(function(){
+		  var country = $(this).text();
+		  $(this).attr('value',country)
+		});
+	}
+}
+
 // change active swatch on full body product section
 function activeSwatch(){
 	var $imgs = $('.img-ul').find('img');

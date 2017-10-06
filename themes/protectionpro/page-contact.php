@@ -59,5 +59,10 @@
 <?php get_footer(); ?>
 
 <script>
-	
+	setTimeout(function(){
+		$('#nf-field-9').find('option').each(function(){
+		  var country = $(this).text();
+		  $(this).attr('value',country)
+		});
+	},500)
 </script>
