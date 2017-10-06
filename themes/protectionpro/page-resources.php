@@ -5,6 +5,9 @@
 	get_header(); 
 	get_template_part('template-parts/top-bg');
 ?>
+<style>
+	.resources .medium-4 img{height:auto}
+</style>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -15,7 +18,7 @@
 			<hr class="yellow-line">
 			<div class="body"><?php the_content(); ?></div>
 		</div>
-		<div class="medium-6 columns">
+		<div class="medium-4 columns">
 			<img src="<?php the_field('support_img'); ?>" alt="">
 			<h4 class="red-title"><?php the_field('support_title'); ?></h4>
 			<ul>
@@ -27,7 +30,7 @@
 			</ul>
 			<a href="<?php echo site_url(); ?>/contact" class="button btn-black">Get Support</a>
 		</div>
-		<div class="medium-6 columns">
+		<div class="medium-4 columns">
 			<img src="<?php the_field('training_img'); ?>" alt="">
 			<h4 class="red-title"><?php the_field('training_title'); ?></h4>
 			<ul>
@@ -38,6 +41,18 @@
 				<?php } ?>
 			</ul>
 			<a href="<?php echo site_url(); ?>/training" class="button btn-black">Training Videos</a>
+		</div>
+		<div class="medium-4 columns">
+			<img src="<?php the_field('reports_img'); ?>" alt="">
+			<h4 class="red-title"><?php the_field('reports_title'); ?></h4>
+			<ul>
+				<?php for ($i=1; $i < 10; $i++) { ?>
+					<?php if (get_field('reports_item'.$i)) { ?>
+						<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('reports_item'.$i); ?></li>
+					<?php } ?>
+				<?php } ?>
+			</ul>
+			<a href="http://reports.clearplex.com/" class="button btn-black">Log In</a>
 		</div>
 		<div class="clearfix"></div>
 		<section class="view-resources">
