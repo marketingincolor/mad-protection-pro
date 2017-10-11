@@ -28,9 +28,14 @@
 
 <script>
 	setTimeout(function(){
-		$('#nf-field-17').find('option').each(function(){
-		  var country = $(this).text();
-		  $(this).attr('value',country)
+		$('#nf-field-17').on('change',function(){
+			if ($(this).val() == 'US') {}
+			setTimeout(function(){
+				$('#nf-field-22').find('option:first').before('<option disabled="disabled" selected="selected">Select State</option>');
+			},200);
+		var country = $(this).find('option:selected').text();
+		$(this).attr('value',country)
 		});
+		$('#nf-field-22').find('option:first').before('<option disabled="disabled" selected="selected">Select State</option>');
 	},500)
 </script>
