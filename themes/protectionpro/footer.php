@@ -53,7 +53,7 @@
 							<div class="footer-credits">
 								<p class="copyright">Copyright &copy;<?php echo date('Y') ?>  ClearPlex<sup>&reg;</sup> ProtectionPro by Madico<sup>&reg;</sup></p>
 								<ul>
-									<li><a href="http://reports.clearplex.com">Reports Login</a></li> |
+									<li><a href="http://reports.clearplex.com" target="_blank">Reports Login</a></li> |
 									<li><a href="<?php echo site_url(); ?>/privacy-policy">Privacy Policy</a></li>
 								</ul>
 							</div>
@@ -65,17 +65,24 @@
 
 		<?php do_action( 'foundationpress_layout_end' ); ?>
 
-<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
-		</div><!-- Close off-canvas content -->
-	</div><!-- Close off-canvas wrapper -->
-<?php endif; ?>
+	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
+			</div><!-- Close off-canvas content -->
+		</div><!-- Close off-canvas wrapper -->
+	<?php endif; ?>
 
 
-<?php wp_footer(); ?>
-<?php do_action( 'foundationpress_before_closing_body' ); ?>
-<!-- <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
-//]]></script> -->
-<?php $options = get_option('mic_theme_options');echo html_entity_decode( $options['gtm_code_body']); ?>
+	<?php wp_footer(); ?>
+	<?php do_action( 'foundationpress_before_closing_body' ); ?>
+	<!-- <script id="__bs_script__">//<![CDATA[
+	    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
+	//]]></script> -->
+	<?php $options = get_option('mic_theme_options');echo html_entity_decode( $options['gtm_code_body']); ?>
+
+	<script>
+		$(document).on('closed.zf.reveal',function(){
+			$('#video-modal').find('video').trigger('pause');
+			$('#exampleModal1').find('video').trigger('pause');
+		});
+	</script>
 </body>
 </html>

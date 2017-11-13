@@ -6,7 +6,11 @@
 	$feat_img = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 	get_template_part('template-parts/top-bg');
 ?>
-
+<style>
+	video {
+    width: 100%;
+	}
+</style>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <section class="training">
@@ -22,8 +26,12 @@
 <?php endwhile; endif; ?>
 
 <div class="reveal" id="exampleModal1" data-reveal>
-  <h1></h1>
-  <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+  <h2></h2>
+  <!-- If Youtube embed -->
+  <!-- <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe> -->
+
+  <!-- If video file -->
+	<video src="<?php echo home_url();the_field('full_video_url'); ?>" controls autoplay></video>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -116,14 +124,15 @@
 
 <?php get_footer(); ?>
 <script>
+	// If youtube embed
 	$('.video-container').on('click',function(){
 		var that = this;
 		$('#exampleModal1').bind('open.zf.reveal',function(){
 			var videoSrc   = $(that).data('video');
 			var videoTitle = $(that).data('title');
-			$('#exampleModal1').find('iframe').attr('src',videoSrc);
+			$('#exampleModal1').find('video').attr('src',videoSrc);
 			$('#exampleModal1').find('h1').text(videoTitle);
 		});
 		$('#exampleModal1').foundation('open');
-	})
+	});
 </script>
