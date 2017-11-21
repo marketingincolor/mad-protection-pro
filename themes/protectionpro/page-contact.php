@@ -23,9 +23,9 @@
 	<div class="row">
 		<div class="large-10 large-offset-1 columns text-center">
 			<ul>
-				<li><a href="<?php echo site_url(); ?>/training" class="button btn-black text-center"><?php the_field('left_box_icon'); ?></i><br /><?php the_field('left_box_text'); ?></a></li>
-				<li><a href="<?php echo site_url(); ?>/distributor" class="button btn-black text-center"><?php the_field('middle_box_icon'); ?><br /><?php the_field('middle_box_text'); ?></a></li>
-				<li><a href="<?php echo site_url(); ?>/faq" class="button btn-black text-center"><?php the_field('right_box_icon'); ?></i><br /><?php the_field('right_box_text'); ?></a></li>
+				<li><a href="<?php echo site_url();the_field('left_box_link'); ?>" class="button btn-black text-center"><?php the_field('left_box_icon'); ?></i><br /><?php the_field('left_box_text'); ?></a></li>
+				<li><a href="<?php echo site_url();the_field('middle_box_link'); ?>" class="button btn-black text-center"><?php the_field('middle_box_icon'); ?><br /><?php the_field('middle_box_text'); ?></a></li>
+				<li><a href="<?php echo site_url();the_field('right_box_link'); ?>" class="button btn-black text-center"><?php the_field('right_box_icon'); ?></i><br /><?php the_field('right_box_text'); ?></a></li>
 			</ul>
 		</div>
 	</div>
@@ -46,7 +46,18 @@
 			<div id="contact-form">
 				<div class="row">
 					<div class="large-12 columns">
-						<?php echo do_shortcode('[ninja_form id=1]'); ?>
+
+						<?php 
+
+						if(ICL_LANGUAGE_CODE == 'en') {
+						  echo do_shortcode('[ninja_form id=1]');
+						}elseif (ICL_LANGUAGE_CODE == 'it') {
+						 	echo do_shortcode('[ninja_form id=3]');
+						}elseif (ICL_LANGUAGE_CODE == 'es') {
+						 	echo do_shortcode('[ninja_form id=5]');
+						}
+
+						?>
 					</div>
 				</div>
 			</div>

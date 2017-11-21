@@ -95,8 +95,13 @@ a,button{
 // ======== 2.) Navigation Styles ========
 // =======================================
 
+// Italian specific styles
+.it .top-bar .languages{
+	right: 140px;
+}
+
 .top-bar{
-	background-color:$clear;
+	background-color: $clear;
 	position: absolute;
 	width: 100%;
 	transition: opacity 0.25s ease-in-out;
@@ -139,6 +144,30 @@ a,button{
 			@media(max-width: 375px){
 				top: 1px !important;
 				font-size: 20px !important;
+			}
+		}
+	}
+	.languages{
+		position: absolute;
+		right: 120px;
+		top: -35px;
+		.button{
+			background-color: $clear
+		}
+	}
+	.dropdown-pane{
+		width: 80px;
+		background-color: $white !important;
+		border: 1px solid #CCC;
+		border-bottom: none;
+		padding: 0;
+		li{
+			list-style-type: none;
+			border-bottom: 1px solid #CCC;
+			a{
+				color: $black;
+				@include font(14);
+				padding: 3px 18px;
 			}
 		}
 	}
@@ -198,7 +227,7 @@ a,button{
 		@media(max-width: 943px){
 			text-align: right;
 		}
-		#menu-top-nav,.login{
+		#menu-top-nav,#menu-top-nav-italian,.login{
 			@media(max-width: 943px){
 				display: none;
 			}
@@ -236,10 +265,10 @@ a,button{
 			}
 		}
 	}
-	#menu-top-nav li:last-child{
+	#menu-top-nav li:last-child,#menu-top-nav-italian li:last-child{
 		border-bottom: none;
 	}
-	#menu-top-nav li:last-child a{
+	#menu-top-nav li:last-child a,#menu-top-nav-italian li:last-child a{
 		@extend %gray-button;
 		padding-left: 20px;
 		padding-right: 20px;
@@ -324,6 +353,26 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 			color: #757677;
 		  @include montserrat(400);
 	  }
+	  .mobile.languages{
+	  	button{
+	  		background-color: $clear;
+	  	}
+	  	ul{
+	  		padding: 0;
+	  		width: 80px;
+	  		border: 1px solid #CCC;
+	  		border-bottom: none;
+	  	}
+	  	li{
+	  		list-style-type: none;
+	  		border-bottom: 1px solid #CCC;
+	  	}
+	  	li a{
+				padding: 3px 11px;
+				outline: 0;
+				color: $black;
+	  	}
+	  }
 	}
 	.close-button{
 		top: 40px;
@@ -348,6 +397,11 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	.close-button{
 	  font-size: 30px;
 	  color: $white;
+	}
+}
+.it .large-hero .play-group .play-text{
+	@include breakpoint(small only){
+		padding: 7px !important;
 	}
 }
 .large-hero {
@@ -440,6 +494,10 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		border-top-left-radius:3px;
 		border-bottom-left-radius:3px;
 		@include oswald(500);
+	}
+	.play-group .play-text, .play-group .play-container{
+		height: 48px;
+		padding: 13px;
 	}
 	.play-container{
 		border-top-right-radius:3px;
@@ -1699,7 +1757,7 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		text-align: center;
 		@include margin(50,bottom);
 	}
-	#menu-footer-menu {
+	#menu-footer-menu,#menu-footer-menu-italian {
 		display: flex;
 		flex-wrap: wrap;
 		li{
@@ -1716,8 +1774,11 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	}
 	.bottom-footer{
 		padding: 5% 0;
-		@breakpoint(small only){
+		@include breakpoint(small only){
 			padding: 5% 0;
+		}
+		.menu-footer-menu-italian-container{
+			@include margin(20,bottom);
 		}
 	}
 	.partner-logos{

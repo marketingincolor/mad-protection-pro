@@ -8,7 +8,7 @@
 
 <!-- Hero Section -->
 <section class="large-hero">
-	<video src="<?php echo home_url();the_field('video_url'); ?>" autoplay="" loop="" muted="" preload="auto"></video>
+	<video src="<?php the_field('video_url'); ?>" autoplay="" loop="" muted="" preload="auto"></video>
 	<center class="center">
 		<h1><?php the_field('hero_title'); ?></h1>
 		<p class="large-hero-body"><?php the_field('hero_body'); ?></p>
@@ -17,7 +17,7 @@
 		  <a href="#" class="button play-container"><div class="play-button"></div></a>
 		</div><br class="show-for-small-only" />
 		<div class="button-group">
-			<a href="<?php echo site_url(); ?>/products" class="button learn-more"><?php the_field('learn_more_button_text'); ?></a>
+			<a href="<?php echo site_url(); ?><?php the_field('learn_more_button_link'); ?>" class="button learn-more"><?php the_field('learn_more_button_text'); ?></a>
 		</div>
 	</center>
 	<div class="scroll-down">
@@ -177,7 +177,7 @@
 			<h4 class="cutter-title"><?php the_field('cutter'.$count.'_title'); ?></h4>
 			<p class="cutter-body"><?php the_field('cutter'.$count.'_body'); ?></p>
 			<?php if ($count == 1) { ?>
-				<a href="<?php echo site_url(); ?>/products#hardware-comparison" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
+				<a href="<?php echo site_url();the_field('cutter_button_link'); ?>" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
 			<?php } ?>
 		</div>
 
@@ -198,7 +198,7 @@
 			<hr class="yellow-line">
 			<div class="clearfix"></div>
 			<p><?php the_field('protection_body'); ?></p>
-			<a href="<?php echo site_url(); ?>/products#touchscreen" class="button btn-black"><?php the_field('protection_button'); ?></a>
+			<a href="<?php echo site_url();the_field('protection_button_link'); ?>" class="button btn-black"><?php if (ICL_LANGUAGE_CODE=='en'){the_field('protection_button');}elseif(ICL_LANGUAGE_CODE == 'it'){the_field('protection_button_text');}else if(ICL_LANGUAGE_CODE == 'es'){the_field('protection_button_text');} ?></a>
 		</div>
 	</div>
 </section>
@@ -255,7 +255,8 @@
 
 <script>
 
-var url = "<?php echo home_url();the_field('full_video_url'); ?>";
+  var url = "<?php the_field('full_video_url'); ?>";
+  
 	$(document).on('closed.zf.reveal',function(){
 		$('#video-modal').find('video').trigger('pause');
 	});

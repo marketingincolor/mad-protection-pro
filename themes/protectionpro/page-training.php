@@ -54,8 +54,9 @@
 			// Query custom post type "videos"
 
 			$args = array(
-				'post_type'      => 'videos',
-				'posts_per_page' => -1
+				'post_type'        => 'videos',
+				'posts_per_page'   => -1,
+				'suppress_filters' => false
 			);
 
 			$the_query = new WP_Query($args);

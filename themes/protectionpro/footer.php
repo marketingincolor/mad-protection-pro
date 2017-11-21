@@ -28,14 +28,14 @@
 						<div class="medium-8 medium-offset-2 columns">
 							<div class="footer-meta">
 								<p><?php the_field('footer_body',$footer_id); ?></p>
-								<a href="<?php echo site_url(); ?>/contact" class="button btn-white"><?php the_field('footer_button_text',$footer_id); ?></a>
+								<a href="<?php echo site_url(); ?><?php the_field('contact_link',$footer_id); ?>" class="button btn-white"><?php the_field('footer_button_text',$footer_id); ?></a>
 							</div>
 						</div>
 					</div>
 				</aside>
 				<aside class="bottom-footer">
 					<div class="row">
-						<div class="large-8 large-offset-2 columns">
+						<div class="large-10 large-offset-1 columns">
 							<!-- Hide logos until we get some -->
 						  <ul class="partner-logos hide">
 								<?php 
@@ -53,8 +53,8 @@
 							<div class="footer-credits">
 								<p class="copyright">Copyright &copy;<?php echo date('Y') ?>  ClearPlex<sup>&reg;</sup> ProtectionPro by Madico<sup>&reg;</sup></p>
 								<ul>
-									<li><a href="http://reports.clearplex.com" target="_blank">Reports Login</a></li> |
-									<li><a href="<?php echo site_url(); ?>/privacy-policy">Privacy Policy</a></li>
+									<li><a href="http://reports.clearplex.com" target="_blank"><?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';} ?></a></li> |
+									<li><a href="<?php echo site_url(); ?><?php the_field('privacy_policy_link',$footer_id); ?>"><?php the_field('privacy_policy_text',$footer_id); ?></a></li>
 								</ul>
 							</div>
 						</div>
