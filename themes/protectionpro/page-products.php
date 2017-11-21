@@ -72,9 +72,31 @@
 <section class="hardware-table clearfix" id="hardware-comparison">
 	<div class="row">
 		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
-			<h3>A Hardware Solution for Every Need</h3>
-			<hr class="yellow-line">
-			<p class="hardware-body">ProtectionPro offers three different size cutters, each designed for specific retailers, devices, and volume of usage per week.</p>
+
+			<?php if (ICL_LANGUAGE_CODE=='en') : ?>
+
+			  <h3>A Hardware Solution for Every Need</h3>
+			  <hr class="yellow-line">
+			  <p class="hardware-body">ProtectionPro offers three different size cutters, each designed for specific retailers, devices, and volume of usage per week.</p>
+			 
+			<?php endif; ?>
+
+			<?php if (ICL_LANGUAGE_CODE=='it') : ?>
+
+			  <h3>UNA SOLUZIONE HARDWARE PER OGNI BISOGNO</h3>
+			  <hr class="yellow-line">
+			  <p class="hardware-body">ProtectionPro offre tre tipologie di plotter di dimensioni diverse, ciascuno progettato al fine di far fronte alle necessità dei rivenditori, in base al volume d'utilizzo settimanale.</p>
+			 
+			<?php endif; ?>
+
+			<?php if (ICL_LANGUAGE_CODE=='es') : ?>
+
+			  <h3>A Hardware Solution for Every Need</h3>
+			  <hr class="yellow-line">
+			  <p class="hardware-body">ProtectionPro offers three different size cutters, each designed for specific retailers, devices, and volume of usage per week.</p>
+			 
+			<?php endif; ?>
+			
 		</div>
 		<div class="medium-12 columns text-center">
 			<div class="row collapse hide-for-small-only">
@@ -237,7 +259,25 @@
 					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item5'); ?></li>
 					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item6'); ?></li>
 				</ul>
-				<p class="swatches"><span class="available">Sample Patterns</span> <span class="select">(Select to Preview)</span></p>
+
+				<?php if (ICL_LANGUAGE_CODE=='en') : ?>
+
+				 <p class="swatches"><span class="available">Sample Patterns</span> <span class="select">(Select to Preview)</span></p>
+				 
+				<?php endif; ?>
+
+				<?php if (ICL_LANGUAGE_CODE=='it') : ?>
+
+				 <p class="swatches"><span class="available">MODELLI ESEMPIO</span> <span class="select">(Selezionare per un'anteprima)</span></p>
+				 
+				<?php endif; ?>
+
+				<?php if (ICL_LANGUAGE_CODE=='es') : ?>
+
+				 <p class="swatches"><span class="available">Sample Patterns</span> <span class="select">(Select to Preview)</span></p>
+				 
+				<?php endif; ?>
+				
 				<ul class="img-ul">
 					<li><a href="#1"><img src="<?php bloginfo('template_directory'); ?>/assets/images/alligator-circle.png" alt="" class="active-swatch"></a></li>
 					<li><a href="#2"><img src="<?php bloginfo('template_directory'); ?>/assets/images/silver-circle.png" alt=""></a></li>

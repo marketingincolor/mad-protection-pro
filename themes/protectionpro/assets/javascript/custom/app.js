@@ -41,9 +41,18 @@ function ajaxFAQsearch(){
 		var $form    = $(this).parent().parent();
     var query    = $(this).val();
     var $content = $('#accordion-container');
+    var url      = '';
+
+    if ($('body').hasClass('es')) {
+    	url = templateURL + '/ajax-search-es.php';
+    }else if($('body').hasClass('it')){
+    	url = templateURL + '/ajax-search-it.php';
+    }else{
+    	url = templateURL + '/ajax-search.php';
+    }
 
 		$.ajax({
-			url: templateURL + '/ajax-search.php',
+			url: url,
 			type: 'POST',
 			data: {query : query},
 			success: function(response) {
@@ -128,9 +137,13 @@ function scrollDown(){
 setTimeout(function(){
 	if ($(window).width() < 640) {
 		// first name
-		$('.page-template-page-contact').find('#nf-field-1').attr('placeholder','First name')
+		$('.page-template-page-contact').find('#nf-field-1').attr('placeholder','First name');
 		// last name
-		$('.page-template-page-contact').find('#nf-field-6').attr('placeholder','Last name')
+		$('.page-template-page-contact').find('#nf-field-6').attr('placeholder','Last name');
+		// Italian first name
+		$('.page-template-page-contact').find('#nf-field-23').attr('placeholder','Nome');
+		// Italian last name
+		$('.page-template-page-contact').find('#nf-field-28').attr('placeholder','Cognome');
 	}
 },250);
 
@@ -141,6 +154,8 @@ setTimeout(function(){
 		var $form = $('#nf-form-1-cont');
 		$form.find('#nf-field-5').find('option').removeAttr("selected");
 		$form.find('#nf-field-5').find('option:first').before('<option disabled="disabled" selected="selected">Please Choose One</option>');
+		$form.find('#nf-field-27').find('option').removeAttr("selected");
+		$form.find('#nf-field-27').find('option:first').before('<option disabled="disabled" selected="selected">Scegli una opzione</option>');
 	})();
 },150);
 

@@ -28,7 +28,8 @@
 					'post_type'      => 'faqs', 
 					'posts_per_page' => -1,
 					'orderby'        => 'date',
-					'order'          => 'ASC'
+					'order'          => 'ASC',
+					'suppress_filters' => false
 				);
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post(); ?>
