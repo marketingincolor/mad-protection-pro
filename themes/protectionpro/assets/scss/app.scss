@@ -151,8 +151,18 @@ a,button{
 		position: absolute;
 		right: 120px;
 		top: -35px;
+		.choose{
+			font-size: 12px;
+			@include montserrat(400);
+			color: #d1d1d1;
+		}
 		.button{
-			background-color: $clear
+			background-color: $clear;
+			padding-left: 0;
+			padding-right: 30px;
+		}
+		i{
+			color: #d1d1d1;
 		}
 	}
 	.dropdown-pane{
@@ -168,6 +178,10 @@ a,button{
 				color: $black;
 				@include font(14);
 				padding: 3px 18px;
+				transition: background-color 0.25s ease-in-out;
+				&:hover{
+					background-color: #CCC;
+				}
 			}
 		}
 	}
@@ -260,7 +274,7 @@ a,button{
 			@include font(12);
 			top: -23px;
 			a{
-				color: #757677;
+				color: #d1d1d1;
 				@include montserrat(400);
 			}
 		}
