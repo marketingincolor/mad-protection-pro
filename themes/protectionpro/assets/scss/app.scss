@@ -166,18 +166,19 @@ a,button{
 		}
 	}
 	.dropdown-pane{
-		width: 80px;
+		width: 130px;
 		background-color: $white !important;
 		border: 1px solid #CCC;
 		border-bottom: none;
 		padding: 0;
+		text-align: center;
 		li{
 			list-style-type: none;
 			border-bottom: 1px solid #CCC;
 			a{
 				color: $black;
 				@include font(14);
-				padding: 3px 18px;
+				padding: 3px 43px;
 				transition: background-color 0.25s ease-in-out;
 				&:hover{
 					background-color: #CCC;
@@ -364,16 +365,21 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		width: 100%;
 		left: 0;
 		a{
-			color: #757677;
+			color: #d1d1d1;
 		  @include montserrat(400);
 	  }
 	  .mobile.languages{
 	  	button{
 	  		background-color: $clear;
 	  	}
+	  	.choose{
+	  		font-size: 16px;
+	  		@include montserrat(400);
+	  		color: #d1d1d1;
+	  	}
 	  	ul{
 	  		padding: 0;
-	  		width: 80px;
+	  		width: 180px;
 	  		border: 1px solid #CCC;
 	  		border-bottom: none;
 	  	}
@@ -382,7 +388,7 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 	  		border-bottom: 1px solid #CCC;
 	  	}
 	  	li a{
-				padding: 3px 11px;
+				padding: 3px 50px;
 				outline: 0;
 				color: $black;
 	  	}
