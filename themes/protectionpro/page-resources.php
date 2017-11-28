@@ -28,7 +28,7 @@
 					 <?php } ?>
 				<?php } ?>
 			</ul>
-			<a href="<?php echo site_url(); ?>/contact" class="button btn-black">Get Support</a>
+			<a href="<?php echo site_url();the_field('support_link'); ?>" class="button btn-black"><?php the_field('support_button_text'); ?></a>
 		</div>
 		<div class="medium-4 columns">
 			<img src="<?php the_field('training_img'); ?>" alt="">
@@ -40,7 +40,7 @@
 					<?php } ?>
 				<?php } ?>
 			</ul>
-			<a href="<?php echo site_url(); ?>/training" class="button btn-black">Training Videos</a>
+			<a href="<?php echo site_url();the_field('training_link'); ?>" class="button btn-black"><?php the_field('training_button_text'); ?></a>
 		</div>
 		<div class="medium-4 columns">
 			<img src="<?php the_field('reports_img'); ?>" alt="">
@@ -52,7 +52,7 @@
 					<?php } ?>
 				<?php } ?>
 			</ul>
-			<a href="http://reports.clearplex.com/" class="button btn-black">Log In</a>
+			<a href="<?php echo site_url();the_field('reports_link'); ?>" class="button btn-black"><?php the_field('reports_button_text'); ?></a>
 		</div>
 		<div class="clearfix"></div>
 		<section class="view-resources">

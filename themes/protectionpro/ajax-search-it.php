@@ -2,6 +2,10 @@
 
 require('../../../wp-blog-header.php');
 header("HTTP/1.1 200 OK");
+
+// set language for search
+global $sitepress;
+$sitepress->switch_lang('it');
 ?>
 
 

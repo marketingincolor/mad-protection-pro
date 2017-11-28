@@ -17,7 +17,17 @@
 			<article class="body"><?php the_content(); ?></article>
 		</div>
 		<div class="large-6 large-offset-3 columns end">
-			<?php echo do_shortcode('[ninja_form id=2]'); ?>
+			
+			<?php 
+				if(ICL_LANGUAGE_CODE == 'en') {
+				  echo do_shortcode('[ninja_form id=2]');
+				}elseif (ICL_LANGUAGE_CODE == 'it') {
+				 	echo do_shortcode('[ninja_form id=4]');
+				}elseif (ICL_LANGUAGE_CODE == 'es') {
+				 	echo do_shortcode('[ninja_form id=6]');
+				}
+			?>
+
 		</div>
 	</div>
 </section>

@@ -31,6 +31,61 @@
 // }
 // add_filter('pre_get_posts','search_filter');
 
+// Get Available Languages
+function icl_post_languages(){
+  // Get current language
+  switch (ICL_LANGUAGE_CODE) {
+    case 'es':
+      $lang = 'es';
+      break;
+    case 'it':
+      $lang = 'Scegli la lingua';
+      break;
+    default:
+      $lang = 'Choose Language';
+      break;
+  }
+
+  $languages = icl_get_languages('skip_missing=1');
+
+  if(1 < count($languages)){
+    echo '<button class="button" type="button" data-toggle="example-dropdown-1"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;<span class="choose">'. $lang .'</span>&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>';
+
+    foreach($languages as $l){
+      if(!$l['active']) {
+      	echo '<ul class="dropdown-pane lang-switcher" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true"><li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li></ul>';
+      }
+    }
+  }
+}
+
+function icl_post_languages_mobile(){
+  // Get current language
+  switch (ICL_LANGUAGE_CODE) {
+    case 'es':
+      $lang = 'es';
+      break;
+    case 'it':
+      $lang = 'Scegli la lingua';
+      break;
+    default:
+      $lang = 'Choose Language';
+      break;
+  }
+
+  $languages = icl_get_languages('skip_missing=1');
+  
+  if(1 < count($languages)){
+    echo '<button class="button" type="button" data-toggle="example-dropdown-bottom-left"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;<span class="choose">'. $lang .'</span>&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>';
+
+    foreach($languages as $l){
+      if(!$l['active']) {
+      	echo '<ul class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-left" data-dropdown data-auto-focus="true"><li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li></ul>';
+      }
+    }
+  }
+}
+
 // Add support for excerpts on pages
 add_post_type_support('page','excerpt');
 
