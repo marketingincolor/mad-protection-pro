@@ -178,7 +178,7 @@ a,button{
 			a{
 				color: $black;
 				@include font(14);
-				padding: 3px 43px;
+				display: block;
 				transition: background-color 0.25s ease-in-out;
 				&:hover{
 					background-color: #CCC;
