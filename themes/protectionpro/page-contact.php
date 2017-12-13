@@ -7,6 +7,12 @@
 	get_template_part('template-parts/top-bg');
 ?>
 
+<style>
+	.it .contact-buttons li{
+		width: 285px;
+	}
+</style>
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <section class="contact-header">
@@ -23,9 +29,19 @@
 	<div class="row">
 		<div class="large-10 large-offset-1 columns text-center">
 			<ul>
-				<li><a href="<?php echo site_url();the_field('left_box_link'); ?>" class="button btn-black text-center"><?php the_field('left_box_icon'); ?></i><br /><?php the_field('left_box_text'); ?></a></li>
-				<li><a href="<?php echo site_url();the_field('middle_box_link'); ?>" class="button btn-black text-center"><?php the_field('middle_box_icon'); ?><br /><?php the_field('middle_box_text'); ?></a></li>
-				<li><a href="<?php echo site_url();the_field('right_box_link'); ?>" class="button btn-black text-center"><?php the_field('right_box_icon'); ?></i><br /><?php the_field('right_box_text'); ?></a></li>
+				<?php if (get_field('left_box_link')) { ?>
+
+				  <li><a href="<?php echo site_url();the_field('left_box_link'); ?>" class="button btn-black text-center"><?php the_field('left_box_icon'); ?></i><br /><?php the_field('left_box_text'); ?></a></li>
+					
+				<?php }if(get_field('middle_box_link')) { ?>
+
+				  <li><a href="<?php echo site_url();the_field('middle_box_link'); ?>" class="button btn-black text-center"><?php the_field('middle_box_icon'); ?><br /><?php the_field('middle_box_text'); ?></a></li>
+
+				<?php }if(get_field('right_box_link')) { ?>
+
+				  <li><a href="<?php echo site_url();the_field('right_box_link'); ?>" class="button btn-black text-center"><?php the_field('right_box_icon'); ?></i><br /><?php the_field('right_box_text'); ?></a></li>
+
+				<?php } ?>
 			</ul>
 		</div>
 	</div>

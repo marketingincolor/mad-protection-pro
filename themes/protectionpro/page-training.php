@@ -31,7 +31,7 @@
   <!-- <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe> -->
 
   <!-- If video file -->
-	<video src="<?php echo home_url();the_field('full_video_url'); ?>" controls autoplay></video>
+	<video src="<?php echo home_url();the_field('full_video_url'); ?>" data-title="" controls autoplay></video>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -128,6 +128,8 @@
 	// If youtube embed
 	$('.video-container').on('click',function(){
 		var that = this;
+		// var theTitle = $(this).data('title');
+		$('#exampleModal1').find('video').data('title',$(this).data('title'));
 		$('#exampleModal1').bind('open.zf.reveal',function(){
 			var videoSrc   = $(that).data('video');
 			var videoTitle = $(that).data('title');
@@ -136,4 +138,5 @@
 		});
 		$('#exampleModal1').foundation('open');
 	});
+
 </script>
