@@ -26,15 +26,15 @@
 				<aside class="bottom-footer">
 					<div class="row">
 						<div class="large-8 large-offset-2 columns">
-						  <ul class="partner-logos">
+						  <!-- <ul class="partner-logos"> -->
 								<?php 
-									for ($count=1; $count < 5; $count++) { 
-										echo '<li><img src="';
-										echo the_field("partner_logo{$count}",$footer_id);
-										echo '"></li>';
-									}
+									// for ($count=1; $count < 5; $count++) { 
+									// 	echo '<li><img src="';
+									// 	echo the_field("partner_logo{$count}",$footer_id);
+									// 	echo '"></li>';
+									// }
 								?>
-							</ul>
+							<!-- </ul> -->
 							<div class="pp-footer-logo">
 								<img src="<?php the_field('pp_footer_logo',$footer_id); ?>" alt="Protection Pro">
 							</div>

@@ -151,11 +151,13 @@ setTimeout(function(){
 // in contact forms, since Ninja Forms can't do it.
 setTimeout(function(){
 	(function addDisabledSelect(){
-		var $form = $('#nf-form-1-cont');
-		$form.find('#nf-field-5').find('option').removeAttr("selected");
-		$form.find('#nf-field-5').find('option:first').before('<option disabled="disabled" selected="selected">Please Choose One</option>');
-		$form.find('#nf-field-27').find('option').removeAttr("selected");
-		$form.find('#nf-field-27').find('option:first').before('<option disabled="disabled" selected="selected">Scegli una opzione</option>');
+		var $englishForm = $('#nf-form-1-cont');
+		var $italianForm = $('#nf-form-3-cont');
+		
+		$englishForm.find('#nf-field-5').find('option').removeAttr("selected");
+		$englishForm.find('#nf-field-5').find('option:first').before('<option disabled="disabled" selected="selected">Please Choose One</option>');
+		$italianForm.find('#nf-field-27').find('option').removeAttr("selected");
+		$italianForm.find('#nf-field-27').find('option:first').before('<option disabled="disabled" selected="selected">Scegli una opzione</option>');
 	})();
 },150);
 
