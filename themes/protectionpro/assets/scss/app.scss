@@ -1176,6 +1176,12 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		}
 	}
 }
+.it .view-resources .resource-cta {
+	height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .view-resources{
 	padding-top: 5%;
 	h5{
