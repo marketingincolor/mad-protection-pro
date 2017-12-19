@@ -57,7 +57,7 @@
 					</div>
 					<div class="top-bar-right">
 						<span class="languages show-for-large">
-							<?php //icl_post_languages(); ?>
+							<?php icl_post_languages(); ?>
 						</span>
 						<span class="login hide-for-small-only">
 							<a href="http://reports.clearplex.com" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;<?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';} ?></a>
@@ -75,7 +75,7 @@
 						  <span class="mobile-login">
 						  	<div>
 						  		<span class="mobile languages">
-						  			<?php //icl_post_languages_mobile(); ?>
+						  			<?php icl_post_languages_mobile(); ?>
 						  		</span>
 						  	</div>
 						  	<a href="http://reports.clearplex.com" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;<?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';} ?></a>

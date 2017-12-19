@@ -52,7 +52,7 @@
 					<?php } ?>
 				<?php } ?>
 			</ul>
-			<a href="<?php echo site_url();the_field('reports_link'); ?>" class="button btn-black"><?php the_field('reports_button_text'); ?></a>
+			<a href="<?php the_field('reports_link'); ?>" class="button btn-black"><?php the_field('reports_button_text'); ?></a>
 		</div>
 		<div class="clearfix"></div>
 		<section class="view-resources">
