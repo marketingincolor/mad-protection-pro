@@ -28,10 +28,9 @@
 <div class="reveal" id="exampleModal1" data-reveal>
   <h2></h2>
   <!-- If Youtube embed -->
-  <!-- <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe> -->
-
+    <iframe width="560" height="315" src="" frameborder="0" allowfullscreen ></iframe>
   <!-- If video file -->
-	<video src="<?php echo home_url();the_field('full_video_url'); ?>" data-title="" controls autoplay></video>
+	<video src="" data-title="" controls autoplay ></video>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -133,8 +132,25 @@
 		$('#exampleModal1').bind('open.zf.reveal',function(){
 			var videoSrc   = $(that).data('video');
 			var videoTitle = $(that).data('title');
-			$('#exampleModal1').find('video').attr('src',videoSrc);
+			var isTube = videoSrc.match(/tube/g);
+			console.log('video:', videoSrc);
+			console.log('tube:', isTube);
+			if ( isTube != null ) {
+				$('#exampleModal1').find('iframe').attr('src',videoSrc);
+				$('#exampleModal1').find('iframe').css('display','block');
+				$('#exampleModal1').find('video').attr('src', '');
+				$('#exampleModal1').find('video').css('display','none');
+			}
+			else {
+				$('#exampleModal1').find('video').attr('src',videoSrc);
+				$('#exampleModal1').find('video').css('display','block');
+				$('#exampleModal1').find('iframe').attr('src','');
+				$('#exampleModal1').find('iframe').css('display','none');
+			}
 			$('#exampleModal1').find('h1').text(videoTitle);
+		});
+		$('#exampleModal1').bind('closed.zf.reveal',function(){
+			$('#exampleModal1').find('iframe').attr('src','');
 		});
 		$('#exampleModal1').foundation('open');
 	});
