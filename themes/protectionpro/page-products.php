@@ -91,9 +91,9 @@
 
 			<?php if (ICL_LANGUAGE_CODE=='es') : ?>
 
-			  <h3>A Hardware Solution for Every Need</h3>
+			  <h3>UNA SOLUCION DE HARDWARD PARA CADA NECESIDAD</h3>
 			  <hr class="yellow-line">
-			  <p class="hardware-body">ProtectionPro offers three different size cutters, each designed for specific retailers, devices, and volume of usage per week.</p>
+			  <p class="hardware-body">ProtectionPro ofrece tres tipos de cortadoras de dimensiones diversas, cada una pensada para las necesidades de cada detallista y el volumen de uso semanal.</p>
 			 
 			<?php endif; ?>
 			
@@ -274,7 +274,7 @@
 
 				<?php if (ICL_LANGUAGE_CODE=='es') : ?>
 
-				 <p class="swatches"><span class="available">Sample Patterns</span> <span class="select">(Select to Preview)</span></p>
+				 <p class="swatches"><span class="available">PATRONES EJEMPLARES</span> <span class="select">(Seleccione para visualizar)</span></p>
 				 
 				<?php endif; ?>
 				
