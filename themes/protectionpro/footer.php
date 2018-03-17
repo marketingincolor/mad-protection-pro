@@ -53,7 +53,7 @@
 							<div class="footer-credits">
 								<p class="copyright">Copyright &copy;<?php echo date('Y') ?>  ClearPlex<sup>&reg;</sup> ProtectionPro by Madico<sup>&reg;</sup></p>
 								<ul>
-									<li><a href="http://reports.clearplex.com" target="_blank"><?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';} ?></a></li> |
+									<li><a href="http://reports.clearplex.com" target="_blank"><?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';}elseif(ICL_LANGUAGE_CODE == 'es'){echo 'Login Reportes';} ?></a></li> |
 									<li><a href="<?php echo site_url(); ?><?php the_field('privacy_policy_link',$footer_id); ?>"><?php the_field('privacy_policy_text',$footer_id); ?></a></li>
 								</ul>
 							</div>
@@ -83,43 +83,6 @@
 			$('#video-modal').find('video').trigger('pause');
 			$('#exampleModal1').find('video').trigger('pause');
 		});
-
-			// Analytics video watching data
-			var counter = 0;
-
-		  $('#video-modal,#exampleModal1').find('video').on('play',function(){
-		  	var that = this;
-		  	var videoDuration = this.duration;
-
-		  	if(counter == 0 && this.currentTime == 0){
-		  		ga("create", "UA-11866094-9", {name: "gtm20"});
-		  		ga("gtm20.send", {hitType: "event", eventCategory: "Videos", eventAction: "Played Video", eventLabel: $(this).data('title') + ' - ' + location.href.split('.com')[1], eventValue: undefined});
-		  	}
-		  	if (counter > 0 && this.currentTime == 0) {
-		  		counter = 0;
-		  		ga("create", "UA-11866094-9", {name: "gtm20"});
-		  		ga("gtm20.send", {hitType: "event", eventCategory: "Videos", eventAction: "Played Video", eventLabel: $(this).data('title') + ' - ' + location.href.split('.com')[1], eventValue: undefined});
-		  	}
-			  timer = setInterval(function(){
-			  	counter++;
-			  	if (counter == Math.floor(videoDuration * 0.25)) {
-			  		ga("gtm20.send", {hitType: "event", eventCategory: "Videos", eventAction: "25%", eventLabel: $(that).data('title') + ' - ' + location.href.split('.com')[1], eventValue: undefined});
-			  	}else if(counter == Math.floor(videoDuration * 0.5)){
-			  		ga("gtm20.send", {hitType: "event", eventCategory: "Videos", eventAction: "50%", eventLabel: $(that).data('title') + ' - ' + location.href.split('.com')[1], eventValue: undefined});
-			  	}else if(counter == Math.floor(videoDuration * 0.75)){
-			  		ga("gtm20.send", {hitType: "event", eventCategory: "Videos", eventAction: "75%", eventLabel: $(that).data('title') + ' - ' + location.href.split('.com')[1], eventValue: undefined});
-			  	}
-			  },1000)
-		  });
-
-		  $('#video-modal,#exampleModal1').find('video').on('pause',function(){
-			  if(counter){clearInterval(timer);}
-		  });
-
-		  $('#video-modal,#exampleModal1').find('video').on('ended',function(){
-			  ga("gtm20.send", {hitType: "event", eventCategory: "Videos", eventAction: "Video Completed", eventLabel: $(this).data('title') + ' - ' + location.href.split('.com')[1], eventValue: undefined});
-			  counter = 0;
-		  });
 	</script>
 </body>
 </html>

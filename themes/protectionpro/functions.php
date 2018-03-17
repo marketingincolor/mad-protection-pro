@@ -36,7 +36,7 @@ function icl_post_languages(){
   // Get current language
   switch (ICL_LANGUAGE_CODE) {
     case 'es':
-      $lang = 'es';
+      $lang = 'Elige lengua';
       break;
     case 'it':
       $lang = 'Scegli la lingua';
@@ -46,16 +46,23 @@ function icl_post_languages(){
       break;
   }
 
-  $languages = icl_get_languages('skip_missing=1');
+  $languages = icl_get_languages();
 
   if(1 < count($languages)){
     echo '<button class="button" type="button" data-toggle="example-dropdown-1"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;<span class="choose">'. $lang .'</span>&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>';
-
+    echo '<ul class="dropdown-pane lang-switcher" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">';
     foreach($languages as $l){
       if(!$l['active']) {
-      	echo '<ul class="dropdown-pane lang-switcher" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true"><li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li></ul>';
+        if (strpos($l['url'],'/it') !== false) {
+          echo '<li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li>';
+        }else if (strpos($l['url'],'/es') !== false) {
+          echo '';
+        }else{
+          echo '<li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li>';
+        }
       }
     }
+    echo '</ul>';
   }
 }
 
@@ -63,7 +70,7 @@ function icl_post_languages_mobile(){
   // Get current language
   switch (ICL_LANGUAGE_CODE) {
     case 'es':
-      $lang = 'es';
+      $lang = 'Elige lengua';
       break;
     case 'it':
       $lang = 'Scegli la lingua';
@@ -78,11 +85,13 @@ function icl_post_languages_mobile(){
   if(1 < count($languages)){
     echo '<button class="button" type="button" data-toggle="example-dropdown-bottom-left"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;<span class="choose">'. $lang .'</span>&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>';
 
+    echo '<ul class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-left" data-dropdown data-auto-focus="true">';
     foreach($languages as $l){
       if(!$l['active']) {
-      	echo '<ul class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-left" data-dropdown data-auto-focus="true"><li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li></ul>';
+      	echo '<li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li>';
       }
     }
+    echo '</ul>';
   }
 }
 

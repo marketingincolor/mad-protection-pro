@@ -2,7 +2,7 @@
 	/*
 	Template Name: Training
 	*/
-	get_header(); 
+	get_header();
 	$feat_img = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 	get_template_part('template-parts/top-bg');
 ?>
@@ -28,10 +28,9 @@
 <div class="reveal" id="exampleModal1" data-reveal>
   <h2></h2>
   <!-- If Youtube embed -->
-  <!-- <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe> -->
-
+    <iframe width="560" height="315" src="" frameborder="0" allowfullscreen ></iframe>
   <!-- If video file -->
-	<video src="<?php echo home_url();the_field('full_video_url'); ?>" data-title="" controls autoplay></video>
+	<video src="" data-title="" controls autoplay ></video>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -81,7 +80,7 @@
 		<!-- <div class="medium-2 medium-offset-1 columns">
 			<aside class="video-cats">
 				<ul>
-					<?php 
+					<?php
 						// $taxonomy = 'videos';
 						// $terms = get_terms($taxonomy, ['hide_empty' => false,]);
 						// foreach($terms as $term) {
@@ -128,13 +127,39 @@
 	// If youtube embed
 	$('.video-container').on('click',function(){
 		var that = this;
-		// var theTitle = $(this).data('title');
+		
 		$('#exampleModal1').find('video').data('title',$(this).data('title'));
 		$('#exampleModal1').bind('open.zf.reveal',function(){
+			
+		  var origin = window.location.protocol + '//' + window.location.hostname;
 			var videoSrc   = $(that).data('video');
+			videoSrc += '?enablejsapi=1&amp;origin=' + encodeURIComponent(origin);
 			var videoTitle = $(that).data('title');
-			$('#exampleModal1').find('video').attr('src',videoSrc);
+			var isTube = videoSrc.match(/tube/g);
+			$(this).attr('data-video-title',videoTitle);
+
+			if ( isTube != null ) {
+				$('#exampleModal1').find('iframe').attr('src',videoSrc);
+				$('#exampleModal1').find('iframe').css('display','block');
+				$('#exampleModal1').find('video').attr('src', '');
+				$('#exampleModal1').find('video').css('display','none');
+			}
+			else {
+				$('#exampleModal1').find('video').attr('src',videoSrc);
+				$('#exampleModal1').find('video').css('display','block');
+				$('#exampleModal1').find('iframe').attr('src','');
+				$('#exampleModal1').find('iframe').css('display','none');
+			}
 			$('#exampleModal1').find('h1').text(videoTitle);
+
+			setTimeout(function(){
+				if(ytTracker != null) {
+	        ytTracker.init(videoTitle);
+	      }
+			},500)
+		});
+		$('#exampleModal1').bind('closed.zf.reveal',function(){
+			$('#exampleModal1').find('iframe').attr('src','');
 		});
 		$('#exampleModal1').foundation('open');
 	});
