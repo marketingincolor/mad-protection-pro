@@ -22,6 +22,10 @@ $options = get_option('mic_theme_options'); ?>
 
  						<h1 class="error-title">Pagina non trovata</h1>
 
+ 					<?php }elseif (ICL_LANGUAGE_CODE == 'es') { ?>
+
+ 						<h1 class="error-title">Página No Encontrada</h1>
+
  					<?php } ?>
  				</header>
  				<hr class="yellow-line">
@@ -36,7 +40,11 @@ $options = get_option('mic_theme_options'); ?>
 
  								<h1 class="error-title">Siamo spiacenti ma qualcosa è andato storto. Controlla l'URL e ricomincia dalla casella di ricerca, oppure usa il link qui sotto per tornare alla nostra home page.</h1>
 
- 							<?php } ?>
+ 							<?php }elseif (ICL_LANGUAGE_CODE == 'es') { ?>
+
+ 								<h1 class="error-title">¡Lo sentimos! Algo salió mal. Verifica la dirección URL y comienza de nuevo en el cuadro de búsqueda, o usa el enlace de abajo para volver a nuestra página de inicio.</h1>
+
+ 							<?php } ?> 							
  						</p>
  					</div>
  				</div>
@@ -64,7 +72,13 @@ $options = get_option('mic_theme_options'); ?>
 					<li><a href="<?php echo site_url(); ?>/it/distributore" class="button btn-black text-center"><?php echo $options['404_middle_button_icon']; ?><br />Diventa un Distributore</a></li>
 					<li><a href="<?php echo site_url(); ?>/it/domande-frequenti/" class="button btn-black text-center"><?php echo $options['404_right_button_icon']; ?><br />Domande Frequenti</a></li>
 
- 				<?php } ?>
+ 				<?php }elseif (ICL_LANGUAGE_CODE == 'es') { ?>
+
+					<li><a href="<?php echo site_url(); ?>/es" class="button btn-black text-center"><?php echo $options['404_left_button_icon']; ?><br />Ir a la página de inicio</a></li>
+					<li><a href="<?php echo site_url(); ?>/es/conviertete-en-distribuidor" class="button btn-black text-center"><?php echo $options['404_middle_button_icon']; ?><br />Conviértete en Distribuidor</a></li>
+					<li><a href="<?php echo site_url(); ?>/es/preguntas-frecuentes/" class="button btn-black text-center"><?php echo $options['404_right_button_icon']; ?><br />Preguntas Frecuentes</a></li>
+
+ 				<?php } ?> 				
  			</ul>
  		</div>
  	</div>

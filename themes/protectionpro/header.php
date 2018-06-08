@@ -52,7 +52,7 @@
 				<div class="small-12 columns">
 					<div class="top-bar-left">
 						<div class="site-desktop-title top-bar-title">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_directory'); ?>/assets/images/nav-logo.png" alt="Protection Pro"></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_directory'); ?>/assets/images/ProtectionPro_Logo_White.svg" alt="Protection Pro"></a>
 						</div>
 					</div>
 					<div class="top-bar-right">
@@ -60,7 +60,7 @@
 							<?php icl_post_languages(); ?>
 						</span>
 						<span class="login hide-for-small-only">
-							<a href="http://reports.clearplex.com" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;<?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';}elseif(ICL_LANGUAGE_CODE == 'es'){echo 'Login Reportes';} ?></a>
+							<a href="http://reports.clearplex.com" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;<?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';}elseif(ICL_LANGUAGE_CODE == 'es'){echo 'Acceso a Informes';} ?></a>
 						</span>
 						<?php foundationpress_top_bar_r(); ?>
 
@@ -78,7 +78,7 @@
 						  			<?php icl_post_languages_mobile(); ?>
 						  		</span>
 						  	</div>
-						  	<a href="http://reports.clearplex.com" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;<?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';}elseif(ICL_LANGUAGE_CODE == 'es'){echo 'Login Reportes';} ?></a>
+						  	<a href="http://reports.clearplex.com" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;<?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';}elseif(ICL_LANGUAGE_CODE == 'es'){echo 'Acceso a Informes';} ?></a>
 						  </span>
 						  <button class="close-button" data-close aria-label="Close reveal" type="button">
 						    <span aria-hidden="true">&times;</span>
