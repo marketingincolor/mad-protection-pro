@@ -197,8 +197,8 @@
 			<h2><?php the_field('protection_title'); ?></h2>
 			<hr class="yellow-line">
 			<div class="clearfix"></div>
-			<p><?php the_field('protection_body'); ?></p>
-			<a href="<?php echo site_url();the_field('protection_button_link'); ?>" class="button btn-black"><?php if (ICL_LANGUAGE_CODE=='en'){the_field('protection_button');}elseif(ICL_LANGUAGE_CODE == 'it'){the_field('protection_button_text');}else if(ICL_LANGUAGE_CODE == 'es'){the_field('protection_button_text');} ?></a>
+			<?php the_field('protection_body'); ?>
+			<a href="<?php echo site_url();the_field('protection_button_link'); ?>" class="button btn-black"><?php if (ICL_LANGUAGE_CODE=='en'){the_field('protection_button');}elseif(ICL_LANGUAGE_CODE == 'it'){the_field('protection_button_text');}else if(ICL_LANGUAGE_CODE == 'es'){the_field('protection_button');} ?></a>
 		</div>
 	</div>
 </section>
@@ -257,11 +257,11 @@
 
   var url = "<?php the_field('full_video_url'); ?>";
   
-	$(document).on('closed.zf.reveal',function(){
-		$('#video-modal').find('video').trigger('pause');
+	$(document).find('#video-modal').on('closed.zf.reveal',function(){
+		$(this).find('video').trigger('pause');
 	});
-	$(document).on('open.zf.reveal',function(){
-		$('#video-modal').find('video').attr('src',url);
+	$(document).find('#video-modal').on('open.zf.reveal',function(){
+		$(this).find('video').attr('src',url);
 	});
 		
 </script>

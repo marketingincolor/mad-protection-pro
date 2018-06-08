@@ -72,31 +72,9 @@
 <section class="hardware-table clearfix" id="hardware-comparison">
 	<div class="row">
 		<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns text-center">
-
-			<?php if (ICL_LANGUAGE_CODE=='en') : ?>
-
-			  <h3>A Hardware Solution for Every Need</h3>
-			  <hr class="yellow-line">
-			  <p class="hardware-body">ProtectionPro offers three different size cutters, each designed for specific retailers, devices, and volume of usage per week.</p>
-			 
-			<?php endif; ?>
-
-			<?php if (ICL_LANGUAGE_CODE=='it') : ?>
-
-			  <h3>UNA SOLUZIONE HARDWARE PER OGNI BISOGNO</h3>
-			  <hr class="yellow-line">
-			  <p class="hardware-body">ProtectionPro offre tre tipologie di plotter di dimensioni diverse, ciascuno progettato al fine di far fronte alle necessità dei rivenditori, in base al volume d'utilizzo settimanale.</p>
-			 
-			<?php endif; ?>
-
-			<?php if (ICL_LANGUAGE_CODE=='es') : ?>
-
-			  <h3>A Hardware Solution for Every Need</h3>
-			  <hr class="yellow-line">
-			  <p class="hardware-body">ProtectionPro offers three different size cutters, each designed for specific retailers, devices, and volume of usage per week.</p>
-			 
-			<?php endif; ?>
-			
+			<h3><?php the_field('hardware_title'); ?></h3>
+			<hr class="yellow-line">
+			<p class="hardware-body"><?php the_field('hardware_body'); ?></p>
 		</div>
 		<div class="medium-12 columns text-center">
 			<div class="row collapse hide-for-small-only">
@@ -146,8 +124,8 @@
 			</div>
 
 			<div class="row show-for-small-only">
-				<img class="slide-img" src="<?php bloginfo('template_directory'); ?>/assets/images/slide-compare.jpg" alt="slide left to compare">
-				<img class="slide-img-right" src="<?php bloginfo('template_directory'); ?>/assets/images/slide-right.jpg" alt="slide right to compare">
+				<img class="slide-img" src="<?php bloginfo('template_directory'); ?>/assets/images/slide-compare.png" alt="slide left to compare">
+				<img class="slide-img-right" src="<?php bloginfo('template_directory'); ?>/assets/images/slide-right.png" alt="slide right to compare">
 				
 				<div class="compare-carousel owl-carousel owl-theme">
 			    <div class="item">
@@ -238,18 +216,93 @@
 		<div class="clearfix"></div>
 		<div class="large-7 large-offset-0 medium-10 medium-offset-1 columns carousel-column">
 			<div class="full-body-carousel owl-carousel owl-theme">
-		    <div class="item" data-hash="1" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/alligator-phone.jpg);">
-		    </div>
-		    <div class="item" data-hash="2" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/silver-phone.jpg);">
-		    </div>
-		    <div class="item" data-hash="3" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/white-phone.jpg);">
-		    </div>
-		    <div class="item" data-hash="4" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/black-phone.jpg);">
-		    </div>
+
+				<?php
+				$args = array(
+					'post_type'      => 'product_swatches', 
+					'posts_per_page' => -1,
+					'orderby'        => 'menu_order',
+					'order'          => 'ASC'
+				);
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+			    <div class="item" data-hash="<?php echo $post->menu_order + 1; ?>" style="background-image:url(<?php the_post_thumbnail_url(); ?>">
+			    	<p><?php the_title(); ?></p>
+			    </div>
+
+		    <?php $count++;endwhile; wp_reset_postdata(); ?>
+		    
 			</div>
 		</div>
 		<div class="large-5 large-offset-0 medium-10 medium-offset-1 columns black-column">
 			<div class="black-bg">
+				<p class="swatches"><span class="available"><?php the_field('swatch_patterns'); ?></span><br><span class="select"><?php the_field('swatch_preview'); ?></span></p>
+				<div id="swatch-carousel" class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false">
+				  <div class="orbit-wrapper">
+				    <div class="orbit-controls">
+				      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+				      <button class="orbit-next"><span class="show-for-sr">Next Slide</span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				    </div>
+				    <!-- CIRCULAR SWATCH CAROUSEL -->
+				    <ul class="orbit-container">
+				      <li class="is-active orbit-slide">
+
+					    	<?php
+						    	$swatch_count = 0;
+						    	$total_post_count = wp_count_posts('product_swatches')->publish;
+						    	$args = array(
+						    		'post_type'      => 'product_swatches', 
+						    		'posts_per_page' => -1,
+						    		'orderby'        => 'menu_order',
+						    		'order'          => 'ASC'
+						    	);
+						    	$loop = new WP_Query( $args );
+						    	while ( $loop->have_posts() ) : $loop->the_post();
+						    ?>
+
+				      		<a href="#<?php echo $swatch_count + 1; ?>"><img src="<?php the_field('circle_swatch'); ?>" alt="<?php the_title(); ?>" <?php if ($swatch_count == 0){echo 'class="active-swatch"';} ?>></a>
+
+									<?php $swatch_count++; ?>
+									<?php if ($swatch_count % 3 == 0 && $swatch_count != $total_post_count) { ?>
+									  	
+									</li><li class="orbit-slide">
+
+									<?php } ?>
+									<?php if ($swatch_count == $total_post_count) { ?>
+
+									</li>
+
+									<?php } ?>
+
+				        <?php endwhile; wp_reset_postdata(); ?>
+
+				    </ul>
+				  </div>
+				  <!-- IF DOTS ARE NEEDED AS EXTRA NAVIGATION THEN UNCOMMENT THIS SECTION BELOW -->
+				  <!-- <nav class="orbit-bullets">
+				  	<?php for ($i=0; $i < ceil($total_post_count / 3); $i++) { ?>
+						<?php switch ($i) {
+							case 0:
+								$current_slide = 'First';break;
+							case 1:
+								$current_slide = 'Second';break;
+							case 2:
+								$current_slide = 'Third';break;
+							case 3:
+								$current_slide = 'Fourth';break;
+							case 4:
+								$current_slide = 'Fifth';break;
+							default:
+								break;
+						} ?>
+
+				  		<button<?php if($i == 0){ ?> class="is-active"<?php } ?> data-slide="<?php echo $i; ?>"><span class="show-for-sr"><?php echo $current_slide; ?> slide details.</span><?php if($i == 0){ ?><span class="show-for-sr">Current Slide</span><?php } ?></button>
+
+				  	<?php } ?>
+			      
+				  </nav> -->
+				</div>
 				<h4><?php the_field('full_body_blackbox_heading'); ?></h4>
 				<ul>
 					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item1'); ?></li>
@@ -258,31 +311,6 @@
 					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item4'); ?></li>
 					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item5'); ?></li>
 					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item6'); ?></li>
-				</ul>
-
-				<?php if (ICL_LANGUAGE_CODE=='en') : ?>
-
-				 <p class="swatches"><span class="available">Sample Patterns</span> <span class="select">(Select to Preview)</span></p>
-				 
-				<?php endif; ?>
-
-				<?php if (ICL_LANGUAGE_CODE=='it') : ?>
-
-				 <p class="swatches"><span class="available">MODELLI ESEMPIO</span> <span class="select">(Selezionare per un'anteprima)</span></p>
-				 
-				<?php endif; ?>
-
-				<?php if (ICL_LANGUAGE_CODE=='es') : ?>
-
-				 <p class="swatches"><span class="available">Sample Patterns</span> <span class="select">(Select to Preview)</span></p>
-				 
-				<?php endif; ?>
-				
-				<ul class="img-ul">
-					<li><a href="#1"><img src="<?php bloginfo('template_directory'); ?>/assets/images/alligator-circle.png" alt="" class="active-swatch"></a></li>
-					<li><a href="#2"><img src="<?php bloginfo('template_directory'); ?>/assets/images/silver-circle.png" alt=""></a></li>
-					<li><a href="#3"><img src="<?php bloginfo('template_directory'); ?>/assets/images/white-circle.png" alt=""></a></li>
-					<li><a href="#4"><img src="<?php bloginfo('template_directory'); ?>/assets/images/black-circle.png" alt=""></a></li>
 				</ul>
 			</div>
 		</div>

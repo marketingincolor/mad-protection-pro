@@ -7,9 +7,11 @@ $(document).ready(function(){
 	scrollDown();
 	productCarousel();
 	fullBodyCarousel();
-	columnHeight();
 	activeSwatch();
 	ajaxFAQsearch();
+	setTimeout(function(){
+		columnHeight();
+	},1500);
 });
 
 $(window).resize(function(){
@@ -27,7 +29,7 @@ function changeCountryValue(){
 
 // change active swatch on full body product section
 function activeSwatch(){
-	var $imgs = $('.img-ul').find('img');
+	var $imgs = $('#swatch-carousel').find('img');
 	$imgs.on('click',function(){
 		$imgs.removeClass('active-swatch');
 		$(this).addClass('active-swatch');
@@ -118,9 +120,11 @@ function fullBodyCarousel(){
 function columnHeight(){
 	var rightColHeight = $('.black-column').outerHeight();
 
-	$('.full-body').find('.item').each(function(){
-		$(this).css({'height':rightColHeight});
-	});
+	if ($(window).width() > 480) {
+		$('.full-body').find('.item').each(function(){
+			$(this).css({'height':rightColHeight});
+		});
+	}
 }
 
 // Scroll down to second section on home page
@@ -144,6 +148,10 @@ setTimeout(function(){
 		$('.page-template-page-contact').find('#nf-field-23').attr('placeholder','Nome');
 		// Italian last name
 		$('.page-template-page-contact').find('#nf-field-28').attr('placeholder','Cognome');
+		// Spanish first name
+		$('.page-template-page-contact').find('#nf-field-50').attr('placeholder','Nombre');
+		// Spanish last name
+		$('.page-template-page-contact').find('#nf-field-55').attr('placeholder','Apellido');
 	}
 },250);
 
@@ -153,13 +161,16 @@ setTimeout(function(){
 	(function addDisabledSelect(){
 		var $englishForm = $('#nf-form-1-cont');
 		var $italianForm = $('#nf-form-3-cont');
+		var $spanishForm = $('#nf-form-5-cont');
 		
 		$englishForm.find('#nf-field-5').find('option').removeAttr("selected");
 		$englishForm.find('#nf-field-5').find('option:first').before('<option disabled="disabled" selected="selected">Please Choose One</option>');
 		$italianForm.find('#nf-field-27').find('option').removeAttr("selected");
 		$italianForm.find('#nf-field-27').find('option:first').before('<option disabled="disabled" selected="selected">Scegli una opzione</option>');
+		$spanishForm.find('#nf-field-54').find('option').removeAttr("selected");
+		$spanishForm.find('#nf-field-54').find('option:first').before('<option disabled="disabled" selected="selected">Elige una opción</option>');
 	})();
-},150);
+},250);
 
 // makes nav slide down after scrolling past 1st section
 function navSlideDown(){

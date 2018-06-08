@@ -42,8 +42,8 @@
 							<div class="footer-credits">
 								<p class="copyright">Copyright &copy;<?php echo date('Y') ?>  ClearPlex<sup>&reg;</sup> ProtectionPro by Madico<sup>&reg;</sup></p>
 								<ul>
-									<li><a href="http://reports.clearplex.com">Reports Login</a></li> |
-									<li><a href="<?php echo site_url(); ?>/privacy-policy">Privacy Policy</a></li>
+									<li><a href="http://reports.clearplex.com" target="_blank"><?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';}elseif(ICL_LANGUAGE_CODE == 'es'){echo 'Login Reportes';} ?></a></li> |
+									<li><a href="<?php echo site_url(); ?><?php the_field('privacy_policy_link',$footer_id); ?>"><?php the_field('privacy_policy_text',$footer_id); ?></a></li>
 								</ul>
 							</div>
 						</div>
