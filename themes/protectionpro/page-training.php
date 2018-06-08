@@ -137,7 +137,6 @@
 			var videoTitle = $(that).data('title');
 			var isTube = videoSrc.match(/tube/g);
 			$(this).attr('data-video-title',videoTitle);
-
 			if ( isTube != null ) {
 				$('#exampleModal1').find('iframe').attr('src',videoSrc);
 				$('#exampleModal1').find('iframe').css('display','block');
@@ -157,6 +156,9 @@
 	        ytTracker.init(videoTitle);
 	      }
 			},500)
+		});
+		$('#exampleModal1').bind('closed.zf.reveal',function(){
+			$('#exampleModal1').find('iframe').attr('src','');
 		});
 		$('#exampleModal1').bind('closed.zf.reveal',function(){
 			$('#exampleModal1').find('iframe').attr('src','');
