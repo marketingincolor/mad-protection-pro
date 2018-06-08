@@ -98,9 +98,15 @@ a,button{
 // ======== 2.) Navigation Styles ========
 // =======================================
 
-// Italian specific styles
+// Langugage specific styles
 .it .top-bar .languages{
 	right: 140px;
+}
+.es .top-bar .languages{
+	right: 150px;
+}
+.top-bar.slide-down .languages{
+	top: -35px;
 }
 
 .top-bar{
@@ -125,6 +131,9 @@ a,button{
 		}
 		@media(max-width: 400px){
 			height: 80px;
+		}
+		.top-bar-right .login{
+			top: -24px;
 		}
 		.top-bar-left {
 			top: 2px;
@@ -224,15 +233,13 @@ a,button{
 		@media(max-width: 375px){
 			top: 20px;
 		}
-		@media(max-width: 320px){
-			left: 10px;
-		}
 		.top-bar-title img{
-			@media(max-width: 400px){
-				width: 215px;
+			width: 300px;
+			@media(max-width: 480px){
+				width: 200px;
 			}
 			@media(max-width: 360px){
-				width: 175px;
+				width: 180px;
 			} 
 		}
 	}
@@ -286,7 +293,7 @@ a,button{
 	#menu-top-nav li:last-child,#menu-top-nav-italian li:last-child{
 		border-bottom: none;
 	}
-	#menu-top-nav li:last-child a,#menu-top-nav-italian li:last-child a{
+	#menu-top-nav li:last-child a,#menu-top-nav-italian li:last-child a,#menu-top-nav-spanish li:last-child a{
 		@extend %gray-button;
 		padding-left: 20px;
 		padding-right: 20px;
@@ -367,6 +374,9 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 		bottom: 15%;
 		width: 100%;
 		left: 0;
+		@media(max-width:320px){
+			bottom:8%;
+		}
 		a{
 			color: #d1d1d1;
 		  @include montserrat(400);
@@ -824,7 +834,7 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 }
 
 .full-body{
-	padding: 10% 0;
+	padding: 10% 20px;
 	background-color: #f7f7f7;
 	h2{
 		@include font(36);
@@ -833,6 +843,24 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
+		position:relative;
+		p{
+			color: #FFF;
+			background-color: rgba(0,0,0,0.5);
+			position: absolute;
+			padding: 10px 15px;
+			text-transform: uppercase;
+			margin: 0;
+			@include oswald(400);
+			@include breakpoint(small only){
+				bottom:0;
+				right:0;
+				@include font(14);
+			}
+		}
+		@media(max-width:480px){
+			height: 250px !important;
+		}
 	}
 	.body{
 		@include margin(50,bottom);
@@ -841,6 +869,9 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 		background-color: $black;
 		padding: 60px;
 		color: white;
+		@include breakpoint(large down){
+			padding:40px;
+		}
 		@include breakpoint(small only){
 			padding: 30px;
 		}
@@ -850,7 +881,6 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 		.swatches{
 			color: $white;
 			@include oswald(400);
-			margin-top: 30px;
 			.available{
 				@include font(18);
 				text-transform: uppercase;
@@ -878,18 +908,48 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 			@include montserrat(300);
 		}
 	}
-	.img-ul{
-		display: flex;
-		@include margin(20,top);
-		li{
-			flex-grow:1;
-			padding:0;
+	#swatch-carousel{
+		padding:10px 0;
+		margin-bottom: 30px;
+		.orbit-slide{
+			text-indent: 0px;
+			padding: 0px;
 			text-align: center;
-			margin-right:10px;
+			img{
+				border: 2px solid #666;
+				border-radius: 50%;
+				margin:0 2.5px;
+				margin-bottom: 5px;
+				@media(max-width:480px){
+					width:65px;
+				}
+				@media(max-width:414px){
+					width:55px;
+				}
+				@media(max-width:375px){
+					width:45px;
+				}
+				@media(max-width:320px){
+					width:40px;
+				}
+				&.active-swatch{
+					border: 2px solid #f5c831;
+				}
+			}
 		}
-		img{
-			border: 2px solid #666;
-			border-radius: 50%;
+		.swatch-col{
+			display: inline-block;
+		}
+		.swatch-col p{
+			font-size: 12px;
+			color:#FFF;
+			line-height: 1.4em;
+		}
+		.orbit-previous,.orbit-next{
+			padding:1rem 3px;
+			@include breakpoint(small only){
+				padding: 1rem 5px;
+			}
 		}
 	}
 	.carousel-column, .black-column{
@@ -908,6 +968,27 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 	}
 }
 
+.es .hardware-table{
+	.medium-4.columns:nth-of-type(1){
+		padding-bottom: 40px;
+		@include breakpoint(medium only){
+			top: 58px;
+			padding-bottom: 68px;
+		}
+		@media(max-width:800px){
+			padding-bottom: 21px;
+		}
+		@include breakpoint(small down){
+			padding-bottom: 30px;
+		}
+	}
+	.medium-4.columns:nth-of-type(3){
+		padding-bottom: 35px;
+		@include breakpoint(medium only){
+			top: 58px;
+		}
+	}
+}
 .hardware-table{
 	background-color: #f7f7f7;
 	padding: 10% 0;
@@ -1854,6 +1935,12 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 	}
 	.pp-footer-logo{
 		@include margin(50,bottom);
+		img{
+			width: 260px;
+			@include breakpoint(small only){
+				width: 200px;
+			}
+		}
 	}
 	.footer-credits{
 		@include font(13);

@@ -133,7 +133,7 @@
 			
 		  var origin = window.location.protocol + '//' + window.location.hostname;
 			var videoSrc   = $(that).data('video');
-			videoSrc += '?enablejsapi=1&amp;origin=' + encodeURIComponent(origin);
+			videoSrc += '?rel=0&enablejsapi=1&amp;origin=' + encodeURIComponent(origin);
 			var videoTitle = $(that).data('title');
 			var isTube = videoSrc.match(/tube/g);
 			$(this).attr('data-video-title',videoTitle);

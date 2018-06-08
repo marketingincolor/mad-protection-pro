@@ -35,7 +35,7 @@
 				</aside>
 				<aside class="bottom-footer">
 					<div class="row">
-						<div class="large-10 large-offset-1 columns">
+						<div class="<?php if(!ICL_LANGUAGE_CODE == 'es'){echo 'large-10 large-offset-1';}else{echo 'large-12';} ?> columns">
 							<!-- Hide logos until we get some -->
 						  <!-- <ul class="partner-logos hide"> -->
 								<?php 
@@ -51,9 +51,9 @@
 							</div>
 							<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' )); ?>
 							<div class="footer-credits">
-								<p class="copyright">Copyright &copy;<?php echo date('Y') ?>  ClearPlex<sup>&reg;</sup> ProtectionPro by Madico<sup>&reg;</sup></p>
+								<p class="copyright">Copyright &copy;<?php echo date('Y') ?> ProtectionPro by Madico<sup>&reg;</sup></p>
 								<ul>
-									<li><a href="http://reports.clearplex.com" target="_blank"><?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';}elseif(ICL_LANGUAGE_CODE == 'es'){echo 'Login Reportes';} ?></a></li> |
+									<li><a href="http://reports.clearplex.com" target="_blank"><?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';}elseif(ICL_LANGUAGE_CODE == 'es'){echo 'Acceso a Informes';} ?></a></li> |
 									<li><a href="<?php echo site_url(); ?><?php the_field('privacy_policy_link',$footer_id); ?>"><?php the_field('privacy_policy_text',$footer_id); ?></a></li>
 								</ul>
 							</div>

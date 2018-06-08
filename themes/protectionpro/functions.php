@@ -36,7 +36,7 @@ function icl_post_languages(){
   // Get current language
   switch (ICL_LANGUAGE_CODE) {
     case 'es':
-      $lang = 'Elige lengua';
+      $lang = 'Elige Idioma';
       break;
     case 'it':
       $lang = 'Scegli la lingua';
@@ -53,13 +53,7 @@ function icl_post_languages(){
     echo '<ul class="dropdown-pane lang-switcher" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">';
     foreach($languages as $l){
       if(!$l['active']) {
-        if (strpos($l['url'],'/it') !== false) {
           echo '<li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li>';
-        }else if (strpos($l['url'],'/es') !== false) {
-          echo '';
-        }else{
-          echo '<li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li>';
-        }
       }
     }
     echo '</ul>';
@@ -70,7 +64,7 @@ function icl_post_languages_mobile(){
   // Get current language
   switch (ICL_LANGUAGE_CODE) {
     case 'es':
-      $lang = 'Elige lengua';
+      $lang = 'Elige Idioma';
       break;
     case 'it':
       $lang = 'Scegli la lingua';
@@ -88,7 +82,7 @@ function icl_post_languages_mobile(){
     echo '<ul class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-left" data-dropdown data-auto-focus="true">';
     foreach($languages as $l){
       if(!$l['active']) {
-      	echo '<li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li>';
+          echo '<li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li>';
       }
     }
     echo '</ul>';
