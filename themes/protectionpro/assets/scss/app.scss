@@ -649,26 +649,52 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 }
 
 .protectionpro-film{
-	@extend %bg_img;
-	padding: 10% 0;
-	@include breakpoint(small only){
-		padding: 15% 0 55%;
-		@include pad30-mobile;
-		background-image: url(../images/film-bg-mobile.jpg) !important;
-		background-position: left bottom;
-	}
-	.yellow-line{
-		float: left;
-	}
+	padding: 10% 0 0;
 	p{
 		line-height: 1.8rem;
+		@include margin(25,bottom)
 	}
-	h5{
-		@include font(18);
-	}
-	.protection-title{
+	h2{
+		@include margin(50,bottom);
 		@include font(36);
-		line-height: 40px;
+		@include breakpoint(small down){
+			text-align: left;
+      padding: 0 5%;
+		}
+	}
+	h3{
+		@include font(20);
+		@include margin(20,bottom)
+	}
+	.top,.bottom{
+		@include breakpoint(small only){
+		  background-image:none!important;
+		  padding: 0;
+		  margin-bottom: 0!important;
+		}
+	}
+	.top{
+		padding: 13% 0;
+		@include breakpoint(small only){
+			padding: 0 0 10%;
+		}
+		.flex{
+			@include breakpoint(small only){
+				padding: 0 5% 10%;
+			}
+		}
+	}
+	.bottom{
+		padding: 0 0 12%;
+		@include breakpoint(small only){
+			padding: 0;
+		}
+		.medium-6{
+			@include breakpoint(small only){
+				padding: 0 7%;
+				margin-bottom: 40px;
+			}
+		}
 	}
 }
 
@@ -1898,7 +1924,7 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 	.bottom-footer{
 		padding: 5% 0;
 		@include breakpoint(small only){
-			padding: 5% 0;
+			padding: 10% 0;
 		}
 		.menu-footer-menu-italian-container,.menu-footer-menu-spanish-container{
 			@include margin(20,bottom);
