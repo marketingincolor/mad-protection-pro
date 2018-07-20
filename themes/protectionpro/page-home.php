@@ -191,14 +191,32 @@
 
 <!-- Protection Pro Film Section -->
 
-<section class="protectionpro-film" style="background-image: url(<?php the_field('protection_bg_img'); ?>);">
+<section class="protectionpro-film">
 	<div class="row">
-		<div class="medium-6 medium-offset-6 columns">
-			<h2><?php the_field('protection_title'); ?></h2>
-			<hr class="yellow-line">
-			<div class="clearfix"></div>
-			<?php the_field('protection_body'); ?>
-			<a href="<?php echo site_url();the_field('protection_button_link'); ?>" class="button btn-black"><?php if (ICL_LANGUAGE_CODE=='en'){the_field('protection_button');}elseif(ICL_LANGUAGE_CODE == 'it'){the_field('protection_button_text');}else if(ICL_LANGUAGE_CODE == 'es'){the_field('protection_button');} ?></a>
+		<div class="medium-8 medium-offset-2 large-6 large-offset-3 columns">
+			<h2 class="text-center"><?php the_field('protection_title'); ?></h2>
+		</div>
+	</div>
+	<div class="top" style="margin-bottom:30px;background:url(<?php the_field('shield_img'); ?>) center center no-repeat;background-size:cover">
+		<div class="row">
+			<div class="medium-6 medium-offset-6 columns">
+				<div class="flex flex-text">
+					<h3><?php the_field('shield_title'); ?></h3>
+					<p><?php the_field('shield_body') ?></p>
+					<a href="<?php the_field('shield_button_link'); ?>" class="button btn-black"><?php the_field('shield_button_text'); ?></a>
+				</div>
+			</div>
+			<img src="<?php the_field('shield_mobile_image'); ?>" alt="" class="show-for-small-only">
+		</div>
+	</div>
+	<div class="bottom" style="background:url(<?php the_field('cover_image'); ?>) center center no-repeat;background-size:cover">
+	  <div class="row">
+			<div class="medium-6 columns end">
+				<h3><?php the_field('cover_title'); ?></h3>
+				<p><?php the_field('cover_body') ?></p>
+				<a href="<?php the_field('cover_button_link'); ?>" class="button btn-black"><?php the_field('cover_button_text'); ?></a>
+			</div>
+			<img src="<?php the_field('cover_mobile_image'); ?>" alt="" class="show-for-small-only">
 		</div>
 	</div>
 </section>
