@@ -206,7 +206,7 @@
 	</div>
 </section>
 		
-<section class="full-body">
+<section id="body-section" class="full-body">
 	<div class="row">
 		<div class="medium-10 medium-offset-1 columns text-center">
 			<h2><?php the_field('full_body_heading'); ?></h2>
