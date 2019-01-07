@@ -169,13 +169,15 @@ setTimeout(function(){
 		$italianForm.find('#nf-field-27').find('option:first').before('<option disabled="disabled" selected="selected">Scegli una opzione</option>');
 		$spanishForm.find('#nf-field-54').find('option').removeAttr("selected");
 		$spanishForm.find('#nf-field-54').find('option:first').before('<option disabled="disabled" selected="selected">Elige una opción</option>');
+		$('#nf-form-7-cont').find('#nf-field-75').find('option').removeAttr("selected");
+		$('#nf-form-7-cont').find('#nf-field-75').find('option:first').before('<option disabled="disabled" selected="selected">Please Choose One</option>');
 	})();
 },250);
 
 // makes nav slide down after scrolling past 1st section
 function navSlideDown(){
 	var viewportHeight = $(window).height();
-	if ($('body').hasClass('home') || $('body').hasClass('page-template-page-products')) {
+	if ($('body').hasClass('home') || $('body').hasClass('page-template-page-products') || $('body').hasClass('page-template-page-translation-template')) {
 		if ($(window).scrollTop() > 200 && $(window).scrollTop() < viewportHeight) {
 			$('.top-bar').removeClass('slide-down').addClass('opacity0');
 		}

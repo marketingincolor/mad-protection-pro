@@ -439,12 +439,11 @@ body:not(.home):not(.page-template-page-products) .top-bar.slide-down .top-bar-r
 }
 .large-hero {
 	background: $black;
-	height: 100vh;
-	min-height: 700px;
+	height: 550px;
 	overflow: hidden;
 	position: relative;
 	@include breakpoint(medium down){
-		min-height: 500px;
+		height: 500px;
 	}
 	.scroll-down{
 		position: absolute;
@@ -611,7 +610,7 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 
 .cutters{
 	@extend %bg_img;
-	padding: 8% 0 30%;
+	padding: 4% 0 24%;
 	background-position: center bottom;
 	@include breakpoint(small only){
 		padding: 15% 0 50%;
@@ -649,10 +648,10 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 }
 
 .protectionpro-film{
-	padding: 10% 0 0;
+	padding: 5% 0 0;
 	p{
 		line-height: 1.8rem;
-		@include margin(25,bottom)
+		@include margin(25,bottom);
 	}
 	h2{
 		@include margin(50,bottom);
@@ -664,7 +663,7 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 	}
 	h3{
 		@include font(20);
-		@include margin(20,bottom)
+		@include margin(20,bottom);
 	}
 	.top,.bottom{
 		@include breakpoint(small only){
@@ -697,6 +696,10 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 		}
 	}
 }
+// For cantonese
+.page-id-1334 .sales-wheel .wheel-bg{
+	padding: 75px 0;
+}
 
 .sales-wheel{
 	padding: 5% 0;
@@ -704,7 +707,7 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 		@include margin(0,bottom);
 	}
 	p{
-		@include margin(100,bottom);
+		@include margin(50,bottom);
 	}
 	.mobilep{
 		@include margin(0,bottom);
@@ -715,20 +718,31 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 	.wheel-bg{
 		background-position: center center;
 		background-repeat: no-repeat;
+		padding: 55px 0;
 		@media(max-width: 1140px){
 			background-size: contain;
 		}
 		h4{font-size: 20px;}
 		p{font-size: 14px;}
-		.columns{
+		.row{
 			position: relative;
-			top: 50px;
 		}
-		.middle-columns{
-			top: 100px;
-		}
-		.bottom-columns{
+		.top-row{
+			top: -35px;
 
+			@media(max-width: 1140px){
+				top: 35px;
+			}
+		}
+		.middle-row{
+			top: 60px;
+		}
+		.bottom-row{
+			top: 120px;
+
+			@media(max-width: 1140px){
+				top: 70px;
+			}
 		}
 	}
 	.clearfix.show-for-medium-only{

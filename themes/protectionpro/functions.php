@@ -14,76 +14,51 @@
  * @since FoundationPress 1.0.0
  */
 
-// search posts and pages
-// function search_filter( $query ) {
-// 	if (!is_page(14)) {
-// 		if ( $query->is_search ) {
-// 		  $query->set( 'post_type', array('post','page','case_studies') );
-// 		}
-// 		return $query;
-// 	} else{
-	// 	if ( $query->is_search ) {
-	// 	  $query->set('post_type', array('faqs'));
-	// 	}
-	// 	return $query;
-	// }
-  
-// }
-// add_filter('pre_get_posts','search_filter');
-
 // Get Available Languages
 function icl_post_languages(){
-  // Get current language
-  switch (ICL_LANGUAGE_CODE) {
-    case 'es':
-      $lang = 'Elige Idioma';
-      break;
-    case 'it':
-      $lang = 'Scegli la lingua';
-      break;
-    default:
-      $lang = 'Choose Language';
-      break;
-  }
 
-  $languages = icl_get_languages();
+  $languages = icl_get_languages('skip_missing=0');
+  $langs      = array();
+  
+  foreach($languages as $l){
+    if(!$l['active']) {
+      $langs[$l['translated_name']] = $l['url'];
+    }
+  }
+  // Sort languages alphabetically by name
+  ksort($langs);
 
   if(1 < count($languages)){
-    echo '<button class="button" type="button" data-toggle="example-dropdown-1"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;<span class="choose">'. $lang .'</span>&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>';
+    echo '<button class="button" type="button" data-toggle="example-dropdown-1"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;<span class="choose">'. __('Choose Language','protectionpro') .'</span>&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>';
     echo '<ul class="dropdown-pane lang-switcher" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">';
-    foreach($languages as $l){
-      if(!$l['active']) {
-          echo '<li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li>';
-      }
+    
+    foreach ($langs as $key => $value) {
+      echo '<li><a href="'.$value.'">'.$key.'</a></li>';
     }
     echo '</ul>';
   }
 }
 
 function icl_post_languages_mobile(){
-  // Get current language
-  switch (ICL_LANGUAGE_CODE) {
-    case 'es':
-      $lang = 'Elige Idioma';
-      break;
-    case 'it':
-      $lang = 'Scegli la lingua';
-      break;
-    default:
-      $lang = 'Choose Language';
-      break;
-  }
 
-  $languages = icl_get_languages('skip_missing=1');
+  $languages = icl_get_languages('skip_missing=0');
+  $langs      = array();
+  
+  foreach($languages as $l){
+    if(!$l['active']) {
+      $langs[$l['translated_name']] = $l['url'];
+    }
+  }
+  // Sort languages alphabetically by name
+  ksort($langs);
   
   if(1 < count($languages)){
-    echo '<button class="button" type="button" data-toggle="example-dropdown-bottom-left"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;<span class="choose">'. $lang .'</span>&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>';
+    echo '<button class="button" type="button" data-toggle="example-dropdown-bottom-left"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;<span class="choose">'. __('Choose Language','protectionpro') .'</span>&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>';
 
     echo '<ul class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-left" data-dropdown data-auto-focus="true">';
-    foreach($languages as $l){
-      if(!$l['active']) {
-          echo '<li><a href="'.$l['url'].'">'.$l['translated_name'].'</a></li>';
-      }
+    
+    foreach ($langs as $key => $value) {
+      echo '<li><a href="'.$value.'">'.$key.'</a></li>';
     }
     echo '</ul>';
   }
