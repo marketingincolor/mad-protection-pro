@@ -31,6 +31,21 @@
 			case 'it':
 				$lang = 'it';
 				break;
+			case 'de':
+				$lang = 'de';
+				break;
+			case 'fr':
+				$lang = 'fr';
+				break;
+			case 'nl':
+				$lang = 'nl';
+				break;
+			case 'zh-hans':
+				$lang = 'zh-hans';
+				break;
+			case 'zh-hant':
+				$lang = 'zh-hant';
+				break;
 			default:
 				$lang = 'en';
 				break;
