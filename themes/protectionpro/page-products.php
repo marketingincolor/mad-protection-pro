@@ -83,13 +83,21 @@
 					<img src="<?php the_field('express_image'); ?>" alt="">
 					<p><?php the_field('express_body'); ?></p>
 					<ul>
-						<li><?php the_field('express_dimensions') ?></li>
-						<li><?php the_field('express_weight') ?></li>
-						<li><?php the_field('express_sizes') ?></li>
-						<li><?php the_field('express_types') ?></li>
-						<li><?php the_field('express_usage') ?></li>
-						<li><?php the_field('express_volume') ?></li>
-						<li><?php the_field('express_retail') ?></li>
+						<?php if (get_field('express_dimensions')) { ?>
+							<li><?php the_field('express_dimensions') ?></li>
+						<?php }if(get_field('express_weight')) { ?>
+							<li><?php the_field('express_weight') ?></li>
+						<?php }if(get_field('express_sizes')) { ?>
+							<li><?php the_field('express_sizes') ?></li>
+						<?php }if(get_field('express_types')) { ?>
+							<li><?php the_field('express_types') ?></li>
+						<?php }if(get_field('express_usage')) { ?>
+							<li><?php the_field('express_usage') ?></li>
+						<?php }if(get_field('express_volume')) { ?>
+							<li><?php the_field('express_volume') ?></li>
+						<?php }if(get_field('express_retail')) { ?>
+							<li><?php the_field('express_retail') ?></li>
+						<?php } ?>
 					</ul>
 				</div>
 				<div class="medium-4 columns">
@@ -98,13 +106,21 @@
 					<img src="<?php the_field('elite_image'); ?>" alt="">
 					<p><?php the_field('elite_body'); ?></p>
 					<ul>
-						<li><?php the_field('elite_dimensions') ?></li>
-						<li><?php the_field('elite_weight') ?></li>
-						<li><?php the_field('elite_sizes') ?></li>
-						<li><?php the_field('elite_types') ?></li>
-						<li><?php the_field('elite_usage') ?></li>
-						<li><?php the_field('elite_volume') ?></li>
-						<li><?php the_field('elite_retail') ?></li>
+						<?php if (get_field('elite_dimensions')) { ?>
+							<li><?php the_field('elite_dimensions') ?></li>
+						<?php }if(get_field('elite_weight')) { ?>
+							<li><?php the_field('elite_weight') ?></li>
+						<?php }if(get_field('elite_sizes')) { ?>
+							<li><?php the_field('elite_sizes') ?></li>
+						<?php }if(get_field('elite_types')) { ?>
+							<li><?php the_field('elite_types') ?></li>
+						<?php }if(get_field('elite_usage')) { ?>
+							<li><?php the_field('elite_usage') ?></li>
+						<?php }if(get_field('elite_volume')) { ?>
+							<li><?php the_field('elite_volume') ?></li>
+						<?php }if(get_field('elite_retail')) { ?>
+							<li><?php the_field('elite_retail') ?></li>
+						<?php } ?>
 					</ul>
 				</div>
 				<div class="medium-4 columns">
@@ -112,13 +128,21 @@
 					<img src="<?php the_field('lite_image'); ?>" alt="">
 					<p><?php the_field('lite_body'); ?></p>
 					<ul>
-						<li><?php the_field('lite_dimensions') ?></li>
-						<li><?php the_field('lite_weight') ?></li>
-						<li><?php the_field('lite_sizes') ?></li>
-						<li><?php the_field('lite_types') ?></li>
-						<li><?php the_field('lite_usage') ?></li>
-						<li><?php the_field('lite_volume') ?></li>
-						<li><?php the_field('lite_retail') ?></li>
+						<?php if (get_field('lite_dimensions')) { ?>
+							<li><?php the_field('lite_dimensions') ?></li>
+						<?php }if(get_field('lite_weight')) { ?>
+							<li><?php the_field('lite_weight') ?></li>
+						<?php }if(get_field('lite_sizes')) { ?>
+							<li><?php the_field('lite_sizes') ?></li>
+						<?php }if(get_field('lite_types')) { ?>
+							<li><?php the_field('lite_types') ?></li>
+						<?php }if(get_field('lite_usage')) { ?>
+							<li><?php the_field('lite_usage') ?></li>
+						<?php }if(get_field('lite_volume')) { ?>
+							<li><?php the_field('lite_volume') ?></li>
+						<?php }if(get_field('lite_retail')) { ?>
+							<li><?php the_field('lite_retail') ?></li>
+						<?php } ?>
 					</ul>
 				</div>
 			</div>

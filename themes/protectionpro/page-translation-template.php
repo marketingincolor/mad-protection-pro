@@ -1,23 +1,25 @@
 <?php
 	/*
-	Template Name: Home
+	Template Name: Translation Template
 	*/
-	get_header(); 
+	get_header('translations'); 
 	$bg_img = wp_get_attachment_url(get_post_thumbnail_id( $post->ID ));
 ?>
 
+<style>
+	body.rtl .cutters .yellow-line {
+    float: right;
+  }
+</style>
+
 <!-- Hero Section -->
 <section class="large-hero">
-	<video src="<?php the_field('video_url'); ?>" playinline autoplay="" loop="" muted="" preload="auto"></video>
+	<video src="<?php the_field('video_url'); ?>" autoplay="" loop="" muted="" preload="auto"></video>
 	<center class="center">
 		<h1><?php the_field('hero_title'); ?></h1>
 		<p class="large-hero-body"><?php the_field('hero_body'); ?></p>
-		<div class="button-group play-group" data-open="video-modal">
-		  <a href="#" class="button play-text"><?php the_field('play_button_text'); ?></a>
-		  <a href="#" class="button play-container"><div class="play-button"></div></a>
-		</div><br class="show-for-small-only" />
 		<div class="button-group">
-			<a href="<?php echo site_url(); ?><?php the_field('learn_more_button_link'); ?>" class="button learn-more"><?php the_field('learn_more_button_text'); ?></a>
+			<a href="<?php the_field('get_started_button_link'); ?>" class="button btn-white gtm_cta_1"><?php the_field('get_started_button_text'); ?></a>
 		</div>
 	</center>
 	<div class="scroll-down">
@@ -164,7 +166,7 @@
 			<h5><?php the_field('home_cutters_title'); ?></h5>
 			<hr class="yellow-line">
 		</div>
-		<div class="medium-9 large-7 columns">
+		<div class="medium-9 large-7 columns <?php if(ICL_LANGUAGE_CODE == 'he'){echo 'medium-offset-3 large-offset-5';} ?>">
 			<p class="body"><?php the_field('home_cutters_body'); ?></p>
 		</div>
 		<div class="clearfix"></div>
@@ -175,13 +177,13 @@
 			<h4 class="cutter-title"><?php the_field('cutter'.$count.'_title'); ?></h4>
 			<p class="cutter-body"><?php the_field('cutter'.$count.'_body'); ?></p>
 			<?php if ($count == 1) { ?>
-				<a href="<?php echo site_url();the_field('cutter_button_link'); ?>" class="button btn-white hide-for-small-only"><?php the_field('cutter_button_text'); ?></a>
+				<a href="<?php the_field('cutter_button_link'); ?>" class="button btn-white hide-for-small-only gtm_cta_2"><?php the_field('cutter_button_text'); ?></a>
 			<?php } ?>
 		</div>
 
 		<?php } ?>
 		<div class="small-12 columns show-for-small-only">
-			<a href="<?php echo site_url(); ?>/products" class="button btn-white"><?php the_field('cutter_button_text'); ?></a>
+			<a href="<?php the_field('cutter_button_link'); ?>" class="button btn-white gtm_cta_2"><?php the_field('cutter_button_text'); ?></a>
 		</div>
 
 	</div>
@@ -201,7 +203,7 @@
 				<div class="flex flex-text">
 					<h3><?php the_field('shield_title'); ?></h3>
 					<p><?php the_field('shield_body') ?></p>
-					<a href="<?php the_field('shield_button_link'); ?>" class="button btn-black"><?php the_field('shield_button_text'); ?></a>
+					<a href="<?php the_field('shield_button_link'); ?>" class="button btn-black gtm_cta_3"><?php the_field('shield_button_text'); ?></a>
 				</div>
 			</div>
 			<img src="<?php the_field('shield_mobile_image'); ?>" alt="" class="show-for-small-only">
@@ -212,62 +214,14 @@
 			<div class="medium-6 columns end">
 				<h3><?php the_field('cover_title'); ?></h3>
 				<p><?php the_field('cover_body') ?></p>
-				<a href="<?php the_field('cover_button_link'); ?>" class="button btn-black"><?php the_field('cover_button_text'); ?></a>
+				<a href="<?php the_field('cover_button_link'); ?>" class="button btn-black gtm_cta_4"><?php the_field('cover_button_text'); ?></a>
 			</div>
 			<img src="<?php the_field('cover_mobile_image'); ?>" alt="" class="show-for-small-only">
 		</div>
 	</div>
 </section>
 
-<!-- Case Studies Section  (SECTION ON HOLD)-->
-<!-- <section class="home-case-studies" style="background-image: url(<?php //the_field('home_case_studies_bg'); ?>);">
-	<div class="row">
-		<div class="medium-6 columns">
-			<h3><?php //the_field('home_case_studies_title'); ?></h3>
-			<hr class="yellow-line">
-			<div class="clearfix"></div>
-			<p><?php //the_field('home_case_studies_body'); ?></p>
-
-			<?php
-			// Query custom post type "case_studies" to get 
-			// featured case studies only
-
-			// $args = array(
-			// 	'post_type'      => 'case_studies',
-			// 	'orderby'        => 'menu_order',
-			// 	'order'          => 'ASC',
-			// 	'posts_per_page' => 2,
-			// 	'tax_query' => array(
-			// 			array(
-			// 				'taxonomy' => 'home_case_study',
-			// 				'field'    => 'slug',
-			// 				'terms'    => 'home_page',
-			// 			),
-			// 		),
-			// );
-
-			// $the_query = new WP_Query($args);
-
-			// if ( $the_query->have_posts() ) {
-			// 	while ( $the_query->have_posts() ) {
-			// 		$the_query->the_post();
-			// 		$count++;
-			?>
-
-			<div class="featured-case-study">
-				<h5 class="red-title"><?php //the_title(); ?></h5>
-				<p><?php //echo wp_trim_words(get_the_content(),20,'...') ?></p>
-				<a href="<?php //the_permalink(); ?>" class="read-more clearfix"><strong>Read More »</strong></a>
-			</div>
-
-			<?php //}} wp_reset_postdata(); ?>
-
-			<a href="<?php //echo site_url(); ?>/case-studies" class="button btn-black"><?php //the_field('home_case_studies_button_text'); ?></a>
-		</div>
-	</div>
-</section> -->
-
-<?php get_footer(); ?>
+<?php get_footer('translations'); ?>
 
 <script>
 
