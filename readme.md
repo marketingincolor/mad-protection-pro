@@ -9,7 +9,7 @@ This GitHub repository includes only the required theme and plugins to be instal
 ### Project Details
 Project Manager: MaryKay Scott
 
-Primary Developer: Edd Twilbeck
+Primary Developer: Nate Beers
 
 Start Date:
 
@@ -19,7 +19,7 @@ Completion Date:
 
 ### STATUS
 
-Development: `Ongoing`
+Development: `In Progress`
 
 Maintenance: `NA`
 

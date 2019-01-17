@@ -4,4 +4,11 @@ backups/ 
 blogs.dir/ 
 cache/ 
 upgrade/ 
-uploads/ 
+uploads/
+node_modules/
+bower_components/
+ai1wm-backups/
+packaged/
+foundation.css
+foundation.css.map
+foundation.js

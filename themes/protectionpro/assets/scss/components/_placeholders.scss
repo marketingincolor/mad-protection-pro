@@ -1,0 +1,51 @@
+%bg_img{
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+%gray-button{
+	border:2px solid #7d7c7c;
+	background-color: #626160;
+	border-radius: 3px;
+	letter-spacing: 1px;
+	transition: background-color 0.25s ease-in-out;
+	@include font(16);
+	&:hover {
+		background-color: #7d7c7c;
+	}
+}
+%height100 {
+	height: 100vh;
+}
+%btn-white{
+	background-color: $clear;
+	border:2px solid #eab321;
+	border-radius: 3px;
+	text-transform: uppercase;
+	@include font(16);
+	@include oswald(500);
+	letter-spacing: 1px;
+	color:$white;
+	transition: background-color 0.25s ease-in-out;
+	&:hover{
+		background-color: #eab321;
+	}
+}
+%btn-black{
+	background-color: $clear;
+	border:2px solid #eab321;
+	border-radius: 3px;
+	text-transform: uppercase;
+	@include font(16);
+	@include oswald(500);
+	color:$black;
+	letter-spacing: 1px;
+	transition: all 0.25s ease-in-out;
+	&:hover{
+		background-color: #eab321;
+		color: $white;
+	}
+}
