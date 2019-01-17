@@ -811,6 +811,14 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 			line-height: 1.8
 		}
 	}
+	&.infinity-hero{
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 450px;
+		.center{
+			top: 60%;
+		}
+	}
 	.yellow-line{
 		float: left;
 	}
@@ -843,6 +851,79 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 				@include font(16);
 			}
 		}
+	}
+}
+
+// Infinity Series Page
+.page-template-page-infinity{
+	h5{
+		@include oswald(400);
+		@include font(14);
+	}
+}
+.fine-print{
+	@include font(12);
+	@include montserrat(300);
+	font-style: italic;
+	margin-bottom: 0!important;
+}
+.infinity-intro{
+	padding: 40px 0;
+	img{
+		@include margin(15,bottom);
+	}
+	h2{
+		@include font(36);
+		@include margin(25,bottom);
+	}
+	h4{
+		@include font(20);
+	}
+	p{
+		@include font(14);
+	}
+	.column-block{
+		@include margin(0,bottom);
+	}
+	.intro-text p{
+		@include font(16);
+		@include margin(50,bottom);
+	}
+}
+
+.infinity-carbon{
+	background-size: cover;
+	padding: 40px 0 0;
+	h2{
+		@include margin(25,bottom);
+	}
+	p{
+		@include margin(35,bottom);
+	}
+	.icon-row img{
+		margin-bottom: 10px;
+	}
+	.img-column{
+		position: relative;
+		img{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+	.fine-print{
+		margin-bottom: 40px!important;
+	}
+}
+
+.infinity-metal{
+	background-size: cover;
+	padding: 40px 0;
+	h2{
+		@include margin(25,bottom);
+	}
+	p{
+		@include margin(35,bottom);
 	}
 }
 
