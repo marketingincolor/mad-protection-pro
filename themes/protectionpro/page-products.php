@@ -230,116 +230,16 @@
 	</div>
 </section>
 		
-<section id="body-section" class="full-body">
+<section id="body-section" class="full-body" style="padding: 40px 20px 0">
 	<div class="row">
 		<div class="medium-10 medium-offset-1 columns text-center">
 			<h2><?php the_field('full_body_heading'); ?></h2>
 			<hr class="yellow-line">
-			<p class="body"><?php the_field('full_body_body'); ?></p>
+			<p class=""><?php the_field('full_body_body'); ?></p>
+			<a href="<?php the_field('full_body_cta_link'); ?>" class="button btn-black body" style="margin-bottom:40px"><?php the_field('full_body_cta_text'); ?></a>
 		</div>
-		<div class="clearfix"></div>
-		<div class="large-7 large-offset-0 medium-10 medium-offset-1 columns carousel-column">
-			<div class="full-body-carousel owl-carousel owl-theme">
-
-				<?php
-				$args = array(
-					'post_type'      => 'product_swatches', 
-					'posts_per_page' => -1,
-					'orderby'        => 'menu_order',
-					'order'          => 'ASC'
-				);
-				$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-			    <div class="item" data-hash="<?php echo $post->menu_order + 1; ?>" style="background-image:url(<?php the_post_thumbnail_url(); ?>">
-			    	<p><?php the_title(); ?></p>
-			    </div>
-
-		    <?php $count++;endwhile; wp_reset_postdata(); ?>
-		    
-			</div>
-		</div>
-		<div class="large-5 large-offset-0 medium-10 medium-offset-1 columns black-column">
-			<div class="black-bg">
-				<p class="swatches"><span class="available"><?php the_field('swatch_patterns'); ?></span><br><span class="select"><?php the_field('swatch_preview'); ?></span></p>
-				<div id="swatch-carousel" class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false">
-				  <div class="orbit-wrapper">
-				    <div class="orbit-controls">
-				      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-				      <button class="orbit-next"><span class="show-for-sr">Next Slide</span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-				    </div>
-				    <!-- CIRCULAR SWATCH CAROUSEL -->
-				    <ul class="orbit-container">
-				      <li class="is-active orbit-slide">
-
-					    	<?php
-						    	$swatch_count = 0;
-						    	$total_post_count = wp_count_posts('product_swatches')->publish;
-						    	$args = array(
-						    		'post_type'      => 'product_swatches', 
-						    		'posts_per_page' => -1,
-						    		'orderby'        => 'menu_order',
-						    		'order'          => 'ASC'
-						    	);
-						    	$loop = new WP_Query( $args );
-						    	while ( $loop->have_posts() ) : $loop->the_post();
-						    ?>
-
-				      		<a href="#<?php echo $swatch_count + 1; ?>"><img src="<?php the_field('circle_swatch'); ?>" alt="<?php the_title(); ?>" <?php if ($swatch_count == 0){echo 'class="active-swatch"';} ?>></a>
-
-									<?php $swatch_count++; ?>
-									<?php if ($swatch_count % 3 == 0 && $swatch_count != $total_post_count) { ?>
-									  	
-									</li><li class="orbit-slide">
-
-									<?php } ?>
-									<?php if ($swatch_count == $total_post_count) { ?>
-
-									</li>
-
-									<?php } ?>
-
-				        <?php endwhile; wp_reset_postdata(); ?>
-
-				    </ul>
-				  </div>
-				  <!-- IF DOTS ARE NEEDED AS EXTRA NAVIGATION THEN UNCOMMENT THIS SECTION BELOW -->
-				  <!-- <nav class="orbit-bullets">
-				  	<?php for ($i=0; $i < ceil($total_post_count / 3); $i++) { ?>
-						<?php switch ($i) {
-							case 0:
-								$current_slide = 'First';break;
-							case 1:
-								$current_slide = 'Second';break;
-							case 2:
-								$current_slide = 'Third';break;
-							case 3:
-								$current_slide = 'Fourth';break;
-							case 4:
-								$current_slide = 'Fifth';break;
-							default:
-								break;
-						} ?>
-
-				  		<button<?php if($i == 0){ ?> class="is-active"<?php } ?> data-slide="<?php echo $i; ?>"><span class="show-for-sr"><?php echo $current_slide; ?> slide details.</span><?php if($i == 0){ ?><span class="show-for-sr">Current Slide</span><?php } ?></button>
-
-				  	<?php } ?>
-			      
-				  </nav> -->
-				</div>
-				<h4><?php the_field('full_body_blackbox_heading'); ?></h4>
-				<ul>
-					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item1'); ?></li>
-					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item2'); ?></li>
-					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;  <?php the_field('full_body_blackbox_item3'); ?></li>
-					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item4'); ?></li>
-					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item5'); ?></li>
-					<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; <?php the_field('full_body_blackbox_item6'); ?></li>
-				</ul>
-			</div>
-		</div>
-		<div class="clearfix"></div>
 	</div>
+	<div class="text-center"><img src="<?php the_field('full_body_image'); ?>" alt="ProtectionPro Infinity Series Products"></div>
 </section>
 
 <!-- <section class="library" style="background-image: url(<?php //the_field('library_bg'); ?>);">
