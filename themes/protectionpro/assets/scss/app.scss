@@ -159,6 +159,9 @@ a,button{
 			}
 		}
 	}
+	.dropdown.menu>li.is-dropdown-submenu-parent>a::after{
+		border-color: $white transparent transparent;
+	}
 	.languages{
 		position: absolute;
 		right: 120px;
@@ -175,6 +178,13 @@ a,button{
 		}
 		i{
 			color: #d1d1d1;
+		}
+	}
+	.is-dropdown-submenu.js-dropdown-active{
+		border: 0;
+		.menu-item{
+			padding-right: 0;
+			padding-left: 0;
 		}
 	}
 	.dropdown-pane{
@@ -812,11 +822,23 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 		}
 	}
 	&.infinity-hero{
+		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		height: 450px;
+		height: 400px;
+
+		@media(max-width:800px){
+			height: 300px;
+		}
+		@media(max-width:640px){
+			background-position: center 100px;
+			height: 300px;
+		}
 		.center{
 			top: 60%;
+			@media(max-width:640px){
+				top: 40%;
+			}
 		}
 	}
 	.yellow-line{
@@ -856,9 +878,24 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 
 // Infinity Series Page
 .page-template-page-infinity{
+	.menu .active>a{
+		background-color: $clear;
+	}
 	h5{
 		@include oswald(400);
 		@include font(14);
+
+		@media(max-width:800px){
+			@include font(12);
+		}
+		@include breakpoint(small only){
+			@include font(14);
+		}
+	}
+	.column-block img{
+		max-height: 55px;
+		max-width: 55px;
+		margin-bottom: 10px;
 	}
 }
 .fine-print{
@@ -877,13 +914,16 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 		@include margin(25,bottom);
 	}
 	h4{
-		@include font(20);
+		@include font(18);
 	}
 	p{
 		@include font(14);
 	}
 	.column-block{
 		@include margin(0,bottom);
+		@include breakpoint(medium down){
+			margin-bottom: 20px;
+		}
 	}
 	.intro-text p{
 		@include font(16);
@@ -894,14 +934,19 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 .infinity-carbon{
 	background-size: cover;
 	padding: 40px 0 0;
+
+	@include breakpoint(small only){
+		text-align: center;
+	}
+
 	h2{
 		@include margin(25,bottom);
+		@include breakpoint(small only){
+			@include font(26);
+		}
 	}
 	p{
 		@include margin(35,bottom);
-	}
-	.icon-row img{
-		margin-bottom: 10px;
 	}
 	.img-column{
 		position: relative;
@@ -909,21 +954,121 @@ body.es .large-hero .button-group,body.it .large-hero .button-group{
 			position: absolute;
 			bottom: 0;
 			right: 0;
+			@include breakpoint(small only){
+				position: static;
+			}
 		}
 	}
 	.fine-print{
 		margin-bottom: 40px!important;
 	}
+
+	&.texture{
+		
+		@include breakpoint(small only){
+			overflow: hidden;
+		}
+
+		.img-column img{
+			@media(max-width: 800px){
+				width: 90%;
+			}
+			@include breakpoint(small only){
+				width: 75%;
+				position: relative;
+				top: 160px;
+				margin-top: -160px;
+			}
+		}
+	}
+
+	&.spectrum{
+
+		@include breakpoint(small only){
+			overflow: hidden;
+		}
+
+		.img-column img{
+			position: relative;
+			top: 160px;
+			margin-top: -160px;
+		}
+	}
 }
 
 .infinity-metal{
-	background-size: cover;
+	background-size: cover!important;
 	padding: 40px 0;
+
+	@include breakpoint(small only){
+		text-align: center;
+	}
+
 	h2{
 		@include margin(25,bottom);
+		@include breakpoint(small only){
+			@include font(26);
+		}
 	}
 	p{
 		@include margin(35,bottom);
+	}
+
+	&.metal{
+		@media(min-width:1600px){
+			background-position: 0 0 !important;
+		}
+		@include breakpoint(small only){
+			background: #EEE !important;
+		}
+
+		h2,p{
+			@include breakpoint(small only){
+				text-align: center;
+			}
+		}
+	}
+
+	&.sparkle{
+		@media(min-width:1600px){
+			background-position: 0 0 !important;
+		}
+		@media(max-width: 1024px){
+			background-position: -240px 0 !important;
+		}
+		@media(max-width: 800px){
+			background-position: -400px 0 !important;
+		}
+		@media(max-width: 640px){
+			background-position: center center !important;
+		}
+
+		h2,p{
+			@include breakpoint(small only){
+				text-align: center;
+			}
+		}
+	}
+
+	&.art{
+		@media(max-width: 1024px){
+			background-position: -345px 0 !important;
+		}
+		@media(max-width: 800px){
+			background-position: -530px 0 !important;
+		}
+		@media(max-width: 768px){
+			background-position: -580px 0 !important;
+		}
+		@media(max-width: 640px){
+			background-position: center center !important;
+		}
+
+		h2,p{
+			@include breakpoint(small only){
+				text-align: center;
+			}
+		}
 	}
 }
 

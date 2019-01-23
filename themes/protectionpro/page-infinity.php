@@ -48,7 +48,7 @@
 				<p><?php the_field('carbon_copy'); ?></p>
 				<div class="row">
 					<div class="medium-11 end columns">
-						<div class="row medium-up-5 icon-row">
+						<div class="row small-up-2 medium-up-5 icon-row">
 							
 							<?php
 							if( have_rows('carbon_icons') ):
@@ -74,14 +74,14 @@
 		</div>
 	</section>
 
-	<section class="infinity-metal" style="background: url(<?php the_field('metal_backgroud_image'); ?>) center center no-repeat;">
+	<section class="infinity-metal metal" style="background: url(<?php the_field('metal_backgroud_image'); ?>) center center no-repeat;">
 		<div class="row">
 			<div class="large-5 large-offset-6 medium-6 medium-offset-5 columns end">
 				<h2 class="text-right"><?php the_field('metal_title'); ?></h2>
 				<p class="text-right"><?php the_field('metal_copy'); ?></p>
-				<div class="row medium-up-5 icon-row">
+				<div class="row small-up-2 medium-up-5 icon-row">
 					<?php if(count(get_field('metal_icons')) < 5); { ?>
-						<div class="column column-block text-center show-for-medium"></div>
+						<div id="empty-block" class="column column-block text-center show-for-medium"></div>
 					<?php } ?>
 					<?php
 					if( have_rows('metal_icons') ):
@@ -102,14 +102,14 @@
 		</div>
 	</section>
 
-	<section class="infinity-carbon" style="background: url(<?php the_field('texture_background_image'); ?>) center center no-repeat;background-size:cover">
+	<section class="infinity-carbon texture" style="background: url(<?php the_field('texture_background_image'); ?>) center center no-repeat;background-size:cover">
 		<div class="row" data-equalizer data-equalize-on="medium">
 			<div class="medium-6 medium-offset-1 columns" data-equalizer-watch>
 				<h2><?php the_field('texture_title'); ?></h2>
 				<p><?php the_field('texture_copy'); ?></p>
 				<div class="row">
 					<div class="medium-12 end columns">
-						<div class="row medium-up-6 icon-row">
+						<div class="row small-up-2 medium-up-6 icon-row">
 							
 							<?php
 							if( have_rows('texture_icons') ):
@@ -135,12 +135,12 @@
 		</div>
 	</section>
 
-	<section class="infinity-metal" style="background: url(<?php the_field('sparkle_background_image'); ?>) center center no-repeat;background-size:cover">
+	<section class="infinity-metal sparkle" style="background: url(<?php the_field('sparkle_background_image'); ?>) center center no-repeat;background-size:cover">
 		<div class="row">
 			<div class="large-5 large-offset-6 medium-6 medium-offset-5 columns end">
 				<h2 class="text-right"><?php the_field('sparkle_title'); ?></h2>
 				<p class="text-right"><?php the_field('sparkle_copy'); ?></p>
-				<div class="row medium-up-3 large-up-6 icon-row">
+				<div class="row small-up-2 medium-up-3 large-up-6 icon-row">
 
 					<?php
 					if( have_rows('sparkle_icons') ):
@@ -161,14 +161,14 @@
 		</div>
 	</section>
 
-	<section class="infinity-carbon" style="background: url(<?php the_field('spectrum_background_image'); ?>) center center no-repeat;">
+	<section class="infinity-carbon spectrum" style="background: url(<?php the_field('spectrum_background_image'); ?>) center center no-repeat;">
 		<div class="row" data-equalizer data-equalize-on="medium">
 			<div class="medium-6 medium-offset-1 columns" data-equalizer-watch>
 				<h2><?php the_field('spectrum_title'); ?></h2>
 				<p><?php the_field('spectrum_copy'); ?></p>
 				<div class="row">
 					<div class="medium-12 end columns">
-						<div class="row medium-up-6 icon-row">
+						<div class="row small-up-2 medium-up-6 icon-row">
 							
 							<?php
 							if( have_rows('spectrum_icons') ):
@@ -194,12 +194,12 @@
 		</div>
 	</section>
 
-	<section class="infinity-metal" style="background: url(<?php the_field('art_background_image'); ?>) center center no-repeat;background-size:cover">
+	<section class="infinity-metal art" style="background: url(<?php the_field('art_background_image'); ?>) center center no-repeat;background-size:cover">
 		<div class="row">
 			<div class="large-5 large-offset-6 medium-6 medium-offset-5 columns end">
 				<h2 class="text-right"><?php the_field('art_title'); ?></h2>
 				<p class="text-right"><?php the_field('art_copy'); ?></p>
-				<div class="row medium-up-3 large-up-6 icon-row">
+				<div class="row small-up-2 medium-up-3 large-up-6 icon-row">
 
 					<?php
 					if( have_rows('art_icons') ):
@@ -223,4 +223,8 @@
 
 <?php get_footer(); ?>
 
-
+<script>
+	if ($(window).width() < 641) {
+		$('#empty-block').remove();
+	}
+</script>
