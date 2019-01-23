@@ -177,7 +177,7 @@ setTimeout(function(){
 // makes nav slide down after scrolling past 1st section
 function navSlideDown(){
 	var viewportHeight = $(window).height();
-	if ($('body').hasClass('home') || $('body').hasClass('page-template-page-products') || $('body').hasClass('page-template-page-translation-template')) {
+	if ($('body').hasClass('home') || $('body').hasClass('page-template-page-products') || $('body').hasClass('page-template-page-translation-template') || $('body').hasClass('page-template-page-infinity')) {
 		if ($(window).scrollTop() > 200 && $(window).scrollTop() < viewportHeight) {
 			$('.top-bar').removeClass('slide-down').addClass('opacity0');
 		}
