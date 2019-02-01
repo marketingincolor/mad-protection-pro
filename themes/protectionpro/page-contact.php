@@ -64,16 +64,15 @@
 					<div class="large-12 columns">
 
 						<?php 
-
-						if(ICL_LANGUAGE_CODE == 'en') {
-						  echo do_shortcode('[ninja_form id=1]');
-						}elseif (ICL_LANGUAGE_CODE == 'it') {
-						 	echo do_shortcode('[ninja_form id=3]');
-						}elseif (ICL_LANGUAGE_CODE == 'es') {
-						 	echo do_shortcode('[ninja_form id=5]');
-						}
-
+							if(ICL_LANGUAGE_CODE == 'en') {
+								echo do_shortcode('[ninja_form id=1]');
+							}elseif (ICL_LANGUAGE_CODE == 'it') {
+							 	echo do_shortcode('[ninja_form id=3]');
+							}elseif (ICL_LANGUAGE_CODE == 'es') {
+							 	echo do_shortcode('[ninja_form id=5]');
+							}
 						?>
+
 					</div>
 				</div>
 			</div>
