@@ -19,7 +19,7 @@
 		<?php if (is_page('consumer-success','thank-you-distributor','distributor-success','retailer-success','success')) { ?>
 			<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 		<?php } ?>
-		<style>.partner-logos{display:flex;list-style-type:none;align-items:center}</style>
+		<style>.partner-logos{display:flex;list-style-type:none;align-items:center} #mobile-menu .mobile-menu-list li{padding:2px 0 !important;} #mobile-menu .mobile-menu-list li:last-child {padding-top:20px !important;}</style>
 		<?php wp_head(); ?>
 		<script type="text/javascript">
 		    var _ss = _ss || [];

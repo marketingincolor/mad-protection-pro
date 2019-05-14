@@ -51,7 +51,7 @@
 							</div>
 							<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' )); ?>
 							<div class="footer-credits">
-								<p class="copyright">Copyright &copy;<?php echo date('Y') ?> ProtectionPro<sup>&trade;</sup> by Madico<sup>&reg;</sup></p>
+								<p class="copyright">Copyright &copy;<?php echo date('Y') ?> ProtectionPro<sup>&reg;</sup> by Madico<sup>&reg;</sup></p>
 								<ul>
 									<li><a href="http://reports.clearplex.com" target="_blank"><?php if(ICL_LANGUAGE_CODE == 'en'){ echo 'Reports Login';}elseif(ICL_LANGUAGE_CODE == 'it'){echo 'Login Statistiche';}elseif(ICL_LANGUAGE_CODE == 'es'){echo 'Acceso a Informes';} ?></a></li> |
 									<li><a href="<?php echo site_url(); ?><?php the_field('privacy_policy_link',$footer_id); ?>"><?php the_field('privacy_policy_text',$footer_id); ?></a></li>
