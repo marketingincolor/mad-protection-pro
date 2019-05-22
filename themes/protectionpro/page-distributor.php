@@ -20,7 +20,7 @@
 			
 			<?php 
 				if(ICL_LANGUAGE_CODE == 'en') {
-				  echo do_shortcode('[ninja_form id=2]');
+					echo do_shortcode('[ninja_form id=2]');
 				}elseif (ICL_LANGUAGE_CODE == 'it') {
 				 	echo do_shortcode('[ninja_form id=4]');
 				}elseif (ICL_LANGUAGE_CODE == 'es') {

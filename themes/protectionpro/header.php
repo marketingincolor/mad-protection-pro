@@ -19,8 +19,21 @@
 		<?php if (is_page('consumer-success','thank-you-distributor','distributor-success','retailer-success','success')) { ?>
 			<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 		<?php } ?>
-		<style>.partner-logos{display:flex;list-style-type:none;align-items:center}</style>
+		<style>.partner-logos{display:flex;list-style-type:none;align-items:center} #mobile-menu .mobile-menu-list li{padding:2px 0 !important;} #mobile-menu .mobile-menu-list li:last-child {padding-top:20px !important;}</style>
 		<?php wp_head(); ?>
+		<script type="text/javascript">
+		    var _ss = _ss || [];
+		    _ss.push(['_setDomain', 'https://koi-3QNHJKLJ4E.marketingautomation.services/net']);
+		    _ss.push(['_setAccount', 'KOI-436IHIWD3C']);
+		    _ss.push(['_trackPageView']);
+		(function() {
+		    var ss = document.createElement('script');
+		    ss.type = 'text/javascript'; ss.async = true;
+		    ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNHJKLJ4E.marketingautomation.services/client/ss.js?ver=1.1.1';
+		    var scr = document.getElementsByTagName('script')[0];
+		    scr.parentNode.insertBefore(ss, scr);
+		})();
+		</script>
 	</head>
 
 	<?php
