@@ -128,7 +128,7 @@
 								<img src="/wp-content/uploads/2018/06/protectionpro-logo-color.svg" alt="Protection Pro">
 							</div>
 							<div class="footer-credits">
-								<p class="copyright">Copyright &copy;<?php echo date('Y') ?> ProtectionPro<sup>&trade;</sup> by Madico<sup>&reg;</sup></p>
+								<p class="copyright">Copyright &copy;<?php echo date('Y') ?> ProtectionPro<sup>&reg;</sup> by Madico<sup>&reg;</sup></p>
 							</div>
 						</div>
 					</div>
